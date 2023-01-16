@@ -12,4 +12,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  saveResumeAsPDF() {
+    let link = document.createElement('a');
+    link.download = "Ayush_CV_3.5.pdf";
+    link.href = "assets/Ayush_CV_Angular.pdf";
+    link.click();
+  }
+
 }
