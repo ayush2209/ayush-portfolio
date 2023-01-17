@@ -1,27 +1,8 @@
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 $blue: #6575a0;
 
 .textStyle {
     color: white !important
-}
-
-
-a:hover {
-    color: blueviolet;
 }
 
 @media only screen and (max-width: 500px) {
