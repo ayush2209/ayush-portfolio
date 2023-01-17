@@ -12,12 +12,31 @@
     }
 }
 
-$blue: #2962ff;
+$blue: #6575a0;
 
 .font-shadow {
     text-transform: uppercase;
-    font-shadow: 2px 2px 10px $blue;
     transition: all 0.5s ease-in-out;
     letter-spacing: 0.2em;
     text-align: center;
+}
+
+.textStyle {
+    color: white !important
+}
+
+a:hover {
+    color: blueviolet;
+}
+
+@media only screen and (max-width: 500px) {
+    .textStyle {
+        font-size: xx-small;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .textStyle {
+        font-size: x-large;
+    }
 }
