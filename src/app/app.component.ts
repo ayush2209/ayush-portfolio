@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ayush-blog';
+  redirectToComponentPosition(event: any) {
+    document.querySelector(event)?.scrollIntoView({ behavior: 'smooth'});
+  }
 }

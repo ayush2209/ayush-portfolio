@@ -1,4 +1,33 @@
 <app-navbar></app-navbar>
 <hr style="margin-top: -5px;">
+<div class="container font-shadow centerContent">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link textStyle" (click)="redirectToComponentPosition('#first')">Project</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link textStyle" (click)="redirectToComponentPosition('#second')">About me</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link textStyle" (click)="redirectToComponentPosition('#third')">Resume</a>
+        </li>
+    </ul>
+</div>
+
+<!------------------------------------------------------------------------------------------------------------>
 <app-home></app-home>
-<router-outlet></router-outlet>
+<div class="container">
+    <hr>
+    <div id="first" style="height:600px; ">
+        <app-project></app-project>
+    </div>
+    <hr>
+    <div id="second" style="margin-top: 20px;">
+        <app-career></app-career>
+    </div>
+    <hr>
+    <div id="third" class="centerContent">
+        <app-about-ayush></app-about-ayush>
+    </div>
+</div>
+<!-- <router-outlet></router-outlet> -->
