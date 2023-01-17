@@ -14,9 +14,9 @@
 
 $blue: #2962ff;
 
-.text-shadow {
+.font-shadow {
     text-transform: uppercase;
-    text-shadow: 2px 2px 10px $blue;
+    font-shadow: 2px 2px 10px $blue;
     transition: all 0.5s ease-in-out;
     letter-spacing: 0.2em;
     text-align: center;
