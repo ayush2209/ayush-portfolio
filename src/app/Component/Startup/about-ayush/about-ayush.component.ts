@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/Shared/Service/common.service';
 
 @Component({
   selector: 'app-about-ayush',
@@ -7,17 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutAyushComponent implements OnInit {
 
-  constructor() { }
+  constructor(private commonService: CommonService) { }
 
   ngOnInit(): void {
   }
-
-
   saveResumeAsPDF() {
-    let link = document.createElement('a');
-    link.download = "Ayush_CV_3.5.pdf";
-    link.href = "assets/Ayush_CV_Angular.pdf";
-    link.click();
+    this.commonService.downloadResume();
   }
-
 }
