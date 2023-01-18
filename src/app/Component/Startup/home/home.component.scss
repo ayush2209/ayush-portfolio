@@ -1,2 +1,39 @@
+.info-text {
+    margin-top: 80px;
+    font-size: 50px;
+    line-height: 1.1;
+    font-family: "Google Sans Bold";
+}
 
-$blue: #6575a0;
+.info-text-p {
+    font-size: 25px;
+    line-height: 40px;
+    margin-right: 40px;
+    font-family: "Google Sans Medium";
+}
+/* Media Query */
+@media (max-width: 1380px) {
+    .info-text {
+        font-size: 50px;
+    }
+    .text-p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .button-greeting-div {
+        justify-content: space-around;
+    }
+    .info-text {
+        margin-top: 2rem!important;
+        font-size: 30px;
+        text-align: center;
+    }
+    .info-text-p {
+        font-size: 16px;
+        margin-right: 0px;
+        line-height: normal;
+        text-align: center;
+    }
+}
