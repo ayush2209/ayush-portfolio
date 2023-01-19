@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -6,6 +7,9 @@ import { Injectable } from '@angular/core';
 export class CommonService {
 
   constructor() { }
+
+  sendLoadingMessage = new Subject<String>();
+
   downloadResume() {
     let link = document.createElement('a');
     link.download = "Ayush_CV_3.5.pdf";

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { CommonService } from './Shared/Service/common.service';
 
 @Component({
   selector: 'app-root',
@@ -9,17 +10,12 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class AppComponent {
 
   constructor(
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private commonService: CommonService
   ) { }
-  
-  redirectToComponentPosition(event: any) {
-    document.querySelector(event)?.scrollIntoView({ behavior: 'smooth'});
-  }
 
-  ngOnInit() {
-    this.spinner.show();
-    setTimeout(() => {
-        this.spinner.hide();
-    }, 2000);
+  redirectToComponentPosition(event: any) {
+    document.querySelector(event)?.scrollIntoView({ behavior: 'smooth' });
   }
+  ngOnInit() { }
 }

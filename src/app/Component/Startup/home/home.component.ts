@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { CommonService } from 'src/app/Shared/Service/common.service';
 
 @Component({
@@ -8,14 +9,23 @@ import { CommonService } from 'src/app/Shared/Service/common.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private commonService: CommonService) { }
+  constructor(private commonService: CommonService, private spinner: NgxSpinnerService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit() { }
   hireMe() {
-    alert('I will open one modal with form.');
+    this.commonService.sendLoadingMessage.next('Hire Me ...');
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 2000);
   }
+
   saveResumeAsPDF() {
+    this.spinner.show();
+    this.commonService.sendLoadingMessage.next('Downloading ...');
     this.commonService.downloadResume();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 1000);
   }
 }

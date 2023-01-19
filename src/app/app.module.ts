@@ -11,6 +11,7 @@ import { CareerComponent } from './Component/Startup/career/career.component';
 import { ProjectComponent } from './Component/Startup/project/project.component';
 import { TechnologyComponent } from './Component/technology/technology.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoaderComponent } from './Component/Startup/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     AboutAyushComponent,
     CareerComponent,
     ProjectComponent,
-    TechnologyComponent
+    TechnologyComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
