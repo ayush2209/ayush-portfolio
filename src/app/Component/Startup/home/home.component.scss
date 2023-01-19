@@ -1,5 +1,5 @@
 .info-text {
-    margin-top: 80px;
+    margin-top: 2rem;
     font-size: 50px;
     line-height: 1.1;
     font-family: "Google Sans Bold";
@@ -8,8 +8,13 @@
 .info-text-p {
     font-size: 20px;
     line-height: 40px;
-    margin-right: 40px;
     font-family: "Google Sans Medium";
+}
+
+.socialMediaIcons {
+    width: 15rem;
+    display: flex;
+    justify-content: space-between;
 }
 /* Media Query */
 @media (max-width: 1380px) {
@@ -26,14 +31,14 @@
         justify-content: space-around;
     }
     .info-text {
-        margin-top: 2rem!important;
+        margin-top: 1rem!important;
         font-size: 30px;
-        text-align: center;
+        // text-align: center;
     }
     .info-text-p {
         font-size: 16px;
         margin-right: 0px;
         line-height: normal;
-        text-align: center;
+        // text-align: center;
     }
 }
