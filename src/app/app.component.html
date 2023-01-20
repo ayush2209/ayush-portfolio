@@ -1,35 +1,37 @@
 <app-navbar></app-navbar>
 <hr style="margin-top: -5px;">
-<div class="container font-shadow centerContent">
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link textStyle" (click)="redirectToComponentPosition('#project')">Project</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link textStyle" (click)="redirectToComponentPosition('#second')">About me</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link textStyle" (click)="redirectToComponentPosition('#third')">Resume</a>
-        </li>
-    </ul>
-</div>
-<!------------------------------------------------------------------------------------------------------------>
 <div class="container">
-    <app-home></app-home>
+    <div class="font-shadow centerContent">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link textStyle" (click)="redirectToComponentPosition('#project')">Project</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link textStyle" (click)="redirectToComponentPosition('#experience')">Experience</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link textStyle" (click)="redirectToComponentPosition('#contactMe')">Contact Me</a>
+            </li>
+        </ul>
+    </div>
+    <!------------------------------------------------------------------------------------------------------------>
     <div>
-        <hr>
-        <div id="project">
-            <app-project></app-project>
-        </div>
-        <hr>
-        <div id="second" style="margin-top: 20px;">
-            <app-career></app-career>
-        </div>
-        <hr>
-        <div id="third" class="centerContent">
-            <app-about-ayush></app-about-ayush>
+        <app-home></app-home>
+        <div>
+            <hr>
+            <div id="project">
+                <app-project></app-project>
+            </div>
+            <hr>
+            <div id="experience">
+                <app-career></app-career>
+            </div>
+            <hr>
+            <div id="contactMe" class="centerContent">
+                <app-about-ayush></app-about-ayush>
+            </div>
         </div>
     </div>
+    <!-- Show loader on launch. -->
+    <app-loader></app-loader>
 </div>
-<!-- Show loader on launch. -->
-<app-loader></app-loader>

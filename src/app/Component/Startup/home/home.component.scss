@@ -27,18 +27,13 @@
 }
 
 @media (max-width: 768px) {
-    .button-greeting-div {
-        justify-content: space-around;
-    }
     .info-text {
         margin-top: 1rem!important;
         font-size: 30px;
-        // text-align: center;
     }
     .info-text-p {
         font-size: 16px;
         margin-right: 0px;
         line-height: normal;
-        // text-align: center;
     }
 }

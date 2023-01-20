@@ -35,13 +35,33 @@ body {
     color: white !important
 }
 
-@media only screen and (max-width: 500px) {
+// @media only screen and (max-width: 500px) {
+//     .textStyle {
+//         font-size: x-small;
+//     }
+// }
+
+// @media only screen and (min-width: 600px) {
+//     .textStyle {
+//         font-size: x-large;
+//     }
+// }
+
+
+
+@media only screen and (min-width: 300px) and (max-width: 767.98px) {
     .textStyle {
-        font-size: x-small;
+        font-size: xx-small;
     }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+    .textStyle {
+        font-size: large;
+    }
+}
+
+@media only screen and (min-width: 992px) {
     .textStyle {
         font-size: x-large;
     }

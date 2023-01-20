@@ -1,0 +1,40 @@
+.card {
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+    background: linear-gradient(45deg, black, transparent);
+    background-size: 300% 300%;
+    animation: gradient 15s ease infinite;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-group {
+    justify-content: space-between;
+}
+
+.card-group .card {
+    margin: 0 0 1rem;
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .card-group .card {
+        -ms-flex: 0 0 48.7%;
+        flex: 0 0 48.7%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .card-group .card {
+        -ms-flex: 0 0 32%;
+        flex: 0 0 32%;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-group .card {
+        -ms-flex: 0 0 24%;
+        flex: 0 0 24%;
+    }
+}
