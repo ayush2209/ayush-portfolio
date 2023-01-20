@@ -32,22 +32,8 @@ body {
 }
 
 .textStyle {
-    color: white !important
+    color: white !important;
 }
-
-// @media only screen and (max-width: 500px) {
-//     .textStyle {
-//         font-size: x-small;
-//     }
-// }
-
-// @media only screen and (min-width: 600px) {
-//     .textStyle {
-//         font-size: x-large;
-//     }
-// }
-
-
 
 @media only screen and (min-width: 300px) and (max-width: 767.98px) {
     .textStyle {
@@ -63,7 +49,7 @@ body {
 
 @media only screen and (min-width: 992px) {
     .textStyle {
-        font-size: x-large;
+        font-size: larger;
     }
 }
 
