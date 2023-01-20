@@ -1,66 +1,108 @@
 /* You can add global styles to this file, and also import other style files */
 html {
-    height: 100%;
+  height: 100vh;
 }
 
 body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    height: 85vh;
-    color: aliceblue;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 600% 600%;
+  animation: gradient 15s ease infinite;
+  height: 85vh;
+  color: aliceblue;
 }
 
 @keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
 
-    50% {
-        background-position: 100% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
+  }
 
-    100% {
-        background-position: 0% 50%;
-    }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-
 .centerContent {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .textStyle {
-    color: white !important;
+  color: white !important;
 }
 
 @media only screen and (min-width: 300px) and (max-width: 767.98px) {
-    .textStyle {
-        font-size: xx-small;
-    }
+  .textStyle {
+    font-size: xx-small;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
-    .textStyle {
-        font-size: large;
-    }
+  .textStyle {
+    font-size: large;
+  }
 }
 
 @media only screen and (min-width: 992px) {
-    .textStyle {
-        font-size: larger;
-    }
+  .textStyle {
+    font-size: larger;
+  }
 }
 
 .font-shadow {
-    text-transform: uppercase;
-    transition: all 0.5s ease-in-out;
-    letter-spacing: 0.2em;
-    text-align: center;
+  text-transform: uppercase;
+  transition: all 0.5s ease-in-out;
+  letter-spacing: 0.2em;
+  text-align: center;
 }
 
 .iconHeight {
-    width: 32;
-    height: 32
+  width: 32;
+  height: 32;
+}
+
+// ---------
+// Heading style like Ayush Anand, Projects ...
+.info-text {
+  margin-top: 2rem;
+  font-size: 50px;
+  line-height: 1.1;
+  font-family: 'Google Sans Bold';
+}
+
+.info-text-p {
+  font-size: 20px;
+  line-height: 40px;
+  font-family: 'Google Sans Medium';
+}
+
+.socialMediaIcons {
+  width: 15rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Media Query */
+@media (max-width: 1380px) {
+  .info-text {
+    font-size: 50px;
+  }
+  .text-p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-text {
+    margin-top: 1rem !important;
+    font-size: 30px;
+  }
+  .info-text-p {
+    font-size: 16px;
+    margin-right: 0px;
+    line-height: normal;
+  }
 }
