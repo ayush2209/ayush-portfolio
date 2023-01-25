@@ -1,47 +1,59 @@
-.card {
-    cursor: pointer;
-    transition: all .4s ease-in-out;
-    background: linear-gradient(45deg, black, transparent);
-    background-size: 300% 300%;
-    animation: gradient 15s ease infinite;
-}
+// .card {
+//     cursor: pointer;
+//     transition: all .4s ease-in-out;
+//     background: linear-gradient(45deg, rgb(255, 255, 255), transparent);
+//     background-size: 300% 300%;
+//     animation: gradient 15s ease infinite;
+// }
 
 .card:hover {
     transform: scale(1.05);
 }
 
-.btn:hover {
-    transform: scale(1.05);
-}
-.card-group {
-    justify-content: space-between;
+// @media (min-width: 576px) and (max-width: 767.98px) {
+//     .card-group .card {
+//         -ms-flex: 0 0 48.7%;
+//         flex: 0 0 48.7%;
+//     }
+// }
+
+// @media (min-width: 768px) and (max-width: 991.98px) {
+//     .card-group .card {
+//         -ms-flex: 0 0 32%;
+//         flex: 0 0 32%;
+//     }
+// }
+
+// @media (min-width: 992px) {
+//     .card-group .card {
+//         -ms-flex: 0 0 24%;
+//         flex: 0 0 24%;
+//     }
+// }
+
+// .btnRight {
+//     // float: right;
+// }
+
+.card {
+    margin: 5% 0%;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+    background: linear-gradient(45deg, rgb(255, 255, 255), transparent);
+    animation: gradient 15s ease infinite;
 }
 
-.card-group .card {
-    margin: 0 0 1rem;
+.card-body {
+    margin: 0% 0% 0% 3%;
+    padding: 6% 0%;
 }
 
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .card-group .card {
-        -ms-flex: 0 0 48.7%;
-        flex: 0 0 48.7%;
-    }
-}
+// .imgHeight {
+//     height: auto;
+// }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .card-group .card {
-        -ms-flex: 0 0 32%;
-        flex: 0 0 32%;
-    }
-}
-
-@media (min-width: 992px) {
-    .card-group .card {
-        -ms-flex: 0 0 24%;
-        flex: 0 0 24%;
-    }
-}
-
-.btnRight {
-    float: right;
-}
+// @media (max-width: 575px) {
+//     .imgHeight {
+//         height: auto;
+//     }
+// }

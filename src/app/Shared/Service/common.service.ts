@@ -12,7 +12,7 @@ export class CommonService {
 
   downloadResume() {
     let link = document.createElement('a');
-    link.download = "Ayush_CV_3.5.pdf";
+    link.download = "Ayush_Resume";
     link.href = "assets/Ayush_CV_Angular.pdf";
     link.click();
   }
