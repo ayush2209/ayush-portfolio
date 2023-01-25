@@ -13,10 +13,10 @@
 }
 
 .animate-charcter {
-    background: linear-gradient(to right, hsl(0, 96%, 49%) 0, hsl(212, 100%, 50%) 10%, hsl(0, 0%, 30%) 20%);
+    background: linear-gradient(to right, hsl(0, 0%, 30%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 30%) 20%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shine 10s infinite linear;
+    animation: shine 3s infinite linear;
 }
 
 @keyframes shine {
