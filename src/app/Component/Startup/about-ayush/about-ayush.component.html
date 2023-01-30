@@ -1,13 +1,42 @@
-<!-- 
-<div class="d-flex flex-column justify-content-center w-100 font-shadow">
-    <div class="d-flex mb-2 flex-column justify-content-center align-items-center">
-        <div>Downalod Resume</div>
+<footer class="info-text mb-3" style="color: rgb(0, 28, 85);">
+    <section class="get-in-touch">
+        <h4 class="title">Get in touch</h4>
+    </section>
+    <div class="row">
+        <div class="col-md-6 container">
+            <form class="contact-form row">
+                <div class="form-field col-lg-6">
+                    <label class="label" for="name">Name</label>
+                    <input id="name" class="input-text js-input" type="text" required>
+                </div>
+                <div class="form-field col-lg-6 ">
+                    <label class="label" for="email">E-mail</label>
+                    <input id="email" class="input-text js-input" type="email" required>
+                </div>
+                <div class="form-field col-lg-6 ">
+                    <label class="label" for="company">Company Name</label>
+                    <input id="company" class="input-text js-input" type="text" required>
+                </div>
+                <div class="form-field col-lg-6 ">
+                    <label class="label" for="phone">Contact Number</label>
+
+                    <input id="phone" class="input-text js-input" type="text" required>
+                </div>
+                <div class="form-field col-lg-12">
+                    <label class="label" for="message">Message</label>
+                    <input id="message" class="input-text js-input" type="text" required>
+                </div>
+                <div class="form-field col-lg-12 mt-3">
+                    <button class="submit-btn" type="submit" value="Submit" (click)="formSubmit()">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6 mt-5 mb-5">
+            <div class="h-100 d-flex customBorder align-items-center justify-content-center">
+                <div class="customBorder">
+                    <h4 class="centerContent">Hi, Thanks for Visiting.</h4>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="mb-5">
-        <button type="button" class="btn btn-info" (click)="saveResumeAsPDF()">Downalod Resume</button>
-    </div>
-</div> -->
-<footer class="info-text mb-2" style="color: rgb(0, 28, 85);">
-    <h4 class="centerContent">Hi, Thanks for Visiting.</h4>
-    <h6 class="centerContent">Planning to add others details so one can connect to me over email or call.</h6>
 </footer>
