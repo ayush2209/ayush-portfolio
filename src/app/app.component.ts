@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { CommonService } from './Shared/Service/common.service';
 
@@ -8,7 +8,8 @@ import { CommonService } from './Shared/Service/common.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
+  isShow: boolean = false;
+  topPosToStartShowing: number = 250;
   constructor(
     private spinner: NgxSpinnerService,
     private commonService: CommonService
@@ -18,4 +19,24 @@ export class AppComponent {
     document.querySelector(event)?.scrollIntoView({ behavior: 'smooth' });
   }
   ngOnInit() { }
+
+  @HostListener('window:scroll')
+  checkScroll() {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    console.log('[scroll]', scrollPosition);
+    if (scrollPosition >= this.topPosToStartShowing) {
+      this.isShow = true;
+    } else {
+      this.isShow = false;
+    }
+  }
+
+  gotoTop() {
+    this.isShow = false;
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
 }

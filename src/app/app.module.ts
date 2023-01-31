@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { NgOptimizedImage } from '@angular/common'
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './Component/Startup/navbar/navbar.component';
@@ -28,7 +29,8 @@ import { LoaderComponent } from './Component/Startup/loader/loader.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]
