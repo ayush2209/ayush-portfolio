@@ -1,6 +1,16 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AbstractControl, NgForm, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { CommonService } from 'src/app/Shared/Service/common.service';
+
+/** Custom Validation for inout forms. */
+export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const forbidden = nameRe.test(control.value);
+    return forbidden ? {forbiddenName: {value: control.value}} : null;
+  };
+}
 
 @Component({
   selector: 'app-about-ayush',
@@ -9,16 +19,18 @@ import { CommonService } from 'src/app/Shared/Service/common.service';
 })
 export class AboutAyushComponent implements OnInit {
 
-  constructor(private commonService: CommonService, private spinner: NgxSpinnerService) { }
+  httpUrl:string = `https://anand-ayush-default-rtdb.firebaseio.com/`;
+
+  constructor(private commonService: CommonService, private spinner: NgxSpinnerService, private _http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
-  formSubmit() {
-    this.commonService.sendLoadingMessage.next('Thanks You.');
+  addEmployee(formData:NgForm) {
     this.spinner.show();
-    setTimeout(() => {
+    this._http.post(`${this.httpUrl}/message.json` , formData.value).subscribe(response => {
+      formData.reset();
       this.spinner.hide();
-    }, 2000);
+    })
   }
 }

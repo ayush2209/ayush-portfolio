@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { NgOptimizedImage } from '@angular/common'
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './Component/Startup/navbar/navbar.component';
@@ -15,6 +16,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoaderComponent } from './Component/Startup/loader/loader.component';
 import { CommonModalComponent } from './Component/On-Demand/common-modal/common-modal.component';
 import { BsModalService } from 'ngx-bootstrap/modal';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { BsModalService } from 'ngx-bootstrap/modal';
     BrowserAnimationsModule,
     AppRoutingModule,
     NgxSpinnerModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [BsModalService],
   bootstrap: [AppComponent]
