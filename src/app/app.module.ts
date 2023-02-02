@@ -13,6 +13,8 @@ import { ProjectComponent } from './Component/Startup/project/project.component'
 import { TechnologyComponent } from './Component/technology/technology.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoaderComponent } from './Component/Startup/loader/loader.component';
+import { CommonModalComponent } from './Component/On-Demand/common-modal/common-modal.component';
+import { BsModalService } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { LoaderComponent } from './Component/Startup/loader/loader.component';
     CareerComponent,
     ProjectComponent,
     TechnologyComponent,
-    LoaderComponent
+    LoaderComponent,
+    CommonModalComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,7 @@ import { LoaderComponent } from './Component/Startup/loader/loader.component';
     NgxSpinnerModule,
     NgOptimizedImage
   ],
-  providers: [],
+  providers: [BsModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

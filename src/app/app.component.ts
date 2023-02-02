@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ModalDialogService } from './Component/On-Demand/common-modal/modal-dialog.service';
 import { CommonService } from './Shared/Service/common.service';
 
 @Component({
@@ -12,13 +13,18 @@ export class AppComponent {
   topPosToStartShowing: number = 250;
   constructor(
     private spinner: NgxSpinnerService,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private _modalService: ModalDialogService
   ) { }
 
   redirectToComponentPosition(event: any) {
     document.querySelector(event)?.scrollIntoView({ behavior: 'smooth' });
   }
-  ngOnInit() { }
+  ngOnInit() {
+    setTimeout(() => {
+      this.openModalAfter5SecOfLaunch();
+    }, 2000);
+  }
 
   @HostListener('window:scroll')
   checkScroll() {
@@ -39,4 +45,13 @@ export class AppComponent {
       behavior: 'smooth'
     });
   }
+
+  openModalAfter5SecOfLaunch() {
+    const config = {
+      title: 'Apologies',
+      content: 'While developing this portfilio, "I reliased, Writting code is easy but not the content." There are many area having duplicate strings, My Manin motive was to build it.Working on Strings. Sorry for this.'
+    }
+    this._modalService.openModal(config);
+  }
+
 }

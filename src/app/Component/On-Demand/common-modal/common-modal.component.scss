@@ -1,0 +1,66 @@
+// .common-modal-container {
+//     min-height: 130px;
+//     // height: 100%;
+//     // width: 100%;
+//     background-color: #FFFFFF;
+//     border-radius: 5px;
+// }
+
+.row {
+    // width: 100%;
+    // min-height: 330px;
+    margin: 10px;
+}
+
+// .common-modal-top {
+//     position: absolute;
+//     top: 10px;
+//     right: 10px;
+//     z-index: 10;
+// }
+
+.common-modal-header {
+    width: 90%;
+    color: #2E2E2E;
+    font-family: "Open Sans";
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 31px;
+
+}
+
+.common-modal-body {
+    width: 90%;
+    color: #2E2E2E;
+    font-family: "Open Sans";
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.custom-button {
+    height: 50px;
+    width: 167px;
+    border: 1px solid #D8DDE0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 #D8DDE0;
+
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    text-align: center;
+}
+
+.button-white {
+    background-color: #FFFFFF;
+    color: #2E2E2E;
+}
+
+.button-red {
+    background-color: #B91440;
+    color: #FFFFFF;
+}
+
+.right-button-margin {
+    margin-left: 20px;
+}
