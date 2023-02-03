@@ -11,8 +11,8 @@
                             <div class="form-group">
                                 <input type="text" id="name" name="fullName" class="form-control" minlength="4"
                                     placeholder="Enter Name" #fullName="ngModel" ngModel required>
-        
-                                <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="errmsg">
+
+                                    <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="errmsg">
                                     <div *ngIf="fullName.errors?.['required']">
                                         <p>* Name is required.</p>
                                     </div>
@@ -22,8 +22,8 @@
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <input type="email" class="form-control" name="email" placeholder="Email" #email="ngModel"
-                                    ngModel required>
+                                <input type="email" class="form-control" name="email" placeholder="Email"
+                                    #email="ngModel" ngModel required>
                                 <div *ngIf="email.invalid && (email.dirty || email.touched)" class="errmsg">
                                     <div *ngIf="email.errors?.['required']">
                                         <p>* Email is required.</p>
@@ -31,8 +31,8 @@
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <textarea name="message" #message='ngModel' class="form-control" placeholder="Message" ngModel
-                                    required cols="30" rows="4"></textarea>
+                                <textarea name="message" #message='ngModel' class="form-control" placeholder="Message"
+                                    ngModel required cols="30" rows="4"></textarea>
                                 <div *ngIf="message.invalid && (message.dirty || message.touched)" class="errmsg">
                                     <div *ngIf="message.errors?.['required']">
                                         <p>* Message is required.</p>
@@ -57,7 +57,8 @@
         <div class="col-md-6 mt-5 mb-5">
             <div class="h-100 d-flex customBorder align-items-center justify-content-center">
                 <div class="customBorder">
-                    <h4 class="centerContent" style="font-family: cursive !important">Hi, Made with ❤️ by Ayush, Thanks for Visiting.</h4>
+                    <h4 class="centerContent" style="font-family: cursive !important">Hi, Made with ❤️ by Ayush, Thanks
+                        for Visiting.</h4>
                 </div>
             </div>
         </div>
