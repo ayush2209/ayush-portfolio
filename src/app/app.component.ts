@@ -49,7 +49,7 @@ export class AppComponent {
   openModalAfter5SecOfLaunch() {
     const config = {
       title: 'Apologies',
-      content: 'While developing this portfilio, "I reliased, Writting code is easy but not the content." There are many area having duplicate strings, My Manin motive was to build it.Working on Strings. Sorry for this.'
+      content: 'While developing this portfilio, "I reliased, Writting code is quite easy not the technical content." There are many area having duplicate strings, My Main motive was to build it.Working on Strings. Sorry for this.'
     }
     this._modalService.openModal(config);
   }
