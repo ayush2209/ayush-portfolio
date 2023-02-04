@@ -21,7 +21,7 @@ export class ModalDialogService {
     // this.isWarning = config.isWaringMsg;
     const modalData = {
       class: 'modal-dialog-centered',
-      ignoreBackdropClick: true,
+      ignoreBackdropClick: config.ignoreBackClick,
       initialState: {
         modalTitle: config.title,
         modalContent: config.content,
