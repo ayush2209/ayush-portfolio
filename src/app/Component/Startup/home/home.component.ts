@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { CommonService } from 'src/app/Shared/Service/common.service';
 import { ModalDialogService } from '../../On-Demand/common-modal/modal-dialog.service';
@@ -13,16 +15,21 @@ export class HomeComponent implements OnInit {
   constructor(
     private commonService: CommonService,
     private spinner: NgxSpinnerService,
-    private _modalService: ModalDialogService) { }
+    private _modalService: ModalDialogService,
+    private _http: HttpClient) { }
+
+  httpUrl: string = `https://anand-ayush-default-rtdb.firebaseio.com/`;
 
   ngOnInit() { }
-  hireMe() {
-    const config = {
-      title: 'Hire me',
-      ignoreBackClick: true,
-      content: 'Dynamic'
-    }
-    this._modalService.openModal(config);
+
+  sendMessage(formData: NgForm) {
+    formData.value['formType'] = "Hire_me";
+    this.spinner.show();
+    console.log((formData.value));
+    this._http.post(`${this.httpUrl}/hireMe.json`, formData.value).subscribe(response => {
+      formData.reset();
+      this.spinner.hide();
+    })
   }
 
   saveResumeAsPDF() {

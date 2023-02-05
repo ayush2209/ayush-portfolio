@@ -1,4 +1,17 @@
-<section class="row mb-3">
+<section>
+    <div class="">
+        <marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();" class="mt-2 rounded onHover"
+            style="font-family: Calibri, sans-serif; color: #FFFFFF" bgcolor="#00224f" scrolldelay="95" behavior="loop">
+            <!-- <span *ngFor="let newsData of newsResponseData">
+                {{newsData.title}} {{' | '}}
+            </span> -->
+            <span>While developing this portfilio, "I reliased, Writting code is quite easy then the technical content."
+                There are many area having duplicate strings, My Main motive was to build it.Working on Strings. Sorry
+                for this.</span>
+        </marquee>
+    </div>
+</section>
+<section class="row">
     <article class="col-sm-6 col-md-6">
         <section class="info-text mb-2" style="color: rgb(0, 28, 85);">Ayush Anand</section>
         <section class="mb-1" style="color: rgb(0, 28, 85);font-family: Google Sans Bold Italic;">Associate Tech Lead at
@@ -12,7 +25,6 @@
             <li> Experienced in UI web applications using Angular 6+ <code>[ Currently using 14 ]</code> HTML5, CSS3,
                 JavaScript, JSON, Bootstrap.
             </li>
-            <li>Able to <b>end-to-end Development</b> for a new requirement.</li>
             <li>Strong technical skills in complex website development including web-based applications and desktop
                 application.</li>
             <li>Experience in system analysis, design, workflow architecture, development, testing and maintenance of
@@ -34,7 +46,8 @@
 </section>
 <section class="mb-2">
     <article>
-        <button type="button" class="btn btn-light shadow" (click)="hireMe()">Hire Me</button>
+        <button type="button" class="btn btn-light shadow" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Hire
+            Me</button>
         <span> | </span>
         <button type="button" class="btn btn-info shadow" (click)="saveResumeAsPDF()">Download CV</button>
     </article>
@@ -46,10 +59,64 @@
             <i class="fa fa-2x fa-github" aria-hidden="true"></i>
         </a>
         <a href="https://twitter.com/omayushanand?t=rqiFI1UM_JngkbiLNqQHDg&s=08" target="_blank" class="btn">
-            <i class="fa-brands fa-2x fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-2x fa-twitter" aria-hidden="true"></i>
         </a>
         <a href="insta" class="btn">
             <i class="fa fa-2x fa-instagram" aria-hidden="true"></i>
         </a>
     </article>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Hire me</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="" #messageForm='ngForm' (ngSubmit)='sendMessage(messageForm)'>
+                    <div class="form-row mt-3">
+                        <div class="form-group">
+                            <input type="text" id="name" name="fullName" class="form-control" minlength="4"
+                                placeholder="Enter Name" #fullName="ngModel" ngModel required>
+
+                            <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="errmsg">
+                                <div *ngIf="fullName.errors?.['required']">
+                                    <p>* Name is required.</p>
+                                </div>
+                                <div *ngIf="fullName.errors?.['minlength']">
+                                    <p>* Name must be at least 4 characters long.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="email" class="form-control" name="email" placeholder="Email" #email="ngModel"
+                                ngModel required>
+                            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="errmsg">
+                                <div *ngIf="email.errors?.['required']">
+                                    <p>* Email is required.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <textarea name="message" #message='ngModel' class="form-control" placeholder="Message"
+                                ngModel required cols="30" rows="4"></textarea>
+                            <div *ngIf="message.invalid && (message.dirty || message.touched)" class="errmsg">
+                                <div *ngIf="message.errors?.['required']">
+                                    <p>* Message is required.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" [disabled]='messageForm.invalid' class="btn btn-outline-primary">Send Invitation</button>
+                        <button type="button" class="btn btn-outline-secondary" (click)="messageForm.reset();">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

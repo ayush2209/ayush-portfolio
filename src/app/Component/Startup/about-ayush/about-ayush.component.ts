@@ -21,12 +21,15 @@ export class AboutAyushComponent implements OnInit {
 
   httpUrl:string = `https://anand-ayush-default-rtdb.firebaseio.com/`;
 
-  constructor(private commonService: CommonService, private spinner: NgxSpinnerService, private _http: HttpClient) { }
+  constructor(
+    private commonService: CommonService,
+    private spinner: NgxSpinnerService,
+    private _http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
-  addEmployee(formData:NgForm) {
+  sendMessage(formData:NgForm) {
     this.spinner.show();
     this._http.post(`${this.httpUrl}/message.json` , formData.value).subscribe(response => {
       formData.reset();

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
-import { ModalDialogService } from './modal-dialog.service';
 
 @Component({
   selector: 'app-common-modal',
