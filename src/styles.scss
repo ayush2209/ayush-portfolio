@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+ font-family: ui-sans-serif;
+}
 .errmsg {
   color: red;
   margin: 1vh;
@@ -103,7 +107,7 @@
   }
 }
 
-.get-in-touch .title {
+.contact-me .title {
   text-align: center;
   letter-spacing: 3px;
   background: -moz-linear-gradient(left, #f4524d 0%, #5543ca 100%) !important;
