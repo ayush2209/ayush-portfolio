@@ -4,3 +4,14 @@
     justify-content: center;
     align-items: center;
 }
+
+.fa-heart:hover {
+    color: red !important;
+}
+
+.customStyle {
+    border: 1px solid #6c757d;
+    .fa-heart {
+        font-size: 1.5em;
+    }
+}

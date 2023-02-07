@@ -12,7 +12,7 @@
                                 <input type="text" id="name" name="fullName" class="form-control" minlength="4"
                                     placeholder="Enter Name" #fullName="ngModel" ngModel required>
 
-                                    <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="errmsg">
+                                <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="errmsg">
                                     <div *ngIf="fullName.errors?.['required']">
                                         <p>* Name is required.</p>
                                     </div>
@@ -55,11 +55,21 @@
             </div>
         </div>
         <div class="col-md-6 mt-5 mb-5">
-            <div class="h-100 d-flex customBorder align-items-center justify-content-center">
-                <div class="customBorder">
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <div class="">
                     <h4 class="centerContent" style="font-family: cursive !important">
                         Hi, Made with ❤️ by Ayush, Thanks for Visiting.
                     </h4>
+                    <div>
+                        <button class="btn customStyle" (click)="increaseLike()">
+                            <i class="fa fa-thin fa-heart fa-2x" [ngStyle]="{'color':  count>0 ? 'red' : '' }">
+                                <span class="ms-2" style="color: rgb(0, 28, 85);" *ngIf="count>0">{{count}}</span>
+                            </i>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary ms-3" (click)="feedback()">
+                            Please Suggest me for correction
+                        </button> 
+                    </div>
                 </div>
             </div>
         </div>
