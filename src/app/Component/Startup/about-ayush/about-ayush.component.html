@@ -63,10 +63,10 @@
                     <div>
                         <button class="btn customStyle" (click)="increaseLike()">
                             <i class="fa fa-thin fa-heart fa-2x" [ngStyle]="{'color':  count>0 ? 'red' : '' }">
-                                <span class="ms-2" style="color: rgb(0, 28, 85);" *ngIf="count>0">{{count}}</span>
+                                <span class="ms-1" style="color: rgb(0, 28, 85);" *ngIf="count>0">{{count}}</span>
                             </i>
                         </button>
-                        <button type="button" class="btn btn-outline-secondary ms-3" (click)="feedback()">
+                        <button type="button" class="btn btn-outline-secondary ms-1" (click)="feedback()">
                             Please Suggest me for correction
                         </button> 
                     </div>
