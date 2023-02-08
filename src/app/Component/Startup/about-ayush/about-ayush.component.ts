@@ -62,7 +62,7 @@ export class AboutAyushComponent implements OnInit {
       })
     } else {
       this._http.put(`${this.httpUrl}likeCount/${'l_Count'}.json`, countObj).subscribe(data => {
-        // console.log(data);
+        this.getLikeCount();
       }, err => {
         alert('Errro 404');;
       });

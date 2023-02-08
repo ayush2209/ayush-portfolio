@@ -62,7 +62,7 @@
                     </h4>
                     <div>
                         <button class="btn customStyle" (click)="increaseLike()">
-                            <i class="fa fa-thin fa-heart fa-2x" [ngStyle]="{'color':  count>0 ? 'red' : '' }">
+                            <i class="fa fa-thin fa-heart fa-2x" [ngStyle]="{'color':  ifClicked ? 'red' : '' }">
                                 <span class="ms-1" style="color: rgb(0, 28, 85);" *ngIf="count>0">{{count}}</span>
                             </i>
                         </button>
