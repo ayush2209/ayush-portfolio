@@ -24,6 +24,7 @@ export class AboutAyushComponent implements OnInit {
 
   ifClicked = false;
   count: any = 0;
+  feedBackData = [];
   constructor(
     private commonService: CommonService,
     private spinner: NgxSpinnerService,
@@ -33,16 +34,25 @@ export class AboutAyushComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getFeedbackDataResponse()
   }
-
+  
   sendMessage(formData: NgForm) {
     this.spinner.show();
-    this._http.post(`${this.httpUrl}/message.json`, formData.value).subscribe(response => {
-      formData.reset();
-      this.spinner.hide();
-    }, err => {
-      alert('Errro 404 : Failed to send message');
-    })
+    this._http.post(`${this.httpUrl}/message.json`, formData.value).subscribe({
+        next: () => {
+          formData.reset();
+          this.spinner.hide();
+        },
+        error: (error) => {
+          formData.reset();
+          this.spinner.hide();
+          alert('Errro 404 : Failed to send message');
+        },
+        complete: () => {
+          
+        }
+      })
   }
   increaseLike() {
     this.ifClicked = this.ifClicked ? false : true;
@@ -78,7 +88,34 @@ export class AboutAyushComponent implements OnInit {
     });
   };
 
-  feedback() {
-    alert(`l'll create a feedback form for you, Thanks for Visiting Pleae do like to movitate me.`);
+  sendFeedback(formData: NgForm) {
+    this.spinner.show();
+    this._http.post(`${this.httpUrl}/feedback.json`, formData.value).subscribe({
+      next: (response) => {
+        formData.reset();
+        this.spinner.hide();
+      },
+      error: (error) => {
+        this.spinner.hide();
+        this.spinner.hide();
+        alert('Errro 404 : Failed to send message');
+      },
+      complete: () => {
+        this.getFeedbackDataResponse();
+      }
+    })
+  }
+
+  getFeedbackDataResponse() {
+    this._http.get<any>(`${this.httpUrl}/feedback.json`).subscribe({
+      next: (response) => {
+        this.feedBackData = Object.values(response);
+        console.log(this.feedBackData);
+      },
+      error: (error) => {
+        alert('404 Error : Faild to load the data');
+      },
+      complete: () => { },
+    })
   }
 }

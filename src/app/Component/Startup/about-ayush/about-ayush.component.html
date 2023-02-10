@@ -66,7 +66,8 @@
                                 <span class="ms-1" style="color: rgb(0, 28, 85);" *ngIf="count>0">{{count}}</span>
                             </i>
                         </button>
-                        <button type="button" class="btn btn-outline-secondary ms-3" (click)="feedback()">
+                        <button type="button" class="btn btn-outline-secondary ms-3" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                             Feedback
                         </button> 
                     </div>
@@ -75,3 +76,102 @@
         </div>
     </div>
 </footer>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <section class="contact-me">
+            <h4 class="title">Get in touch</h4>
+        </section>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#feedback_Form" aria-expanded="true" aria-controls="feedback_Form">
+                        Feedback
+                    </button>
+                </h2>
+                <div id="feedback_Form" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body customPadding">
+                        <div class="contact-form row">
+                            <div class="col rounded">
+                                <form action="" method="" #feedback_Form='ngForm' (ngSubmit)='sendFeedback(feedback_Form)'>
+                                    <div class="form mt-3">
+                                        <div class="form-group">
+                                            <input type="text" id="name" name="fullName" class="form-control"
+                                                minlength="4" placeholder="Name" #fullName="ngModel" ngModel required>
+                                            <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="errmsg">
+                                                <div *ngIf="fullName.errors?.['required']">
+                                                    <p>* Name is required.</p>
+                                                </div>
+                                                <div *ngIf="fullName.errors?.['minlength']">
+                                                    <p>* Name must be at least 4 characters long.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <input type="email" class="form-control" name="email" placeholder="Email" #email="ngModel" ngModel required>
+                                            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="errmsg">
+                                                <div *ngIf="email.errors?.['required']">
+                                                    <p>* Email is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <textarea name="feedback" #feedback='ngModel' class="form-control" placeholder="Thought [Emoji is also supported.]" ngModel required cols="20" rows="2">
+                                            </textarea>
+                                            <div *ngIf="feedback.invalid && (feedback.dirty || feedback.touched)" class="errmsg">
+                                                <div *ngIf="feedback.errors?.['required']">
+                                                    <p>* Feedback is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3 mb-3" style="float: right">
+                                        <div class="col">
+                                            <button type="submit" [disabled]='feedback_Form.invalid'
+                                                class="btn btn-outline-primary">Submit</button>
+                                        </div>
+                                        <div class="col">
+                                            <button type="button" class="btn btn-outline-secondary"
+                                                (click)="feedback_Form.reset()">Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#feedback_Table" aria-expanded="false" aria-controls="feedback_Table">
+                        Previous Feedback
+                    </button>
+                </h2>
+                <div id="feedback_Table" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body customPadding table-wrap">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Reviewer</th>
+                                    <th scope="col">Message</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let feedBackData of feedBackData">
+                                    <!-- <td>{{feedBackData['id']}}</td> -->
+                                    <td>{{feedBackData['fullName']}}</td>
+                                    <td>{{feedBackData['feedback']}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

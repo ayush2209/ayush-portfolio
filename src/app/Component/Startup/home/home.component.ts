@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
   saveResumeAsPDF() {
     this.spinner.show();
     this.commonService.sendLoadingMessage.next('Downloading ...');
-    // this.commonService.downloadResume();
+    this.commonService.downloadResume();
     setTimeout(() => {
       this.spinner.hide();
     }, 1000);

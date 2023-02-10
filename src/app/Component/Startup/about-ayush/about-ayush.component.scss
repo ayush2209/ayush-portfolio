@@ -11,7 +11,27 @@
 
 .customStyle {
     border: 1px solid #6c757d;
+
     .fa-heart {
         font-size: 1em;
     }
+}
+
+// .accordion-item {
+//     border-bottom: #6c757d;
+// }
+
+.accordion-button:focus {
+
+    border-color: white;
+    outline: 0;
+    box-shadow: none;
+}
+
+.table-wrap {
+    // height: 80px;
+    overflow-y: auto;
+}
+.customPadding {
+    padding: 10px;
 }

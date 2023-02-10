@@ -50,7 +50,7 @@ export class AppComponent {
     const config = {
       title: 'Apologies',
       ignoreBackClick: false,
-      content: 'While developing this portfilio, "I reliased, Writting code is quite easy then the technical content." There are many area having duplicate strings, My Main motive was to build it.Working on Strings. Sorry for this.'
+      content: 'While developing this portfilio, "I reliased, Writting code is easier then the technical content." There are many area having duplicate strings, My Main motive was to build it.Working on Strings. Sorry for this.'
     }
     this._modalService.openModal(config);
   }
