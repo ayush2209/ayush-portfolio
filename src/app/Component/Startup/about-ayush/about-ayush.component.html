@@ -80,7 +80,7 @@
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
         <section class="contact-me">
-            <h4 class="title">Get in touch</h4>
+            <h4 class="title">Leave a comment</h4>
         </section>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
@@ -99,32 +99,32 @@
                             <div class="col rounded">
                                 <form action="" method="" #feedback_Form='ngForm' (ngSubmit)='sendFeedback(feedback_Form)'>
                                     <div class="form mt-3">
+                                        <div class="form-group mb-2">
+                                            <textarea name="feedback_Message" #feedback_Message='ngModel' class="form-control" placeholder="Thought [Emoji is also supported.]" ngModel required cols="20" rows="2">
+                                            </textarea>
+                                            <div *ngIf="feedback_Message.invalid && (feedback_Message.dirty || feedback_Message.touched)" class="errmsg">
+                                                <div *ngIf="feedback_Message.errors?.['required']">
+                                                    <p>* Feedback is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="form-group">
-                                            <input type="text" id="name" name="fullName" class="form-control"
-                                                minlength="4" placeholder="Name" #fullName="ngModel" ngModel required>
-                                            <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="errmsg">
-                                                <div *ngIf="fullName.errors?.['required']">
+                                            <input type="text" id="name" name="feedback_Messager" class="form-control"
+                                                minlength="4" placeholder="Name" #feedback_Messager="ngModel" ngModel required>
+                                            <div *ngIf="feedback_Messager.invalid && (feedback_Messager.dirty || feedback_Messager.touched)" class="errmsg">
+                                                <div *ngIf="feedback_Messager.errors?.['required']">
                                                     <p>* Name is required.</p>
                                                 </div>
-                                                <div *ngIf="fullName.errors?.['minlength']">
+                                                <div *ngIf="feedback_Messager.errors?.['minlength']">
                                                     <p>* Name must be at least 4 characters long.</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group mt-3">
-                                            <input type="email" class="form-control" name="email" placeholder="Email" #email="ngModel" ngModel required>
-                                            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="errmsg">
-                                                <div *ngIf="email.errors?.['required']">
+                                            <input type="email" class="form-control" name="f_email" placeholder="Please enter your email." #f_email="ngModel" ngModel required>
+                                            <div *ngIf="f_email.invalid && (f_email.dirty || f_email.touched)" class="errmsg">
+                                                <div *ngIf="f_email.errors?.['required']">
                                                     <p>* Email is required.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group mt-3">
-                                            <textarea name="feedback" #feedback='ngModel' class="form-control" placeholder="Thought [Emoji is also supported.]" ngModel required cols="20" rows="2">
-                                            </textarea>
-                                            <div *ngIf="feedback.invalid && (feedback.dirty || feedback.touched)" class="errmsg">
-                                                <div *ngIf="feedback.errors?.['required']">
-                                                    <p>* Feedback is required.</p>
                                                 </div>
                                             </div>
                                         </div>
