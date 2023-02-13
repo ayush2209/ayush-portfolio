@@ -90,6 +90,7 @@ export class AboutAyushComponent implements OnInit {
 
   sendFeedback(formData: NgForm) {
     this.spinner.show();
+    this.commonService.sendLoadingMessage.next('Thank You');
     this._http.post(`${this.httpUrl}/feedback.json`, formData.value).subscribe({
       next: (response) => {
         formData.reset();
