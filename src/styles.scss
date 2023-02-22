@@ -5,7 +5,6 @@ body {
 }
 .errmsg {
   color: red;
-  margin: 1vh;
   font-size: 2vh;
   .form-control {
       border-bottom: solid red 1px;
@@ -115,4 +114,12 @@ body {
   background: linear-gradient(to right, #f4524d 0%, #5543ca 100%) !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+label {
+  font-size: calc(0.9rem + .3vw)
 }
