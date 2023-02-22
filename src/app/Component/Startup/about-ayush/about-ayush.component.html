@@ -10,7 +10,7 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <input type="text" id="name" name="fullName" class="form-control" minlength="4"
-                                    placeholder="" #fullName="ngModel" ngModel required>
+                                    placeholder="Full Name" #fullName="ngModel" ngModel required>
                                 <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="errmsg">
                                     <div *ngIf="fullName.errors?.['required']">
                                         <p>* Name is required.</p>
@@ -21,7 +21,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" placeholder=""
+                                <input type="email" class="form-control" name="email" placeholder="Email"
                                     #email="ngModel" ngModel required>
                                 <div *ngIf="email.invalid && (email.dirty || email.touched)" class="errmsg">
                                     <div *ngIf="email.errors?.['required']">
@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <textarea name="message" #message='ngModel' class="form-control" placeholder=""
+                                <textarea name="message" #message='ngModel' class="form-control" placeholder="Message"
                                     ngModel required cols="30" rows="1"></textarea>
                                 <div *ngIf="message.invalid && (message.dirty || message.touched)" class="errmsg">
                                     <div *ngIf="message.errors?.['required']">
