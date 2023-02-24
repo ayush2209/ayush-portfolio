@@ -20,7 +20,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <input type="email" class="form-control" name="email" placeholder="Email"
                                     #email="ngModel" ngModel required>
                                 <div *ngIf="email.invalid && (email.dirty || email.touched)" class="errmsg">
@@ -29,7 +29,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <textarea name="message" #message='ngModel' class="form-control" placeholder="Message"
                                     ngModel required cols="30" rows="1"></textarea>
                                 <div *ngIf="message.invalid && (message.dirty || message.touched)" class="errmsg">
