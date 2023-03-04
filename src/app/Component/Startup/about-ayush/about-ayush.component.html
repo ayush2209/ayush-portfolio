@@ -42,11 +42,11 @@
                         <div class="row mt-3 mb-3" style="float: right">
                             <div class="col">
                                 <button type="submit" [disabled]='messageForm.invalid'
-                                    class="btn btn-outline-primary">Send</button>
+                                    class="btn btn-outline-primary shadow">Send</button>
                             </div>
                             <div class="col">
-                                <button type="button" class="btn btn-outline-secondary"
-                                    (click)="messageForm.reset()">Reset</button>
+                                <button type="button" class="btn btn-outline-secondary shadow"
+                                    (click)="messageForm.reset()">Cancel</button>
                             </div>
                         </div>
                     </form>
@@ -60,13 +60,13 @@
                         Hi, Made with ❤️ by Ayush, Thanks for Visiting.
                     </h4>
                     <div>
-                        <button class="btn customStyle" (click)="increaseLike()">
-                            <i class="fa fa-thin fa-heart fa-2x" [ngStyle]="{'color':  ifClicked ? 'red' : '' }">
+                        <button type="button" class="btn customStyle position-relative shadow" (click)="increaseLike()">
+                            <i class="fa fa-thin fa-heart fa-2x" [ngStyle]="{'color':  ifClicked ? 'red' : '' }"> </i>
+                            <span class="shadow position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info text-dark">
                                 <span class="ms-1" style="color: rgb(0, 28, 85);" *ngIf="count>0">{{count}}</span>
-                            </i>
+                            </span>
                         </button>
-                        <button type="button" class="btn btn-outline-secondary ms-3" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <button type="button" class="btn btn-outline-secondary shadow ms-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                             Feedback
                         </button> 
                     </div>
@@ -83,7 +83,7 @@
         </section>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
+    <div class="offcanvas-body shadow">
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
@@ -92,16 +92,21 @@
                         Feedback
                     </button>
                 </h2>
-                <div id="feedback_Form" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div id="feedback_Form" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
                     <div class="accordion-body customPadding">
                         <div class="contact-form row">
                             <div class="col rounded">
-                                <form action="" method="" #feedback_Form='ngForm' (ngSubmit)='sendFeedback(feedback_Form)'>
+                                <form action="" method="" #feedback_Form='ngForm'
+                                    (ngSubmit)='sendFeedback(feedback_Form)'>
                                     <div class="form mt-3">
                                         <div class="form-group mb-2">
-                                            <textarea name="feedback_Message" #feedback_Message='ngModel' class="form-control" placeholder="Thought [Emoji is also supported.]" ngModel required cols="20" rows="2">
+                                            <textarea name="feedback_Message" #feedback_Message='ngModel'
+                                                class="form-control" placeholder="Thought [Emoji is also supported.]"
+                                                ngModel required cols="20" rows="2">
                                             </textarea>
-                                            <div *ngIf="feedback_Message.invalid && (feedback_Message.dirty || feedback_Message.touched)" class="errmsg">
+                                            <div *ngIf="feedback_Message.invalid && (feedback_Message.dirty || feedback_Message.touched)"
+                                                class="errmsg">
                                                 <div *ngIf="feedback_Message.errors?.['required']">
                                                     <p>* Feedback is required.</p>
                                                 </div>
@@ -109,8 +114,10 @@
                                         </div>
                                         <div class="form-group">
                                             <input type="text" id="name" name="feedback_Messager" class="form-control"
-                                                minlength="4" placeholder="Name" #feedback_Messager="ngModel" ngModel required>
-                                            <div *ngIf="feedback_Messager.invalid && (feedback_Messager.dirty || feedback_Messager.touched)" class="errmsg">
+                                                minlength="4" placeholder="Name" #feedback_Messager="ngModel" ngModel
+                                                required>
+                                            <div *ngIf="feedback_Messager.invalid && (feedback_Messager.dirty || feedback_Messager.touched)"
+                                                class="errmsg">
                                                 <div *ngIf="feedback_Messager.errors?.['required']">
                                                     <p>* Name is required.</p>
                                                 </div>
@@ -120,8 +127,11 @@
                                             </div>
                                         </div>
                                         <div class="form-group mt-3">
-                                            <input type="email" class="form-control" name="f_email" placeholder="Please enter your email." #f_email="ngModel" ngModel required>
-                                            <div *ngIf="f_email.invalid && (f_email.dirty || f_email.touched)" class="errmsg">
+                                            <input type="email" class="form-control" name="f_email"
+                                                placeholder="Please enter your email." #f_email="ngModel" ngModel
+                                                required>
+                                            <div *ngIf="f_email.invalid && (f_email.dirty || f_email.touched)"
+                                                class="errmsg">
                                                 <div *ngIf="f_email.errors?.['required']">
                                                     <p>* Email is required.</p>
                                                 </div>
@@ -131,10 +141,10 @@
                                     <div class="row mt-3 mb-3" style="float: right">
                                         <div class="col">
                                             <button type="submit" [disabled]='feedback_Form.invalid'
-                                                class="btn btn-outline-primary">Submit</button>
+                                                class="btn btn-outline-primary shadow">Submit</button>
                                         </div>
                                         <div class="col">
-                                            <button type="button" class="btn btn-outline-secondary"
+                                            <button type="button" class="btn btn-outline-secondary shadow"
                                                 (click)="feedback_Form.reset()">Reset</button>
                                         </div>
                                     </div>
@@ -151,7 +161,8 @@
                         Previous Feedback
                     </button>
                 </h2>
-                <div id="feedback_Table" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionExample">
+                <div id="feedback_Table" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionExample">
                     <div class="accordion-body customPadding table-wrap">
                         <table class="table">
                             <thead>
