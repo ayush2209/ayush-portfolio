@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, NgForm, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { map } from 'rxjs';
+import { LocalStorageService } from 'src/app/Shared/local-storage.service';
 import { CommonService } from 'src/app/Shared/Service/common.service';
 
 /** Custom Validation for inout forms. */
@@ -28,7 +29,8 @@ export class AboutAyushComponent implements OnInit {
   constructor(
     private commonService: CommonService,
     private spinner: NgxSpinnerService,
-    private _http: HttpClient) {
+    private _http: HttpClient,
+    private localStorageService: LocalStorageService) {
     // When we load the app if like count is there then please update this.
     this.getLikeCount();
   }
@@ -36,27 +38,50 @@ export class AboutAyushComponent implements OnInit {
   ngOnInit(): void {
     this.getFeedbackDataResponse()
   }
-  
+
   sendMessage(formData: NgForm) {
     this.spinner.show();
     this._http.post(`${this.httpUrl}/message.json`, formData.value).subscribe({
-        next: () => {
-          formData.reset();
-          this.spinner.hide();
-        },
-        error: (error) => {
-          formData.reset();
-          this.spinner.hide();
-          alert('Errro 404 : Failed to send message');
-        },
-        complete: () => {
-          
-        }
-      })
+      next: () => {
+        formData.reset();
+        this.spinner.hide();
+      },
+      error: (error) => {
+        formData.reset();
+        this.spinner.hide();
+        alert('Errro 404 : Failed to send message');
+      },
+      complete: () => {
+
+      }
+    })
+  }
+
+  tempCount = 0;
+  checkLikedOrDisliked() {
+    if (this.tempCount === 0 && this.localStorageService.getData() != 'true') { //If Liked and local storage has also liked.
+      this.tempCount = this.tempCount + 1;
+      return true;
+    } else {
+      this.tempCount = 0;
+      return false;
+    }
   }
   increaseLike() {
-    this.ifClicked = this.ifClicked ? false : true;
+    if (this.checkLikedOrDisliked()) {
+      this.localStorageService.setdata(true);
+    } else {
+      this.localStorageService.setdata(false);
+    }
+
+    if (this.localStorageService.getData() == 'true') {
+      this.ifClicked = true;
+    } else {
+      this.ifClicked = false;
+    }
+
     this.count = this.ifClicked ? this.count + 1 : this.count - 1;
+
     const countObj = {
       _id: "l_Count",
       countNumber: this.count
@@ -65,28 +90,49 @@ export class AboutAyushComponent implements OnInit {
     // If count is zero it meaans we need to update the count.
     // Or we just need to create an entry.
     if (this.ifClicked && this.count === 0) {
-      this._http.post(`${this.httpUrl}/likeCount.json`, countObj).subscribe(resposne => {
-        this.getLikeCount();
-      }, err => {
-        alert('Errro 404');
+      this._http.post(`${this.httpUrl}/likeCount.json`, countObj).subscribe({
+        next: (resposne) => {
+          this.getLikeCount();
+        },
+        error: (err) => {
+          alert('Errro 404');
+        }, complete: () => {
+
+        }
       })
     } else {
-      this._http.put(`${this.httpUrl}likeCount/${'l_Count'}.json`, countObj).subscribe(data => {
-        this.getLikeCount();
-      }, err => {
-        alert('Errro 404');;
-      });
+      this._http.put(`${this.httpUrl}likeCount/${'l_Count'}.json`, countObj).subscribe({
+        next: (resposne) => {
+          this.getLikeCount();
+        },
+        error: (err) => {
+          alert('Errro 404');
+        }, complete: () => {
+
+        }
+      })
     }
   }
 
   getLikeCount() {
+    // this.checkUserhasLikedOrNotFromLocalStorage();
     this._http.get<any>(`${this.httpUrl}/likeCount.json`).subscribe(data => {
       const response: any = Object.values(data)[0];
       this.count = response.countNumber;
+      if (this.localStorageService.getData() == 'true') {
+        this.ifClicked = true;
+      } else {
+        this.ifClicked = false;
+      }
     }, err => {
       console.log(err);
     });
   };
+
+  // checkUserhasLikedOrNotFromLocalStorage() {
+  //   console.log(this.localStorageService.getData());
+  //   this.localStorageService.getData();
+  // }
 
   sendFeedback(formData: NgForm) {
     this.spinner.show();
@@ -111,7 +157,7 @@ export class AboutAyushComponent implements OnInit {
     this._http.get<any>(`${this.httpUrl}/feedback.json`).subscribe({
       next: (response) => {
         this.feedBackData = Object.values(response);
-        console.log(this.feedBackData);
+        // console.log(this.feedBackData);
       },
       error: (error) => {
         alert('404 Error : Faild to load the data');
