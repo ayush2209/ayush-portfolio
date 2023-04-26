@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ModalDialogService } from './Component/On-Demand/common-modal/modal-dialog.service';
+import { LocalStorageService } from './Shared/local-storage.service';
 import { CommonService } from './Shared/Service/common.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class AppComponent {
   constructor(
     private spinner: NgxSpinnerService,
     private commonService: CommonService,
-    private _modalService: ModalDialogService
+    private _modalService: ModalDialogService,
+    private _localStorageService: LocalStorageService
   ) { }
 
   redirectToComponentPosition(event: any) {
@@ -47,12 +49,14 @@ export class AppComponent {
   }
 
   openModalAfter5SecOfLaunch() {
-    const config = {
-      title: 'Apologies',
-      ignoreBackClick: false,
-      content: 'While developing this portfilio, "I reliased, Writting code is easier then the technical content." There are many area having duplicate strings, My Main motive was to build it.Working on Strings. Sorry for this.'
+    if(! (this._localStorageService.getData('dontShowThisAgain') == 'true')) {
+      const config = {
+        title: 'Apologies',
+        ignoreBackClick: false,
+        content: 'While developing this portfilio, "I reliased, Writting code is easier then the technical content." There are many area having duplicate strings, My Main motive was to build it.Working on Strings. Sorry for this.'
+      }
+      this._modalService.openModal(config);
     }
-    this._modalService.openModal(config);
   }
 
 }

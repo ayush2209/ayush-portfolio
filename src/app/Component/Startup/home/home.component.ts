@@ -11,14 +11,15 @@ import { ModalDialogService } from '../../On-Demand/common-modal/modal-dialog.se
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  angularCurrentVersion:any
+  angularCurrentVersion: any
+  userName = "Ayush Anand"
   constructor(
     private commonService: CommonService,
     private spinner: NgxSpinnerService,
     private _modalService: ModalDialogService,
-    private _http: HttpClient) { 
-      this.angularCurrentVersion = VERSION.full;
-    }
+    private _http: HttpClient) {
+    this.angularCurrentVersion = VERSION.full;
+  }
 
   httpUrl: string = `https://anand-ayush-default-rtdb.firebaseio.com/`;
 

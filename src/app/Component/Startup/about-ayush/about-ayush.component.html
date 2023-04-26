@@ -9,8 +9,7 @@
                     <form action="" method="" #messageForm='ngForm' (ngSubmit)='sendMessage(messageForm)'>
                         <div class="form-row">
                             <div class="form-group">
-                                <input type="text" id="name" name="fullName" class="form-control" minlength="4"
-                                    placeholder="Full Name" #fullName="ngModel" ngModel required>
+                                <input type="text" id="name" name="fullName" class="form-control" minlength="4" placeholder="Full Name" #fullName="ngModel" ngModel required>
                                 <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="errmsg">
                                     <div *ngIf="fullName.errors?.['required']">
                                         <p>* Name is required.</p>
@@ -21,8 +20,7 @@
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <input type="email" class="form-control" name="email" placeholder="Email"
-                                    #email="ngModel" ngModel required>
+                                <input type="email" class="form-control" name="email" placeholder="Email" #email="ngModel" ngModel required>
                                 <div *ngIf="email.invalid && (email.dirty || email.touched)" class="errmsg">
                                     <div *ngIf="email.errors?.['required']">
                                         <p>* Email is required.</p>
@@ -30,8 +28,7 @@
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <textarea name="message" #message='ngModel' class="form-control" placeholder="Message"
-                                    ngModel required cols="30" rows="1"></textarea>
+                                <textarea name="message" #message='ngModel' class="form-control" placeholder="Message" ngModel required cols="30" rows="1"></textarea>
                                 <div *ngIf="message.invalid && (message.dirty || message.touched)" class="errmsg">
                                     <div *ngIf="message.errors?.['required']">
                                         <p>* Message is required.</p>
@@ -41,12 +38,10 @@
                         </div>
                         <div class="row mt-3 mb-3" style="float: right">
                             <div class="col">
-                                <button type="submit" [disabled]='messageForm.invalid'
-                                    class="btn btn-outline-primary shadow">Send</button>
+                                <button type="submit" [disabled]='messageForm.invalid' class="btn btn-outline-primary shadow">Send</button>
                             </div>
                             <div class="col">
-                                <button type="button" class="btn btn-outline-secondary shadow"
-                                    (click)="messageForm.reset()">Cancel</button>
+                                <button type="button" class="btn btn-outline-secondary shadow" (click)="messageForm.reset()">Cancel</button>
                             </div>
                         </div>
                     </form>
@@ -66,10 +61,14 @@
                                 <span class="ms-1" style="color: rgb(0, 28, 85);" *ngIf="count>0">{{count}}</span>
                             </span>
                         </button>
-                        <button type="button" class="btn btn-outline-secondary shadow ms-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <button type="button" class="btn btn-outline-secondary shadow ms-3" aria-details="Feebback Form Section" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                             Feedback
                         </button> 
                     </div>
+                    <!-- <div style="gap: 10px; display: flex" class="mt-3">
+                        <a class="btn btn-light shadow" href="tel: 9509467284">Call</a>
+                        <a class="btn btn-outline-primary shadow" href="sms: 9509467284">SMS</a>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -87,37 +86,28 @@
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#feedback_Form" aria-expanded="true" aria-controls="feedback_Form">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#feedback_Form" aria-expanded="true" aria-controls="feedback_Form">
                         Feedback
                     </button>
                 </h2>
-                <div id="feedback_Form" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample">
+                <div id="feedback_Form" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body customPadding">
                         <div class="contact-form row">
                             <div class="col rounded">
-                                <form action="" method="" #feedback_Form='ngForm'
-                                    (ngSubmit)='sendFeedback(feedback_Form)'>
+                                <form action="" method="" #feedback_Form='ngForm' (ngSubmit)='sendFeedback(feedback_Form)'>
                                     <div class="form mt-3">
                                         <div class="form-group mb-2">
-                                            <textarea name="feedback_Message" #feedback_Message='ngModel'
-                                                class="form-control" placeholder="Thought [Emoji is also supported.]"
-                                                ngModel required cols="20" rows="2">
+                                            <textarea name="feedback_Message" #feedback_Message='ngModel' class="form-control" placeholder="Thought [Emoji is also supported.]" ngModel required cols="20" rows="2">
                                             </textarea>
-                                            <div *ngIf="feedback_Message.invalid && (feedback_Message.dirty || feedback_Message.touched)"
-                                                class="errmsg">
+                                            <div *ngIf="feedback_Message.invalid && (feedback_Message.dirty || feedback_Message.touched)" class="errmsg">
                                                 <div *ngIf="feedback_Message.errors?.['required']">
                                                     <p>* Feedback is required.</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" id="name" name="feedback_Messager" class="form-control"
-                                                minlength="4" placeholder="Name" #feedback_Messager="ngModel" ngModel
-                                                required>
-                                            <div *ngIf="feedback_Messager.invalid && (feedback_Messager.dirty || feedback_Messager.touched)"
-                                                class="errmsg">
+                                            <input type="text" id="name" name="feedback_Messager" class="form-control" minlength="4" placeholder="Name" #feedback_Messager="ngModel" ngModel required>
+                                            <div *ngIf="feedback_Messager.invalid && (feedback_Messager.dirty || feedback_Messager.touched)" class="errmsg">
                                                 <div *ngIf="feedback_Messager.errors?.['required']">
                                                     <p>* Name is required.</p>
                                                 </div>
@@ -127,11 +117,8 @@
                                             </div>
                                         </div>
                                         <div class="form-group mt-3">
-                                            <input type="email" class="form-control" name="f_email"
-                                                placeholder="Please enter your email." #f_email="ngModel" ngModel
-                                                required>
-                                            <div *ngIf="f_email.invalid && (f_email.dirty || f_email.touched)"
-                                                class="errmsg">
+                                            <input type="email" class="form-control" name="f_email" placeholder="Please enter your email." #f_email="ngModel" ngModel required>
+                                            <div *ngIf="f_email.invalid && (f_email.dirty || f_email.touched)" class="errmsg">
                                                 <div *ngIf="f_email.errors?.['required']">
                                                     <p>* Email is required.</p>
                                                 </div>
@@ -140,12 +127,10 @@
                                     </div>
                                     <div class="row mt-3 mb-3" style="float: right">
                                         <div class="col">
-                                            <button type="submit" [disabled]='feedback_Form.invalid'
-                                                class="btn btn-outline-primary shadow">Submit</button>
+                                            <button type="submit" [disabled]='feedback_Form.invalid' class="btn btn-outline-primary shadow">Submit</button>
                                         </div>
                                         <div class="col">
-                                            <button type="button" class="btn btn-outline-secondary shadow"
-                                                (click)="feedback_Form.reset()">Reset</button>
+                                            <button type="button" class="btn btn-outline-secondary shadow" (click)="feedback_Form.reset()">Reset</button>
                                         </div>
                                     </div>
                                 </form>
@@ -156,13 +141,11 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#feedback_Table" aria-expanded="false" aria-controls="feedback_Table">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#feedback_Table" aria-expanded="false" aria-controls="feedback_Table">
                         Previous Feedback
                     </button>
                 </h2>
-                <div id="feedback_Table" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                    data-bs-parent="#accordionExample">
+                <div id="feedback_Table" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionExample">
                     <div class="accordion-body customPadding table-wrap">
                         <table class="table">
                             <thead>

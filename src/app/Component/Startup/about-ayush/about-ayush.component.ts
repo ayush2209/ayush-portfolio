@@ -59,7 +59,7 @@ export class AboutAyushComponent implements OnInit {
 
   tempCount = 0;
   checkLikedOrDisliked() {
-    if (this.tempCount === 0 && this.localStorageService.getData() != 'true') { //If Liked and local storage has also liked.
+    if (this.tempCount === 0 && this.localStorageService.getData('liked') != 'true') { //If Liked and local storage has also liked.
       this.tempCount = this.tempCount + 1;
       return true;
     } else {
@@ -69,12 +69,12 @@ export class AboutAyushComponent implements OnInit {
   }
   increaseLike() {
     if (this.checkLikedOrDisliked()) {
-      this.localStorageService.setdata(true);
+      this.localStorageService.setdata({key: 'liked' , value: true});
     } else {
-      this.localStorageService.setdata(false);
+      this.localStorageService.setdata({key: 'liked' , value: false});
     }
 
-    if (this.localStorageService.getData() == 'true') {
+    if (this.localStorageService.getData('liked') == 'true') {
       this.ifClicked = true;
     } else {
       this.ifClicked = false;
@@ -119,7 +119,7 @@ export class AboutAyushComponent implements OnInit {
     this._http.get<any>(`${this.httpUrl}/likeCount.json`).subscribe(data => {
       const response: any = Object.values(data)[0];
       this.count = response.countNumber;
-      if (this.localStorageService.getData() == 'true') {
+      if (this.localStorageService.getData('liked') == 'true') {
         this.ifClicked = true;
       } else {
         this.ifClicked = false;

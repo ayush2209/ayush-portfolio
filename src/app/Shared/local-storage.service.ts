@@ -6,20 +6,14 @@ import { Injectable } from '@angular/core';
 export class LocalStorageService {
 
   constructor() { }
-  getData () {
-    return window.localStorage.getItem('liked');
+  getData(key: any) {
+    return window.localStorage.getItem(key);
   }
 
-  setdata (data:any) {
-    window.localStorage.setItem('liked', data);
+  setdata(data: any) {
+    window.localStorage.setItem(data.key, data.value);
   }
 
   checkUserhasLikedOrNotFromLocalStorage() {
-    // console.log('Check Data: ', this.localStorageService.getData())
-    // if(this.localStorageService.getData()) {
-    //   this.ifClicked = true;
-    // } else {
-    //   this.ifClicked = false
-    // }
   }
 }

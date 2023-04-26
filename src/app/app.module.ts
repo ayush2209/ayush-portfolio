@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { NgOptimizedImage } from '@angular/common'
-import { HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './Component/Startup/navbar/navbar.component';
@@ -17,6 +17,9 @@ import { LoaderComponent } from './Component/Startup/loader/loader.component';
 import { CommonModalComponent } from './Component/On-Demand/common-modal/common-modal.component';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { FormsModule } from '@angular/forms';
+import { HttpInterceptorService } from './Shared/Service/http-interceptor.service';
+import { UpperCasePipe } from './upper-case.pipe';
+import { TextHightlightDirective } from './text-hightlight.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { FormsModule } from '@angular/forms';
     ProjectComponent,
     TechnologyComponent,
     LoaderComponent,
-    CommonModalComponent
+    CommonModalComponent,
+    UpperCasePipe,
+    TextHightlightDirective
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,14 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     HttpClientModule
   ],
-  providers: [BsModalService],
+  providers: [
+    BsModalService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
