@@ -1,7 +1,6 @@
 <section>
     <div class="">
-        <marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();" class="mt-2 rounded onHover"
-            style="font-family: Calibri, sans-serif; color: #FFFFFF" bgcolor="#00224f" scrolldelay="95" behavior="loop">
+        <marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();" class="mt-2 rounded onHover" style="font-family: Calibri, sans-serif; color: #FFFFFF" bgcolor="#00224f" scrolldelay="95" behavior="loop">
             <!-- <span *ngFor="let newsData of newsResponseData">
                 {{newsData.title}} {{' | '}}
             </span> -->
@@ -69,8 +68,7 @@
 </section>
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -81,8 +79,7 @@
                 <form action="" method="" #messageForm='ngForm' (ngSubmit)='sendMessage(messageForm)'>
                     <div class="form-row mt-3">
                         <div class="form-group">
-                            <input type="text" id="name" name="fullName" class="form-control" minlength="4"
-                                placeholder="Enter Name" #fullName="ngModel" ngModel required>
+                            <input type="text" id="name" name="fullName" class="form-control" minlength="4" placeholder="Enter Name" #fullName="ngModel" ngModel required>
 
                             <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="errmsg">
                                 <div *ngIf="fullName.errors?.['required']">
@@ -94,8 +91,7 @@
                             </div>
                         </div>
                         <div class="form-group mt-3">
-                            <input type="email" class="form-control" name="email" placeholder="Email" #email="ngModel"
-                                ngModel required>
+                            <input type="email" class="form-control" name="email" placeholder="Email" #email="ngModel" ngModel required>
                             <div *ngIf="email.invalid && (email.dirty || email.touched)" class="errmsg">
                                 <div *ngIf="email.errors?.['required']">
                                     <p>* Email is required.</p>
@@ -103,8 +99,7 @@
                             </div>
                         </div>
                         <div class="form-group mt-3">
-                            <textarea name="message" #message='ngModel' class="form-control" placeholder="Message"
-                                ngModel required cols="30" rows="4"></textarea>
+                            <textarea name="message" #message='ngModel' class="form-control" placeholder="Message" ngModel required cols="30" rows="4"></textarea>
                             <div *ngIf="message.invalid && (message.dirty || message.touched)" class="errmsg">
                                 <div *ngIf="message.errors?.['required']">
                                     <p>* Message is required.</p>
