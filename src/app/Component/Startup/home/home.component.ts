@@ -19,11 +19,13 @@ export class HomeComponent implements OnInit {
     private _modalService: ModalDialogService,
     private _http: HttpClient) {
     this.angularCurrentVersion = VERSION.full;
+    this.getTotalYearsOFExperience();
   }
 
   httpUrl: string = `https://anand-ayush-default-rtdb.firebaseio.com/`;
-
-  ngOnInit() { }
+  total_YOE: string | undefined;
+  ngOnInit() {
+  }
 
   sendMessage(formData: NgForm) {
     formData.value['formType'] = "Hire_me";
@@ -45,22 +47,14 @@ export class HomeComponent implements OnInit {
   }
 
   getTotalYearsOFExperience() {
-    // Specify the specific date in ISO format (YYYY-MM-DD)
     const specificDate = new Date('2019-07-19');
-
-    // Get the current date
     const currentDate = new Date();
 
-    // Calculate the difference between the two dates in milliseconds
     const timeDiff = currentDate.getTime() - specificDate.getTime();
 
-    // Calculate the difference in years and months
     const diffYears = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 365));
     const diffMonths = Math.floor((timeDiff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
 
-    // Print the result
-    console.log(`Total years: ${diffYears}`);
-    console.log(`Total months: ${diffMonths}`);
-    return `${diffYears}.${diffMonths}`
+    this.total_YOE = `${diffYears}.${diffMonths}`
   }
 }
