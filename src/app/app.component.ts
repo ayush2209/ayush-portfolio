@@ -49,9 +49,9 @@ export class AppComponent {
   }
 
   openModalAfter5SecOfLaunch() {
-    if(! (this._localStorageService.getData('dontShowThisAgain') == 'true')) {
+    if (!(this._localStorageService.getData('dontShowThisAgain') == 'true')) {
       const config = {
-        title: 'Apologies',
+        title: 'Welcome',
         ignoreBackClick: false,
         content: 'While developing this portfilio, "I reliased, Writting code is easier then the technical content." There are many area having duplicate strings, My Main motive was to build it.Working on Strings. Sorry for this.'
       }

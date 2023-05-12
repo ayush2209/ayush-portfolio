@@ -13,13 +13,18 @@
         <section class="info-text mb-2" style="color: rgb(0, 28, 85);">{{ userName | upperCase}}</section>
         <section class="mb-1" style="color: rgb(0, 28, 85);font-family: Google Sans Bold Italic;">Associate Tech Lead at
             Zycus Infotech. <b>[Angular 14]</b> </section>
-        <p class="">
+        <!-- <p class="">
             A passionate individual who always thrives to work on end to end products which develop sustainable and
             scalable social and technical systems to create impact.
+        </p> -->
+        <p>
+            Experienced Angular Developer with a passion for creating efficient and dynamic web applications.
+            Skilled in developing responsive and intuitive user interfaces.
+            Proficient in Angular, JavaScript, TypeScript, HTML and CSS.
         </p>
         <ul class="list-style" role=listitem>
             <!-- [ngStyle]="{fontSize: true ? '10px' : '50px', backgroundColor: 'red'}" -->
-            <li>3.8 years of experience working in a corporate environment as a front-end UI/Web developer.</li>
+            <li>{{getTotalYearsOFExperience()}} years of experience working in a corporate environment as a front-end UI/Web developer.</li>
             <!-- [ngClass]="['firstStyle']" -->
             <!-- [ngClass]="userName.length > 15 ? 'isActive' : 'notActive' " -->
             <li> Experienced in UI web applications using Angular 6+ <code>[ Currently using 14 ]</code> HTML5, CSS3,
@@ -32,7 +37,7 @@
             </li>
             <li>Good Experience in developing the Single Page Applications using Angular.
             </li>
-            <li>Code Development and Review.</li>
+            <li>Conducted code reviews and implemented best practices to ensure code quality and maintainability.</li>
             <li>Experienced with all the phases of SDLC and <b> agile development methodologies including SCRUM, involved in daily SCRUM meetings to keep track of the Ongoing project status and issues using JIRA </b>.
             </li>
             <li>Excellent experience in GitHub, SVN and BitBucket for source code management and for version control.</li>
