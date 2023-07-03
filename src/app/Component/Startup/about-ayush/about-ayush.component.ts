@@ -1,3 +1,4 @@
+import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, NgForm, ValidationErrors, ValidatorFn } from '@angular/forms';
@@ -69,9 +70,9 @@ export class AboutAyushComponent implements OnInit {
   }
   increaseLike() {
     if (this.checkLikedOrDisliked()) {
-      this.localStorageService.setdata({key: 'liked' , value: true});
+      this.localStorageService.setdata({ key: 'liked', value: true });
     } else {
-      this.localStorageService.setdata({key: 'liked' , value: false});
+      this.localStorageService.setdata({ key: 'liked', value: false });
     }
 
     if (this.localStorageService.getData('liked') == 'true') {

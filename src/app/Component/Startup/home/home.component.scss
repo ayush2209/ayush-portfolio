@@ -1,3 +1,7 @@
+$Slate : #8892b0;
+$CodeFont: SF Mono, Fira Code, Fira Mono, Roboto Mono, Lucida Console, Monaco, Monospace;
+$Green : #64ffda;
+
 .list-style {
     list-style-type: square;
     // line-height: 3.5vh;
@@ -13,4 +17,26 @@
 
 .notActive {
     color: red;
+}
+
+.skill-element {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    font-size: 13px;
+    font-family: $CodeFont;
+    color: $Slate;
+
+    span {
+        padding-bottom: 5px;
+    }
+
+    &:before {
+        content: '▹';
+        position: absolute;
+        left: 0;
+        color: $Green;
+        font-size: 14px;
+        line-height: 12px;
+    }
 }

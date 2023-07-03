@@ -4,6 +4,8 @@ import { ModalDialogService } from './Component/On-Demand/common-modal/modal-dia
 import { LocalStorageService } from './Shared/local-storage.service';
 import { CommonService } from './Shared/Service/common.service';
 
+import * as AOS from 'aos';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -26,6 +28,8 @@ export class AppComponent {
     setTimeout(() => {
       this.openModalAfter5SecOfLaunch();
     }, 2000);
+
+    AOS.init();
   }
 
   @HostListener('window:scroll')

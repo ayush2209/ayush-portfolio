@@ -1,13 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
- font-family: ui-sans-serif;
+  font-family: ui-sans-serif;
 }
+
 .errmsg {
   color: red;
   font-size: 2vh;
+
   .form-control {
-      border-bottom: solid red 1px;
+    border-bottom: solid red 1px;
   }
 }
 
@@ -89,6 +91,7 @@ body {
   .info-text {
     font-size: 50px;
   }
+
   .text-p {
     font-size: 20px;
   }
@@ -99,6 +102,7 @@ body {
     margin-top: 1rem !important;
     font-size: 30px;
   }
+
   .info-text-p {
     font-size: 16px;
     margin-right: 0px;
