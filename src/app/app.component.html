@@ -3,20 +3,19 @@
 <div class="container">
     <div class="font-shadow centerContent" style="cursor: pointer;">
         <ul class="nav nav-tabs">
-            <li class="nav-item">
+            <li class="nav-item underline">
                 <a class="nav-link textStyle" (click)="redirectToComponentPosition('#project')">Career</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item underline">
                 <a class="nav-link textStyle" (click)="redirectToComponentPosition('#experience')">Project</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item underline">
                 <a class="nav-link textStyle" (click)="redirectToComponentPosition('#contactMe')">Contact Me</a>
             </li>
         </ul>
     </div>
     <div style="display: flex; justify-content: end;" *ngIf="isShow">
-        <a id="back-to-top" style="z-index: 999; position: fixed; color: whitesmoke;" (click)="gotoTop()"
-            class="shadow-lg bg-dark rounded-pill btn btn-lg back-to-top" role="button">
+        <a id="back-to-top" style="z-index: 999; position: fixed; color: whitesmoke;" (click)="gotoTop()" class="shadow-lg bg-dark rounded-pill btn btn-lg back-to-top" role="button">
             <i class="fas fa-chevron-up"></i>
         </a>
     </div>
@@ -33,7 +32,7 @@
                 <hr>
                 <app-career></app-career>
             </div>
-            
+
             <div id="contactMe" style="margin-bottom: 20px;">
                 <hr>
                 <app-about-ayush></app-about-ayush>
