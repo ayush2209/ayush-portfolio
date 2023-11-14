@@ -13,10 +13,6 @@
         <section class="info-text mb-2" style="color: rgb(0, 28, 85);">{{ userName | upperCase}}</section>
         <section class="mb-1" style="color: rgb(0, 28, 85);font-family: Google Sans Bold Italic;">Associate Tech Lead at
             Zycus Infotech. <b>[Angular 14]</b> </section>
-        <!-- <p class="">
-            A passionate individual who always thrives to work on end to end products which develop sustainable and
-            scalable social and technical systems to create impact.
-        </p> -->
         <p>
             Experienced Angular Developer with a passion for creating efficient and dynamic web applications.
             Skilled in developing responsive and intuitive user interfaces.
@@ -86,31 +82,37 @@
                     <div class="form-row mt-3">
                         <div class="form-group">
                             <input type="text" id="name" name="fullName" class="form-control" minlength="4" placeholder="Enter Name" #fullName="ngModel" ngModel required>
-
-                            <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="errmsg">
-                                <div *ngIf="fullName.errors?.['required']">
-                                    <p>* Name is required.</p>
-                                </div>
-                                <div *ngIf="fullName.errors?.['minlength']">
-                                    <p>* Name must be at least 4 characters long.</p>
-                                </div>
+                            @if (fullName.invalid && (fullName.dirty || fullName.touched)) {
+                            <div class="errmsg">
+                                @if (fullName.errors?.['required']) {
+                                <p>* Name is required.</p>
+                                }
+                                @if (fullName.errors?.['minlength']) {
+                                <p>* Name must be at least 4 characters long.</p>
+                                }
                             </div>
+                            }
                         </div>
                         <div class="form-group mt-3">
                             <input type="email" class="form-control" name="email" placeholder="Email" #email="ngModel" ngModel required>
-                            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="errmsg">
-                                <div *ngIf="email.errors?.['required']">
-                                    <p>* Email is required.</p>
-                                </div>
+                            @if (email.invalid && (email.dirty || email.touched)) {
+                            <div class="errmsg">
+                                @if (email.errors?.['required']) {
+                                <p>* Email is required.</p>
+                                }
                             </div>
+                            }
+
                         </div>
                         <div class="form-group mt-3">
                             <textarea name="message" #message='ngModel' class="form-control" placeholder="Message" ngModel required cols="30" rows="4"></textarea>
-                            <div *ngIf="message.invalid && (message.dirty || message.touched)" class="errmsg">
-                                <div *ngIf="message.errors?.['required']">
-                                    <p>* Message is required.</p>
-                                </div>
+                            @if (message.invalid && (message.dirty || message.touched)) {
+                            <div class="errmsg">
+                                @if (message.errors?.['required']) {
+                                <p>* Message is required.</p>
+                                }
                             </div>
+                            }
                         </div>
                     </div>
                     <div class="modal-footer">
