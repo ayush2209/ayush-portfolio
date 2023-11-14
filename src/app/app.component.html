@@ -28,17 +28,23 @@
         <div>
             <div id="project">
                 <hr>
+                @defer () {
                 <app-project></app-project>
+                }
             </div>
             <!-- <div class="divider rounded-pill"></div> -->
             <div id="experience">
                 <hr>
+                @defer () {
                 <app-career></app-career>
+                }
             </div>
 
             <div id="contactMe" style="margin-bottom: 20px;">
                 <hr>
+                @defer {
                 <app-about-ayush></app-about-ayush>
+                }
             </div>
         </div>
     </div>
