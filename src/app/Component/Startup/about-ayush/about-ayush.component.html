@@ -164,11 +164,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let feedBackData of feedBackData">
+                                @for (feedBackData of feedBackData; track $index) {
+                                <tr>
                                     <!-- <td>{{feedBackData['id']}}</td> -->
                                     <td>{{feedBackData['feedback_Messager']}}</td>
                                     <td>{{feedBackData['feedback_Message']}}</td>
                                 </tr>
+                                }
                             </tbody>
                         </table>
                     </div>
