@@ -36,7 +36,12 @@
               "node_modules/ngx-spinner/animations/timer.css",
               "node_modules/aos/dist/aos.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "aos"
+           ]
+
           },
           "configurations": {
             "production": {
