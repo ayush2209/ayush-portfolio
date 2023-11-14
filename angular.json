@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ayush-blog:build:production"
+              "buildTarget": "ayush-blog:build:production"
             },
             "development": {
-              "browserTarget": "ayush-blog:build:development"
+              "buildTarget": "ayush-blog:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ayush-blog:build"
+            "buildTarget": "ayush-blog:build"
           }
         },
         "test": {
