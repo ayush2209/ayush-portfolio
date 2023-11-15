@@ -28,22 +28,28 @@
         <div>
             <div id="project">
                 <hr>
-                @defer () {
+                @defer (on viewport) {
                 <app-project></app-project>
+                } @placeholder {
+                <div>Loading App Project...</div>
                 }
             </div>
             <!-- <div class="divider rounded-pill"></div> -->
             <div id="experience">
                 <hr>
-                @defer () {
+                @defer (on viewport) {
                 <app-career></app-career>
+                } @placeholder {
+                <div>Loading Experience...</div>
                 }
             </div>
 
             <div id="contactMe" style="margin-bottom: 20px;">
                 <hr>
-                @defer {
+                @defer (on viewport) {
                 <app-about-ayush></app-about-ayush>
+                } @placeholder {
+                <div>Loading About...</div>
                 }
             </div>
         </div>
