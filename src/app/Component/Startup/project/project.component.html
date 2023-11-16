@@ -4,85 +4,35 @@
     </article>
     <article class="col-sm-6 col-md-6">
         <section class="contact-me">
-            <h4 class="title">Career</h4>
+            <h4 class="title">{{ careerDetailsObj.careerSection.title }}</h4>
         </section>
         <h6>Roles and Responsibilities:</h6>
-        <p class="container" role=listitem data-aos="fade-up">
-            <summary data-aos="fade-up" data-aos-duration="1000">Engaged in all phases of software development lifecycle, which include gathering and analysing
-                user/business system requirements.
-            </summary>
-            <summary data-aos="fade-up" data-aos-duration="1000">Implementing the new features as per the requirements within timeline.</summary>
-            <summary data-aos="fade-up" data-aos-duration="1000">Worked on fixing critical issues of high, medium, and lowpriority.</summary>
-            <summary data-aos="fade-up" data-aos-duration="1000">Worked for adding functionality and enhancement of application.</summary>
-            <summary data-aos="fade-up" data-aos-duration="1000">Worked as a code reviewer.</summary>
-            <summary data-aos="fade-up" data-aos-duration="1000">Unit Test cases in Angular.</summary>
-            <summary data-aos="fade-up" data-aos-duration="1000">Participate in build and Release process.</summary>
-        </p>
+        <ul role="list">
+            @for (responsibility of careerDetailsObj.careerSection.responsibilities; track $index) {
+            <li data-aos="fade-up" data-aos-duration="1000">{{ responsibility }}</li>
+            }
+        </ul>
     </article>
 </section>
-<section>
-    <div class="row">
-        <div class="col-lg-4 d-flex align-items-stretch">
-            <div class="card shadow">
-                <section class="view overlay">
-                    <img class="img-fluid card-img-top imgHeight" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB0HWPg4DcvG7EpsqZqsclZLG7e7YQ2bKybR-GII8Gc8-mUIceu0gZ3owS_wVZpsSZlKs&usqp=CAU" alt="Card image cap">
-                </section>
-                <section class="card-body">
-                    <h5 class="card-title">Zycus</h5>
-                    <hr>
-                    <p class="card-text">Zycus is a pioneer in Cognitive Procurement software and has been a trusted
-                        partner of choice for large global enterprises for two decades. Zycus helps enterprises drive
-                        real savings, reduce risks, and boost compliance and easy-to-use
-                        user interface ensures high adoption and value across the organization.</p>
-                </section>
-                <section class="card-footer">
-                    <button type="button" class="btn btn-light-blue btn-md">
-                        <a href="hzycus.com/company.html" target="_blank" style="text-decoration: none;">Read more...</a>
-                    </button>
-                </section>
-            </div>
-        </div>
-        <div class="col-lg-4 d-flex align-items-stretch">
-            <div class="card shadow">
-                <section class="view overlay">
-                    <img class="img-fluid card-img-top imgHeight" src="assets/efiLogo.jpeg" alt="Card image cap">
-                </section>
-                <section class="card-body">
-                    <h5 class="card-title">EFI Ind Pvt Ltd</h5>
-                    <hr>
-                    <p class="card-text">EFI is a leading firm in doing R&D in colour enhancement and create
-                        printers
-                        and its software to enhance the colour quality. Fiery is very famous product of EFI in
-                        market used in others firms.
-                    </p>
-                </section>
-                <section class="card-footer">
-                    <button type="button" class="btn btn-light-blue btn-md">
-                        <a href="https://go.efi.com/en_us_Fiery-Spot-Pro.html" target="_blank" style="text-decoration: none;">Read more...</a>
-                    </button>
-                </section>
-            </div>
-        </div>
-        <div class="col-lg-4 d-flex align-items-stretch">
-            <div class="card shadow">
-                <section class="view overlay">
-                    <img class="img-fluid card-img-top imgHeight" src="https://cdn.pixabay.com/photo/2015/01/09/11/09/meeting-594091_1280.jpg" alt="Card image cap">
-                </section>
-                <section class="card-body">
-                    <h5 class="card-title">Test Yantra Software Solutions</h5>
-                    <hr>
-                    <p class="card-text">Tyro Vet automates the requirements process and hire
-                        the right talent. It helped the team to reduce around 20% of work to managing the interview
-                        process and keep tracking.</p>
-                </section>
-                <section class="card-footer">
-                    <button type="button" class="btn btn-light-blue btn-md">
-                        <a href="https://www.testyantra.com/" target="_blank" style="text-decoration: none;">
-                            Read more...
-                        </a>
-                    </button>
-                </section>
-            </div>
+
+<section class="row">
+    @for (company of careerDetailsObj.companies; track $index) {
+    <div class="col-lg-4 d-flex align-items-stretch">
+        <div class="card shadow">
+            <section class="view overlay">
+                <img class="img-fluid card-img-top imgHeight" [src]="company.image" alt="Card image cap">
+            </section>
+            <section class="card-body">
+                <h5 class="card-title">{{ company.name }}</h5>
+                <hr>
+                <p class="card-text">{{ company.description }}</p>
+            </section>
+            <section class="card-footer">
+                <button type="button" class="btn btn-light-blue btn-md">
+                    <a [href]="company.readMoreLink" target="_blank" style="text-decoration: none;">Read more...</a>
+                </button>
+            </section>
         </div>
     </div>
+    }
 </section>

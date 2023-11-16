@@ -6,7 +6,6 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { map } from 'rxjs';
 import { LocalStorageService } from 'src/app/Shared/local-storage.service';
 import { CommonService } from 'src/app/Shared/Service/common.service';
-
 /** Custom Validation for inout forms. */
 export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -116,7 +115,6 @@ export class AboutAyushComponent implements OnInit {
   }
 
   getLikeCount() {
-    // this.checkUserhasLikedOrNotFromLocalStorage();
     this._http.get<any>(`${this.httpUrl}/likeCount.json`).subscribe(data => {
       const response: any = Object.values(data)[0];
       this.count = response.countNumber;
@@ -129,11 +127,6 @@ export class AboutAyushComponent implements OnInit {
       console.log(err);
     });
   };
-
-  // checkUserhasLikedOrNotFromLocalStorage() {
-  //   console.log(this.localStorageService.getData());
-  //   this.localStorageService.getData();
-  // }
 
   sendFeedback(formData: NgForm) {
     this.spinner.show();
