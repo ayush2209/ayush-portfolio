@@ -42,9 +42,15 @@
         </ul>
         <!-- </p> -->
     </article>
+
     <article class="col-sm-6 col-md-4 my-2" style="display: flex; align-items: center;">
+        @defer (on viewport; on timer(5s)) {
         <img class="img-fluid rounded" src="assets/homeImg.gif" alt="">
+        } @placeholder {
+        <div>Loading Image... </div>
+        }
     </article>
+
 </section>
 <section class="mb-2">
     <article>

@@ -42,7 +42,8 @@ import { TextHightlightDirective } from './text-hightlight.directive';
     NgxSpinnerModule,
     NgOptimizedImage,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgOptimizedImage
   ],
   providers: [
     BsModalService,
