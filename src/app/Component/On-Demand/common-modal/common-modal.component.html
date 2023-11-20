@@ -4,9 +4,15 @@
         <span aria-hidden="true" class="visually-hidden">&times;</span>
     </button>
 </div>
+
 <div class="modal-body">
-    {{modalContent}}
+    @for (item of modalContent; track $index) {
+    <ul data-aos="fade-up">
+        <li class="bulletStyle" data-aos="fade-up" data-aos-duration="1000">{{item}}</li>
+    </ul>
+    }
 </div>
+
 <div class="modal-footer" style="display: flex; justify-content: space-between;">
     <div class="form-check">
         <input type="checkbox" class="form-check-input" id="don't_Show_Msg" (change)="handleCheckBoxSelected($event)">

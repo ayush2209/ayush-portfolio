@@ -5,6 +5,17 @@ import { LocalStorageService } from './Shared/local-storage.service';
 import { CommonService } from './Shared/Service/common.service';
 
 import * as AOS from 'aos';
+import { ModalConfig } from './Component/On-Demand/common-modal/modal-config';
+
+export const welcomeData = [
+  "Upgraded to Angular 17",
+  "New Syntax for Control Flow in Templates",
+  "Lazy Loading: Deferred Loading for specific elements or components",
+  "Automatic Migration to Built-in Control Flow",
+  "Improved Build Performance with ESBuild",
+  "Work in Progress: Implementing Localization Support"
+];
+
 
 @Component({
   selector: 'app-root',
@@ -17,8 +28,8 @@ export class AppComponent {
   constructor(
     private spinner: NgxSpinnerService,
     private commonService: CommonService,
-    private _modalService: ModalDialogService,
-    private _localStorageService: LocalStorageService
+    public _modalService: ModalDialogService,
+    public _localStorageService: LocalStorageService
   ) { }
 
   redirectToComponentPosition(event: any) {
@@ -52,15 +63,23 @@ export class AppComponent {
     });
   }
 
+  private WELCOME_DATA = [
+    "Upgraded to Angular 17",
+    "New Syntax for Control Flow in Templates",
+    "Lazy Loading: Deferred Loading for specific elements or components",
+    "Automatic Migration to Built-in Control Flow",
+    "Improved Build Performance with ESBuild",
+    "Work in Progress: Implementing Localization Support"
+  ];
+
   openModalAfter5SecOfLaunch() {
     if (!(this._localStorageService.getData('dontShowThisAgain') == 'true')) {
-      const config = {
+      const config: ModalConfig = {
         title: 'Welcome',
         ignoreBackClick: false,
-        content: 'While developing this portfilio, "I reliased, Writting code is easier then the technical content." There are many area having duplicate strings, My Main motive was to build it.Working on Strings. Sorry for this.'
-      }
+        content: this.WELCOME_DATA
+      };
       this._modalService.openModal(config);
     }
   }
-
 }
