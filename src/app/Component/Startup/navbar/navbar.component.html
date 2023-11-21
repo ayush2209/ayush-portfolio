@@ -30,7 +30,7 @@
                     <li class="divider dropdown-divider"></li>
                     <li role="menuitem">
                         <a class="dropdown-item checkbox-label">
-                            <input type="checkbox" class="checkbox-input" (change)="saveLangAsDefault($event)" />
+                            <input type="checkbox" class="checkbox-input" [checked]="setLangAsDefault" (change)="saveLangAsDefault($event)" />
                             <span>Save as Default</span>
                         </a>
                     </li>

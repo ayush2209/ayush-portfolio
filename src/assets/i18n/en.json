@@ -1,10 +1,11 @@
 ﻿{
-	"Name": "Ayush Anand",
-	"Welcome_String": "Welcome",
-	"MarQue_Text_1": "This app is running on Angular Version",
-	"MarQue_Text_2": "WIP: Implementing Multilanguage Support.",
-	"Project":"Project",
-	"Career": "Career",
-	"Contact_Me": "Contact Me",
-	"Role_Title": "Associate Tech Lead at "
+  "Name": "Ayush Anand",
+  "Welcome_String": "Welcome",
+  "MarQue_Text_1": "This app is running on Angular Version",
+  "MarQue_Text_2": "WIP: Implementing Multilanguage Support.",
+  "Project": "Project",
+  "Career": "Career",
+  "Contact_Me": "Contact Me",
+  "Role_Title": "Associate Tech Lead at ",
+  "Description_Title": "Experienced Angular Developer with a passion for creating efficient and dynamic web applications. Skilled in developing responsive and intuitive user interfaces. Proficient in "
 }

@@ -43,6 +43,7 @@ export class NavbarComponent implements OnInit {
     setTimeout(() => {
       this._translateService.use(lang);
       this.spinner.hide();
+      this.setLangAsDefault = false;
     }, 2000);
     this.commonService.sendLoadingMessage.next('Translating ...');
     if (this.setLangAsDefault) {
