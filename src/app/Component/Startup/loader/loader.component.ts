@@ -8,8 +8,8 @@ import { CommonService } from 'src/app/Shared/Service/common.service';
   styleUrls: ['./loader.component.scss']
 })
 export class LoaderComponent implements OnInit {
-  loaderMsg:String = "Loading ..."
-  constructor(private commonService: CommonService , private spinner: NgxSpinnerService) { }
+  loaderMsg: String = "Loading ..."
+  constructor(private commonService: CommonService, private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
     this.openLoader();

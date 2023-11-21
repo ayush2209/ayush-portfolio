@@ -4,13 +4,13 @@
     <div class="font-shadow centerContent" style="cursor: pointer;">
         <ul class="nav nav-tabs">
             <li class="nav-item underline">
-                <a class="nav-link textStyle" (click)="redirectToComponentPosition('#project')">Career</a>
+                <a class="nav-link textStyle" (click)="redirectToComponentPosition('#project')">{{'Career' | translate}}</a>
             </li>
             <li class="nav-item underline">
-                <a class="nav-link textStyle" (click)="redirectToComponentPosition('#experience')">Project</a>
+                <a class="nav-link textStyle" (click)="redirectToComponentPosition('#experience')">{{'Project' | translate}}</a>
             </li>
             <li class="nav-item underline">
-                <a class="nav-link textStyle" (click)="redirectToComponentPosition('#contactMe')">Contact Me</a>
+                <a class="nav-link textStyle" (click)="redirectToComponentPosition('#contactMe')">{{'Contact_Me' | translate}}</a>
             </li>
         </ul>
     </div>
@@ -56,5 +56,5 @@
     </div>
 
     <!-- Show loader on launch. -->
-    <app-loader></app-loader>
+    <app-loader @defer></app-loader>
 </div>

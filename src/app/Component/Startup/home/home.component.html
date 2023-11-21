@@ -1,46 +1,32 @@
 <section>
-    <div class="">
-        <marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();" class="mt-2 rounded onHover" style="font-family: Calibri, sans-serif; color: #FFFFFF" bgcolor="#00224f" scrolldelay="100" behavior="loop">
-            <span>This app is running on Angular Version {{angularCurrentVersion}}.</span>
-            <span> | </span>
-            <span>Started learning <code>React.js </code>fron Namaste React by <b>Akshay Saini</b>.</span>
-        </marquee>
-    </div>
+    <marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();" class="mt-2 rounded onHover" style="font-family: Calibri, sans-serif; color: #FFFFFF" bgcolor="#00224f" scrolldelay="100" behavior="loop">
+        <span>This app is running on Angular Version {{angularCurrentVersion}}.</span>
+        <span> | </span>
+        <!-- <span>Started learning <code>React.js </code>fron Namaste React by <b>Akshay Saini</b>.</span> -->
+        <span>WIP: Implementing Multilanguage Support.</span>
+    </marquee>
 </section>
 
 <section class="row">
     <article class="col-sm-6 col-md-8">
-        <section class="info-text mb-2" style="color: rgb(0, 28, 85);">{{ userName | upperCase}}</section>
-        <section class="mb-1" style="color: rgb(0, 28, 85);font-family: Google Sans Bold Italic;">Associate Tech Lead at
-            Zycus Infotech. <b>[Angular 14]</b> </section>
+        <section class="info-text mb-2" style="color: rgb(0, 28, 85);">{{ 'Name' | translate | upperCase}}</section>
+        <section class="mb-1" style="color: rgb(0, 28, 85);font-family: Google Sans Bold Italic;"> <code> {{'Role_Title' | translate}} at Zycus Infotech. <b>[Angular 14]</b> </code> </section>
         <p>
             Experienced Angular Developer with a passion for creating efficient and dynamic web applications.
             Skilled in developing responsive and intuitive user interfaces.
             Proficient in Angular, JavaScript, TypeScript, HTML and CSS.
         </p>
         <ul class="list-style" role=listitem data-aos="fade-up">
-            <!-- [ngStyle]="{fontSize: true ? '10px' : '50px', backgroundColor: 'red'}" -->
             <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"> <b> <span class="underline">{{total_YOE}} years of experience</span></b> working in a corporate environment as a front-end UI/Web developer.</li>
-            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"> Experienced in UI web applications using Angular 6+ <code>[ Currently using 14 ]</code> HTML5, CSS3,
-                JavaScript, JSON, Bootstrap.
-            </li>
-            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000">Strong technical skills in complex website development including web-based applications and desktop
-                application.</li>
-            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000">Experience in system analysis, design, workflow architecture, development, testing and maintenance of
-                web based applications.
-            </li>
-            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000">Good Experience in developing the Single Page Applications using Angular.
-            </li>
+            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"> Experienced in UI web applications using Angular 6+ <code>[ Currently using 14 ]</code> HTML5, CSS3, JavaScript, JSON, Bootstrap.</li>
+            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000">Strong technical skills in complex website development including web-based applications and desktop application.</li>
+            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000">Experience in system analysis, design, workflow architecture, development, testing and maintenance of web based applications.</li>
+            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000">Good Experience in developing the Single Page Applications using Angular.</li>
             <li class="skill-element" data-aos="fade-up" data-aos-duration="1000">Conducted code reviews and implemented best practices to ensure code quality and maintainability.</li>
-            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000">Experienced with all the phases of SDLC and <b> agile development methodologies including SCRUM, involved in daily SCRUM meetings to keep track of the Ongoing project status and issues using JIRA </b>.
-            </li>
+            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000">Experienced with all the phases of SDLC and <b> agile development methodologies including SCRUM, involved in daily SCRUM meetings to keep track of the Ongoing project status and issues using JIRA </b>.</li>
             <li class="skill-element" data-aos="fade-up" data-aos-duration="1000">Excellent experience in GitHub, SVN and BitBucket for source code management and for version control.</li>
-            <!-- Custom Directive: appTextHightlight -->
             <li class="skill-element" data-aos="fade-up" data-aos-duration="1000">Expertise in using IDE's like Visual Studio Code, Visual Studio, Notepad++ and IntelliJ.</li>
-            <!-- <li>Worked extensively in Agile Development process.
-            </li> -->
         </ul>
-        <!-- </p> -->
     </article>
 
     <article class="col-sm-6 col-md-4 my-2" style="display: flex; align-items: center;">
@@ -54,8 +40,7 @@
 </section>
 <section class="mb-2">
     <article>
-        <button type="button" [ariaHasPopup]="true" class="btn btn-light shadow" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Hire
-            Me</button>
+        <button type="button" [ariaHasPopup]="true" class="btn btn-light shadow" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Hire Me</button>
         <span> | </span>
         <button type="button" class="btn btn-info shadow" (click)="saveResumeAsPDF()">Download CV</button>
     </article>

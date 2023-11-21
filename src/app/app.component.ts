@@ -6,6 +6,7 @@ import { CommonService } from './Shared/Service/common.service';
 
 import * as AOS from 'aos';
 import { ModalConfig } from './Component/On-Demand/common-modal/modal-config';
+import { TranslateService } from '@ngx-translate/core';
 
 export const welcomeData = [
   "Upgraded to Angular 17",
@@ -29,8 +30,11 @@ export class AppComponent {
     private spinner: NgxSpinnerService,
     private commonService: CommonService,
     public _modalService: ModalDialogService,
-    public _localStorageService: LocalStorageService
-  ) { }
+    public _localStorageService: LocalStorageService,
+    private _translateService: TranslateService
+  ) {
+    this._translateService.setDefaultLang('en');
+  }
 
   redirectToComponentPosition(event: any) {
     document.querySelector(event)?.scrollIntoView({ behavior: 'smooth' });

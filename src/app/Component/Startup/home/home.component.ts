@@ -12,7 +12,6 @@ import { ModalDialogService } from '../../On-Demand/common-modal/modal-dialog.se
 })
 export class HomeComponent implements OnInit {
   angularCurrentVersion: any
-  userName = "Ayush Anand"
   constructor(
     private commonService: CommonService,
     private spinner: NgxSpinnerService,

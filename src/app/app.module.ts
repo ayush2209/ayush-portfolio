@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { NgOptimizedImage } from '@angular/common'
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './Component/Startup/navbar/navbar.component';
@@ -20,6 +20,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpInterceptorService } from './Shared/Service/http-interceptor.service';
 import { UpperCasePipe } from './upper-case.pipe';
 import { TextHightlightDirective } from './text-hightlight.directive';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader'
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -43,7 +50,15 @@ import { TextHightlightDirective } from './text-hightlight.directive';
     NgOptimizedImage,
     FormsModule,
     HttpClientModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+    BsDropdownModule
   ],
   providers: [
     BsModalService,
