@@ -18,7 +18,8 @@
                 </svg>
             </a> -->
             <!-- <button (click)="saveAs()">Save as PDF</button> -->
-            <div class="btn-group" dropdown placement="bottom left">
+            <!-- Your HTML template here -->
+            <div class="btn-group" id="123" dropdown placement="bottom left" [insideClick]="true">
                 <button id="button-basic" dropdownToggle type="button" class="btn btn-danger dropdown-toggle" aria-controls="dropdown-basic">
                     Language <span class="caret"></span>
                 </button>
@@ -27,10 +28,14 @@
                         <a class="dropdown-item" (click)="selectLanguage(language.code)">{{ language.name }}</a>
                     </li>
                     <li class="divider dropdown-divider"></li>
-                    <li role="menuitem"><a class="dropdown-item" (click)="selectLanguage('en')">Adding More Lang...</a></li>
+                    <li role="menuitem">
+                        <a class="dropdown-item checkbox-label">
+                            <input type="checkbox" class="checkbox-input" (change)="saveLangAsDefault($event)" />
+                            <span>Save as Default</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
-
             <!-- data-bs-toggle="dropdown" : Add this to use Boosttrap dropdown. -->
         </div>
     </div>

@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { CommonService } from 'src/app/Shared/Service/common.service';
+import { LocalStorageService } from 'src/app/Shared/local-storage.service';
+import { BsDropdownDirective } from 'ngx-bootstrap/dropdown';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +12,7 @@ import { CommonService } from 'src/app/Shared/Service/common.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  // In your component class
+
   languages = [
     { code: 'en', name: 'English' },
     { code: 'de', name: 'German' },
@@ -17,8 +20,7 @@ export class NavbarComponent implements OnInit {
     { code: 'fr', name: 'French' },
     { code: 'it', name: 'Italian' },
     { code: 'ja', name: 'Japanese' },
-    { code: 'ru', name: 'Russian' },
-    // Add more languages as needed
+    { code: 'ru', name: 'Russian' }
   ];
 
   saveAs() {
@@ -28,11 +30,13 @@ export class NavbarComponent implements OnInit {
   constructor(
     private _translateService: TranslateService,
     private commonService: CommonService,
-    private spinner: NgxSpinnerService) { }
+    private spinner: NgxSpinnerService,
+    public _localStorageService: LocalStorageService) { }
 
   ngOnInit(): void {
   }
 
+  setLangAsDefault = false;
   selectLanguage(lang: string) {
     console.log('Language: ', lang);
     this.spinner.show();
@@ -41,5 +45,12 @@ export class NavbarComponent implements OnInit {
       this.spinner.hide();
     }, 2000);
     this.commonService.sendLoadingMessage.next('Translating ...');
+    if (this.setLangAsDefault) {
+      this._localStorageService.setdata({ key: 'lang', value: lang })
+    }
+  }
+
+  saveLangAsDefault(event: any): void {
+    event.target.checked ? this.setLangAsDefault = true : this.setLangAsDefault = false;
   }
 }

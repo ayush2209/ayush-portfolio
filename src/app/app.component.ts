@@ -33,7 +33,7 @@ export class AppComponent {
     public _localStorageService: LocalStorageService,
     private _translateService: TranslateService
   ) {
-    this._translateService.setDefaultLang('en');
+    this._translateService.setDefaultLang(this._localStorageService.getData('lang') || 'en');
   }
 
   redirectToComponentPosition(event: any) {
