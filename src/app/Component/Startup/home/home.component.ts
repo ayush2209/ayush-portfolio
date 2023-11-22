@@ -12,6 +12,8 @@ import { ModalDialogService } from '../../On-Demand/common-modal/modal-dialog.se
 })
 export class HomeComponent implements OnInit {
   angularCurrentVersion: any
+  total_YOE: string | undefined;
+
   constructor(
     private commonService: CommonService,
     private spinner: NgxSpinnerService,
@@ -22,7 +24,9 @@ export class HomeComponent implements OnInit {
   }
 
   httpUrl: string = `https://anand-ayush-default-rtdb.firebaseio.com/`;
-  total_YOE: string | undefined;
+
+  TECH_DESCRIPTION: string[] = ['Tech_Desc_1', 'Tech_Desc_2', 'Tech_Desc_3', 'Tech_Desc_4', 'Tech_Desc_5', 'Tech_Desc_6', 'Tech_Desc_7', 'Tech_Desc_8'];
+
   ngOnInit() {
   }
 

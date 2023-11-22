@@ -6,6 +6,16 @@
   "Project": "Progetto",
   "Career": "Carriera",
   "Contact_Me": "Contattami",
-  "Role_Title": "Lead Tecnico Associato presso ",
-  "Description_Title": "Sviluppatore Angular esperto con una passione per la creazione di applicazioni web efficienti e dinamiche. Abile nello sviluppo di interfacce utente intuitive e reattive. Competente in "
+  "Role_Title": "Associate Tech Lead presso ",
+  "Description_Title": "Sviluppatore Angular esperto con una passione per la creazione di applicazioni web efficienti e dinamiche. Esperto nello sviluppo di interfacce utente responsive e intuitive. Competente in ",
+  "Tech_Desc_1": "Esperienza in applicazioni web UI con Angular (dalla versione 6 alla 14), HTML5, CSS3, JavaScript, JSON e Bootstrap.",
+  "Tech_Desc_2": "Forte competenza tecnica nello sviluppo di siti web complessi, inclusi quelli basati sul web e le applicazioni desktop.",
+  "Tech_Desc_3": "Competenza nell'analisi di sistema, nel design, nell'architettura del flusso di lavoro, nello sviluppo, nei test e nella manutenzione di applicazioni web.",
+  "Tech_Desc_4": "Buona esperienza nello sviluppo di applicazioni Single Page con Angular.",
+  "Tech_Desc_5": "Conduce revisioni del codice e implementa le migliori pratiche per garantire la qualità e la manutenibilità del codice.",
+  "Tech_Desc_6": "Esperienza con tutte le fasi del ciclo di vita del software (SDLC) e metodologie di sviluppo agile, inclusa SCRUM. Coinvolto attivamente nelle riunioni giornaliere di SCRUM per monitorare lo stato del progetto in corso e affrontare problemi utilizzando JIRA.",
+  "Tech_Desc_7": "Eccellente esperienza in GitHub, SVN e BitBucket per la gestione del codice sorgente e il controllo di versione.",
+  "Tech_Desc_8": "Competenza nell'uso di IDE come Visual Studio Code, Visual Studio, Notepad++ e IntelliJ.",
+  "Corporate_Environment_Desc": "Lavoro in un ambiente aziendale come sviluppatore front-end UI/Web.",
+  "Years_Of_Experience": "Anni di Esperienza"
 }

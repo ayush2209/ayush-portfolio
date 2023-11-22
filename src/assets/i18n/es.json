@@ -2,10 +2,20 @@
   "Name": "Ayush Anand",
   "Welcome_String": "Bienvenido",
   "MarQue_Text_1": "Esta aplicación se ejecuta en Angular Versión",
-  "MarQue_Text_2": "WIP: Implementando Soporte Multilingüe.",
+  "MarQue_Text_2": "WIP: Implementación de soporte multilingüe en curso.",
   "Project": "Proyecto",
   "Career": "Carrera",
   "Contact_Me": "Contáctame",
   "Role_Title": "Líder Técnico Asociado en ",
-  "Description_Title": "Desarrollador Angular experimentado con pasión por crear aplicaciones web eficientes y dinámicas. Habilidades en el desarrollo de interfaces de usuario receptivas e intuitivas. Competente en "
+  "Description_Title": "Desarrollador Angular experimentado con pasión por crear aplicaciones web eficientes y dinámicas. Habilidades en el desarrollo de interfaces de usuario receptivas e intuitivas. Competente en ",
+  "Tech_Desc_1": "Experiencia en aplicaciones web UI con Angular (de 6 a 14), HTML5, CSS3, JavaScript, JSON y Bootstrap.",
+  "Tech_Desc_2": "Fuertes habilidades técnicas en el desarrollo de sitios web complejos, incluyendo aplicaciones web y de escritorio.",
+  "Tech_Desc_3": "Experiencia en análisis de sistemas, diseño, arquitectura de flujos de trabajo, desarrollo, pruebas y mantenimiento de aplicaciones web.",
+  "Tech_Desc_4": "Buena experiencia en el desarrollo de aplicaciones de página única con Angular.",
+  "Tech_Desc_5": "Realiza revisiones de código e implementa las mejores prácticas para garantizar la calidad y la maintenibilidad del código.",
+  "Tech_Desc_6": "Experiencia en todas las fases del ciclo de vida del desarrollo de software (SDLC) y metodologías ágiles, incluido SCRUM. Participa activamente en reuniones diarias de SCRUM para seguir el estado del proyecto en curso y abordar problemas utilizando JIRA.",
+  "Tech_Desc_7": "Excelente experiencia con GitHub, SVN y BitBucket para la gestión del código fuente y el control de versiones.",
+  "Tech_Desc_8": "Experto en el uso de entornos de desarrollo integrado como Visual Studio Code, Visual Studio, Notepad++ e IntelliJ.",
+  "Corporate_Environment_Desc": "Trabajo en un entorno corporativo como desarrollador front-end UI/Web.",
+  "Years_Of_Experience": "Años de experiencia"
 }

@@ -6,6 +6,16 @@
   "Project": "Projekt",
   "Career": "Karriere",
   "Contact_Me": "Kontaktiere mich",
-  "Role_Title": "Assoziierter Tech Lead bei ",
-  "Description_Title": "Erfahrener Angular-Entwickler mit Leidenschaft für die Erstellung effizienter und dynamischer Webanwendungen. Kompetent in der Entwicklung von responsiven und intuitiven Benutzeroberflächen. Versiert in "
+  "Role_Title": "Associate Tech Lead bei ",
+  "Description_Title": "Erfahrener Angular-Entwickler mit Leidenschaft für die Erstellung effizienter und dynamischer Webanwendungen. Erfahren in der Entwicklung responsiver und intuitiver Benutzeroberflächen. Kompetent in ",
+  "Tech_Desc_1": "Erfahrung in der Entwicklung von UI-Webanwendungen mit Angular (6+ bis 14), HTML5, CSS3, JavaScript, JSON und Bootstrap.",
+  "Tech_Desc_2": "Starke technische Fähigkeiten in der Entwicklung komplexer Websites, einschließlich webbasierter und Desktop-Anwendungen.",
+  "Tech_Desc_3": "Expertise in der Systemanalyse, im Design, in der Workflow-Architektur, in der Entwicklung, im Test und in der Wartung von webbasierten Anwendungen.",
+  "Tech_Desc_4": "Gute Erfahrung in der Entwicklung von Single-Page-Anwendungen mit Angular.",
+  "Tech_Desc_5": "Führt Code-Reviews durch und implementiert bewährte Praktiken, um Codequalität und Wartbarkeit zu gewährleisten.",
+  "Tech_Desc_6": "Erfahrung in allen Phasen des Softwareentwicklungszyklus (SDLC) und agilen Entwicklungsmethoden, einschließlich SCRUM. Aktive Beteiligung an täglichen SCRUM-Meetings zur Verfolgung des aktuellen Projektstatus und zur Behandlung von Problemen mit JIRA.",
+  "Tech_Desc_7": "Ausgezeichnete Erfahrung in GitHub, SVN und BitBucket für das Management von Quellcode und Versionskontrolle.",
+  "Tech_Desc_8": "Expertise in der Verwendung von Entwicklungsumgebungen wie Visual Studio Code, Visual Studio, Notepad++ und IntelliJ.",
+  "Corporate_Environment_Desc": "Arbeiten in einem Unternehmensumfeld als Front-End UI/Web-Entwickler.",
+  "Years_Of_Experience": "Jahre Erfahrung"
 }
