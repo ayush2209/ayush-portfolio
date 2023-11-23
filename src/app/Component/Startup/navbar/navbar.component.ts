@@ -15,6 +15,7 @@ export class NavbarComponent implements OnInit {
 
   languages = [
     { code: 'en', name: 'English' },
+    { code: 'hi', name: 'Hindi' },
     { code: 'de', name: 'German' },
     { code: 'es', name: 'Spanish' },
     { code: 'fr', name: 'French' },

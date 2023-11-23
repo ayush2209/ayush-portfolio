@@ -27,8 +27,7 @@ export class HomeComponent implements OnInit {
 
   TECH_DESCRIPTION: string[] = ['Tech_Desc_1', 'Tech_Desc_2', 'Tech_Desc_3', 'Tech_Desc_4', 'Tech_Desc_5', 'Tech_Desc_6', 'Tech_Desc_7', 'Tech_Desc_8'];
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   sendMessage(formData: NgForm) {
     formData.value['formType'] = "Hire_me";
