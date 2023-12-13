@@ -8,7 +8,7 @@
 <div class="modal-body">
     @for (item of modalContent; track $index) {
     <ul data-aos="fade-up">
-        <li class="bulletStyle" data-aos="fade-up" data-aos-duration="1000">{{item}}</li>
+        <li class="bulletStyle" data-aos="fade-up" data-aos-duration="1000">{{item | translate}}</li>
     </ul>
     }
 </div>
@@ -16,7 +16,7 @@
 <div class="modal-footer" style="display: flex; justify-content: space-between;">
     <div class="form-check">
         <input type="checkbox" class="form-check-input" id="don't_Show_Msg" (change)="handleCheckBoxSelected($event)">
-        <label class="form-check-label" for="don't_Show_Msg">Don't Show this again</label>
+        <label class="form-check-label" for="don't_Show_Msg">{{'Dont_Show_Again' | translate}}</label>
     </div>
     <div>
         <button type="button" class="btn btn-default shadow" (click)="modalClose()">Close</button>

@@ -9,12 +9,6 @@ import { ModalConfig } from './Component/On-Demand/common-modal/modal-config';
 import { TranslateService } from '@ngx-translate/core';
 
 export const welcomeData = [
-  "Upgraded to Angular 17",
-  "New Syntax for Control Flow in Templates",
-  "Lazy Loading: Deferred Loading for specific elements or components",
-  "Automatic Migration to Built-in Control Flow",
-  "Improved Build Performance with ESBuild",
-  "Work in Progress: Implementing Localization Support"
 ];
 
 
@@ -67,14 +61,14 @@ export class AppComponent {
     });
   }
 
-  private WELCOME_DATA = [
-    "Upgraded to Angular 17",
-    "New Syntax for Control Flow in Templates",
-    "Lazy Loading: Deferred Loading for specific elements or components",
-    "Automatic Migration to Built-in Control Flow",
-    "Improved Build Performance with ESBuild",
-    "Work in Progress: Implementing Localization Support"
-  ];
+  private WELCOME_DATA = ['Upgraded_Angular_17', 'New_Syntax_Control_Flow', 'Lazy_Loading_Deferred', 'Automatic_Migration_Control_Flow', 'Improved_Build_Performance_ESBuild', 'Work_In_Progress_Localization'];
+
+  // ngAfterViewInit() {
+  //   this._translateService.stream(this.WELCOME_DATA)
+  //     .subscribe(translatedObj => {
+  //       this.WELCOME_DATA = translatedObj;
+  //     })
+  // }
 
   openModalAfter5SecOfLaunch() {
     if (!(this._localStorageService.getData('dontShowThisAgain') == 'true')) {

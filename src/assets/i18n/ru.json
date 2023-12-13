@@ -17,5 +17,12 @@
   "Tech_Desc_7": "Отличный опыт работы с GitHub, SVN и BitBucket для управления исходным кодом и контроля версий.",
   "Tech_Desc_8": "Эксперт в использовании сред разработки, таких как Visual Studio Code, Visual Studio, Notepad++ и IntelliJ.",
   "Corporate_Environment_Desc": "Работа в корпоративной среде в качестве фронтенд-разработчика пользовательских интерфейсов/веб-разработчика.",
-  "Years_Of_Experience": "Годы опыта"
+  "Years_Of_Experience": "Годы опыта",
+  "Upgraded_Angular_17": "Обновлено до Angular 17.",
+  "New_Syntax_Control_Flow": "Новый синтаксис для управления потоком в шаблонах",
+  "Lazy_Loading_Deferred": "Ленивая загрузка: Отложенная загрузка для определенных элементов или компонентов",
+  "Automatic_Migration_Control_Flow": "Автоматическая миграция к встроенному управлению потоком",
+  "Improved_Build_Performance_ESBuild": "Улучшенная производительность сборки с помощью ESBuild",
+  "Work_In_Progress_Localization": "В процессе: Внедрение поддержки локализации",
+  "Dont_Show_Again": "Не показывать это снова"
 }

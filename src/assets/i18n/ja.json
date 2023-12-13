@@ -18,5 +18,11 @@
   "Tech_Desc_8": "Visual Studio Code、Visual Studio、Notepad++、IntelliJなどのIDEの使用に精通。",
   "Corporate_Environment_Desc": "大手企業の環境でフロントエンドUI/Web開発者として活動中。",
   "Years_Of_Experience": "大手企業の環境でフロントエンドUI/Web開発者として活動中。",
-  "Years_Of_Experience": "経験年数"
+  "Upgraded_Angular_17": "Angular 17 にアップグレードしました。",
+  "New_Syntax_Control_Flow": "テンプレートの制御フローの新しい構文",
+  "Lazy_Loading_Deferred": "遅延読み込み：特定の要素やコンポーネントのための遅延読み込み",
+  "Automatic_Migration_Control_Flow": "ビルトイン制御フローへの自動移行",
+  "Improved_Build_Performance_ESBuild": "ESBuildによるビルドパフォーマンスの向上",
+  "Work_In_Progress_Localization": "進行中の作業：ローカリゼーションサポートの実装",
+  "Dont_Show_Again": "これをもう一度表示しない"
 }

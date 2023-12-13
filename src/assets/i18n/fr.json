@@ -17,5 +17,12 @@
   "Tech_Desc_7": "Excellente expérience avec GitHub, SVN et BitBucket pour la gestion du code source et le contrôle de version.",
   "Tech_Desc_8": "Expertise dans l'utilisation d'IDE tels que Visual Studio Code, Visual Studio, Notepad++ et IntelliJ.",
   "Corporate_Environment_Desc": "Travail dans un environnement d'entreprise comme développeur front-end UI/Web.",
-  "Years_Of_Experience": "Années d'expérience"
+  "Years_Of_Experience": "Années d'expérience",
+  "Upgraded_Angular_17": "Mise à niveau vers Angular 17.",
+  "New_Syntax_Control_Flow": "Nouvelle syntaxe pour le flux de contrôle dans les modèles",
+  "Lazy_Loading_Deferred": "Chargement différé : Chargement différé pour des éléments ou composants spécifiques",
+  "Automatic_Migration_Control_Flow": "Migration automatique vers le flux de contrôle intégré",
+  "Improved_Build_Performance_ESBuild": "Amélioration des performances de construction avec ESBuild",
+  "Work_In_Progress_Localization": "En cours : Implémentation du support de localisation",
+  "Dont_Show_Again": "Ne pas afficher cela à nouveau"
 }

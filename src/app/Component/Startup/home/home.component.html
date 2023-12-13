@@ -15,7 +15,7 @@
             {{'Description_Title' | translate}} <code>Angular, JavaScript, TypeScript, HTML and CSS</code>.
         </p>
         <ul class="list-style" role=listitem data-aos="fade-up">
-            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"> <b> <span class="underline">{{total_YOE}} {{'Years_Of_Experience ' | translate}}</span></b> {{'Corporate_Environment_Desc' | translate}}.</li>
+            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"> <b> <span class="underline">{{total_YOE}} {{ 'Years_Of_Experience' | translate}}</span></b> {{'Corporate_Environment_Desc' | translate}}.</li>
             @for (item of TECH_DESCRIPTION; track $index) {
             <li class="skill-element" data-aos="" data-aos-duration="1000">{{item | translate}}</li>
             }

@@ -17,5 +17,12 @@
   "Tech_Desc_7": "स्रोत कोड प्रबंधन और संस्करण नियंत्रण के लिए GitHub, SVN और BitBucket में उत्कृष्ट अनुभव।",
   "Tech_Desc_8": "विजुअल स्टूडियो कोड, विजुअल स्टूडियो, नोटपैड++ और इंटेलीजे जैसे आईडीई का उपयोग करने में विशेषज्ञता।",
   "Corporate_Environment_Desc": "कॉर्पोरेट परिवेश में फ्रंट-एंड यूआई/वेब डेवलपर के रूप में कार्य करना|",
-  "Years_Of_Experience": "Years of experience"
+  "Years_Of_Experience": "अनुभव के वर्ष",
+  "Upgraded_Angular_17": "Angular 17 में अपग्रेड किया गया।",
+  "New_Syntax_Control_Flow": "टेम्प्लेट्स में नए सिंटैक्स के लिए नया संचालन",
+  "Lazy_Loading_Deferred": "लेजी लोडिंग: विशिष्ट तत्वों या कॉम्पोनेंट्स के लिए शुष्क लोडिंग",
+  "Automatic_Migration_Control_Flow": "बिल्ट-इन कंट्रोल फ़्लो में स्वचालित प्रवाह",
+  "Improved_Build_Performance_ESBuild": "ESBuild के साथ सुधारित बिल्ड प्रदर्शन",
+  "Work_In_Progress_Localization": "कार्य प्रगति में: स्थानीयकरण समर्थन का कार्य",
+  "Dont_Show_Again": "इसे फिर से ना दिखाएं"
 }
