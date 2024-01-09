@@ -47,9 +47,9 @@ export class NavbarComponent implements OnInit {
       this.setLangAsDefault = false;
     }, 2000);
     this.commonService.sendLoadingMessage.next('Translating ...');
-    if (this.setLangAsDefault) {
-      this._localStorageService.setdata({ key: 'lang', value: lang })
-    }
+    // if (this.setLangAsDefault) {
+    this._localStorageService.setdata({ key: 'lang', value: lang })
+    // }
   }
 
   saveLangAsDefault(event: any): void {

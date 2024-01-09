@@ -19,7 +19,7 @@
             </a> -->
             <!-- <button (click)="saveAs()">Save as PDF</button> -->
             <!-- Your HTML template here -->
-            <div class="btn-group" id="123" dropdown placement="bottom left" [insideClick]="true">
+            <div class="btn-group" id="123" dropdown placement="bottom left" [insideClick]="false">
                 <button id="button-basic" dropdownToggle type="button" class="btn btn-danger dropdown-toggle" aria-controls="dropdown-basic">
                     Language <span class="caret"></span>
                 </button>
@@ -29,10 +29,11 @@
                     </li>
                     <li class="divider dropdown-divider"></li>
                     <li role="menuitem">
-                        <a class="dropdown-item checkbox-label">
+                        <span class="dropdown-item``">This will save as a default language.</span>
+                        <!-- <a class="dropdown-item checkbox-label">
                             <input type="checkbox" class="checkbox-input" [checked]="setLangAsDefault" (change)="saveLangAsDefault($event)" />
                             <span>Save as Default</span>
-                        </a>
+                        </a> -->
                     </li>
                 </ul>
             </div>
