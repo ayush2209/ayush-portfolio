@@ -33,10 +33,11 @@ export class AppComponent {
   redirectToComponentPosition(event: any) {
     document.querySelector(event)?.scrollIntoView({ behavior: 'smooth' });
   }
+
   ngOnInit() {
     setTimeout(() => {
       this.openModalAfter5SecOfLaunch();
-    }, 2000);
+    }, 100);
 
     AOS.init();
   }
@@ -62,13 +63,6 @@ export class AppComponent {
   }
 
   private WELCOME_DATA = ['Upgraded_Angular_17', 'New_Syntax_Control_Flow', 'Lazy_Loading_Deferred', 'Automatic_Migration_Control_Flow', 'Improved_Build_Performance_ESBuild', 'Work_In_Progress_Localization'];
-
-  // ngAfterViewInit() {
-  //   this._translateService.stream(this.WELCOME_DATA)
-  //     .subscribe(translatedObj => {
-  //       this.WELCOME_DATA = translatedObj;
-  //     })
-  // }
 
   openModalAfter5SecOfLaunch() {
     if (!(this._localStorageService.getData('dontShowThisAgain') == 'true')) {
