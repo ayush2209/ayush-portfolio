@@ -15,9 +15,10 @@ export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
 }
 
 @Component({
-  selector: 'app-about-ayush',
-  templateUrl: './about-ayush.component.html',
-  styleUrls: ['./about-ayush.component.scss']
+    selector: 'app-about-ayush',
+    templateUrl: './about-ayush.component.html',
+    styleUrls: ['./about-ayush.component.scss'],
+    standalone: false
 })
 export class AboutAyushComponent implements OnInit {
 

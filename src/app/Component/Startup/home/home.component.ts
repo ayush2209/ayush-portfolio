@@ -6,9 +6,10 @@ import { CommonService } from 'src/app/Shared/Service/common.service';
 import { ModalDialogService } from '../../On-Demand/common-modal/modal-dialog.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    standalone: false
 })
 export class HomeComponent implements OnInit {
   angularCurrentVersion: any

@@ -1,7 +1,8 @@
 import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '[appTextHightlight]'
+    selector: '[appTextHightlight]',
+    standalone: false
 })
 export class TextHightlightDirective {
 

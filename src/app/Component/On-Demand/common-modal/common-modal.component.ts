@@ -3,9 +3,10 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { LocalStorageService } from 'src/app/Shared/local-storage.service';
 
 @Component({
-  selector: 'app-common-modal',
-  templateUrl: './common-modal.component.html',
-  styleUrls: ['./common-modal.component.scss']
+    selector: 'app-common-modal',
+    templateUrl: './common-modal.component.html',
+    styleUrls: ['./common-modal.component.scss'],
+    standalone: false
 })
 export class CommonModalComponent implements OnInit {
 

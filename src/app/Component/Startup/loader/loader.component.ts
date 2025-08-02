@@ -3,9 +3,10 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { CommonService } from 'src/app/Shared/Service/common.service';
 
 @Component({
-  selector: 'app-loader',
-  templateUrl: './loader.component.html',
-  styleUrls: ['./loader.component.scss']
+    selector: 'app-loader',
+    templateUrl: './loader.component.html',
+    styleUrls: ['./loader.component.scss'],
+    standalone: false
 })
 export class LoaderComponent implements OnInit {
   loaderMsg: String = "Loading ..."
