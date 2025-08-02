@@ -21,15 +21,13 @@
               "base": "dist/ayush-blog"
             },
             "index": "src/index.html",
-            "polyfills": [
-              "src/polyfills.ts"
-            ],
+            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules"]
+            },
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.scss",
               "node_modules/font-awesome/css/font-awesome.min.css",
@@ -40,12 +38,8 @@
               "node_modules/aos/dist/aos.css"
             ],
             "scripts": [],
-            "allowedCommonJsDependencies": [
-              "lodash",
-              "aos"
-          ],
-          "browser": "src/main.ts"
-
+            "allowedCommonJsDependencies": ["lodash", "aos"],
+            "browser": "src/main.ts"
           },
           "configurations": {
             "production": {
@@ -104,12 +98,8 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         }
