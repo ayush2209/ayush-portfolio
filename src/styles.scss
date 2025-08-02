@@ -1,13 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Variables */
+$Blue: #648bff;
 
-$Blue : #648bff;
+:root {
+  --blue: #{$Blue};
+}
 
-@layer base {
-  body {
-    @apply font-sans;
-  }
+/* Base styles */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Global styles */
+::selection {
+  background-color: rgba(100, 139, 255, 0.2);
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
 }
 
 .errmsg {
@@ -119,9 +134,9 @@ $Blue : #648bff;
 .contact-me .title {
   text-align: justify;
   letter-spacing: 3px;
-  background: -moz-linear-gradient(left, #f4524d 0%, #5543ca 100%) !important;
-  background: -webkit-linear-gradient(left, #f4524d 0%, #5543ca 100%) !important;
-  background: linear-gradient(to right, #f4524d 0%, #5543ca 100%) !important;
+  background: -moz-linear-gradient(left, #f4524d #{0%}, #5543ca #{100%}) !important;
+  background: -webkit-linear-gradient(left, #f4524d #{0%}, #5543ca #{100%}) !important;
+  background: linear-gradient(to right, #f4524d #{0%}, #5543ca #{100%}) !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
@@ -147,15 +162,15 @@ label {
   content: "";
   display: block;
   height: 1px;
-  left: 50%;
+  left: #{50%};
   position: absolute;
   background: $Blue;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  width: 0%;
+  width: #{0%};
 }
 
 .underline:hover:after {
-  width: 100%;
+  width: #{100%};
   left: 0;
 }
 

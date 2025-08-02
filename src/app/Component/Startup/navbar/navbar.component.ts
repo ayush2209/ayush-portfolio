@@ -7,10 +7,10 @@ import { LocalStorageService } from 'src/app/Shared/local-storage.service';
 import { BsDropdownDirective } from 'ngx-bootstrap/dropdown';
 
 @Component({
-    selector: 'app-navbar',
-    templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.scss'],
-    standalone: false
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss'],
+  standalone: false
 })
 export class NavbarComponent implements OnInit {
 

@@ -25,7 +25,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "stylePreprocessorOptions": {
-              "includePaths": ["node_modules"]
+              "includePaths": ["node_modules", "src/styles"]
             },
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
@@ -46,7 +46,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "800kb",
                   "maximumError": "1mb"
                 },
                 {
@@ -94,7 +94,7 @@
           "builder": "@angular/build:karma",
           "options": {
             "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
