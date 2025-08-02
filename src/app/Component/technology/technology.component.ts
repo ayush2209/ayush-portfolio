@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { PROJECT_DETAILS } from 'src/assets/Common/projectDetails';
 
 @Component({
-    selector: 'app-technology',
-    templateUrl: './technology.component.html',
-    styleUrls: ['./technology.component.scss'],
-    standalone: false
+  selector: 'app-technology',
+  templateUrl: './technology.component.html',
+  styleUrls: ['./technology.component.scss'],
+  standalone: false
 })
 export class TechnologyComponent implements OnInit {
-  projectData = PROJECT_DETAILS
+  projectData: any = PROJECT_DETAILS
   constructor() { }
 
   ngOnInit(): void {

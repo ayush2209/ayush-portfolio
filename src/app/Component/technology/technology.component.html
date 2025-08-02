@@ -1,13 +1,15 @@
-<dl class="accordion" id="accordionExample">
-  <section *ngFor="let company of projectData.company; let i = index" class="accordion-item">
-    <dt class="accordion-header" [id]="'heading' + i">
+<div class="accordion" id="accordionExample">
+  @for (company of projectData.company; track company; let i = $index) {
+  <section class="accordion-item">
+    <div class="accordion-header" [id]="'heading' + i">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + i" [attr.aria-expanded]="i === 0 ? 'true' : 'false'" [attr.aria-controls]="'collapse' + i">
         {{ company.companyName }} | {{ company.duration }}
       </button>
-    </dt>
-    <dd [id]="'collapse' + i" class="accordion-collapse collapse show" [attr.aria-labelledby]="'heading' + i" data-bs-parent="#accordionExample">
+    </div>
+    <div [id]="'collapse' + i" class="accordion-collapse collapse show" [attr.aria-labelledby]="'heading' + i" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <article *ngFor="let project of company.projects; let j = index" class="col shadow-sm">
+        @for (project of company?.projects; track project; let j = $index) {
+        <article class="col shadow-sm">
           <div class="card mt-1">
             <div class="card-body">
               <h5 class="card-title">{{ project.projectName }}</h5>
@@ -19,18 +21,24 @@
                 <span>Roles: </span> <code>{{ project.role }}</code>
                 <div>Responsibilities:</div>
                 <div class="container list-style" role="list">
-                  <div *ngFor="let responsibility of project.responsibilities">
+                  @for (responsibility of project.responsibilities; track responsibility) {
+                  <div>
                     <li>{{ responsibility }}</li>
                   </div>
+                  }
                 </div>
               </div>
-              <div *ngIf="project.achievements">
+              @if (project?.achievements) {
+              <div>
                 <span>Achievement: <code>{{ project.achievements }}</code></span>
               </div>
+              }
             </div>
           </div>
         </article>
+        }
       </div>
-    </dd>
+    </div>
   </section>
-</dl>
+  }
+</div>
