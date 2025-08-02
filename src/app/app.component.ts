@@ -3,6 +3,9 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ModalDialogService } from './Component/On-Demand/common-modal/modal-dialog.service';
 import { LocalStorageService } from './Shared/local-storage.service';
 import { CommonService } from './Shared/Service/common.service';
+import { GoogleAnalyticsService } from './Shared/Service/google-analytics.service';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 import * as AOS from 'aos';
 import { ModalConfig } from './Component/On-Demand/common-modal/modal-config';
@@ -17,7 +20,7 @@ export const welcomeData = [
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   isShow: boolean = false;
   topPosToStartShowing: number = 250;
   constructor(
