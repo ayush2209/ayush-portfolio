@@ -14,19 +14,16 @@
         <button id="button-basic" dropdownToggle type="button" class="btn btn-danger dropdown-toggle" aria-controls="dropdown-basic">
           Language <span class="caret"></span>
         </button>
-        <ul style="cursor: pointer;" id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-end mt-1" role="menu" aria-labelledby="button-basic">
-          @for (language of languages; track language) {
-          <li role="menuitem">
-            <a class="dropdown-item" (click)="selectLanguage(language.code)">{{ language.name }}</a>
-          </li>
-          }
-          <li class="divider dropdown-divider"></li>
-          <li role="menuitem">
-            <span class="dropdown-item">This will save as a default language.</span>
-          </li>
-        </ul>
+        <div id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-end mt-1" role="menu">
+          <div role="group">
+            @for (language of languages; track language) {
+            <button type="button" class="dropdown-item" role="menuitem" (click)="selectLanguage(language.code)">{{ language.name }}</button>
+            }
+          </div>
+          <div class="dropdown-divider" role="separator"></div>
+          <div class="dropdown-item text-muted small">This will save as a default language.</div>
+        </div>
       </div>
-      <!-- data-bs-toggle="dropdown" : Add this to use Boosttrap dropdown. -->
     </div>
   </div>
 </div>
