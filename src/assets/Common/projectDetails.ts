@@ -2,8 +2,26 @@ export const PROJECT_DETAILS = {
   title: 'Project',
   company: [
     {
+      companyName: 'Deloitte USI',
+      duration: 'Apr 2024 - Present',
+      projects: [
+        {
+          projectName: 'Consulting Projects',
+          technologiesUsed: 'HTML5, CSS, Angular, TypeScript, JavaScript, GIT',
+          role: 'Consultant',
+          responsibilities: [
+            'Providing expert consulting services for Angular-based applications.',
+            'Collaborating with client teams to design and implement scalable solutions.',
+            'Optimizing application performance and implementing best practices.',
+            'Conducting code reviews and ensuring code quality standards.',
+            'Mentoring junior developers and sharing technical expertise.'
+          ]
+        }
+      ]
+    },
+    {
       companyName: 'Zycus Infotech',
-      duration: 'Since - Dec, 2022',
+      duration: 'Dec, 2022 - Apr 2024',
       projects: [
         {
           projectName: 'i-Console',
