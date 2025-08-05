@@ -8,6 +8,9 @@
       {
         "image-alt": "off"
       }
-    ]
+    ],
+    "no-inline-styles": "off",
+    "axe/aria": "off",
+    "disown-opener": "off"
   }
 }

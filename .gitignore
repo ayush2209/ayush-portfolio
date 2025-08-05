@@ -1,4 +1,8 @@
 node_modules
 .angular
 dist
+coverage
+.env
+.vscode
 .firebase
+.github

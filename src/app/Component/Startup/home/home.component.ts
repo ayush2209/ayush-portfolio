@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { CommonService } from 'src/app/Shared/Service/common.service';
 import { ModalDialogService } from '../../On-Demand/common-modal/modal-dialog.service';
+import { GtmService } from 'src/app/Shared/Service/gtm.service';
 
 @Component({
     selector: 'app-home',
@@ -19,6 +20,7 @@ export class HomeComponent implements OnInit {
     private commonService: CommonService,
     private spinner: NgxSpinnerService,
     private _modalService: ModalDialogService,
+    private readonly gtmService: GtmService,
     private _http: HttpClient) {
     this.angularCurrentVersion = VERSION.full;
     this.getTotalYearsOFExperience();
@@ -34,6 +36,7 @@ export class HomeComponent implements OnInit {
     formData.value['formType'] = "Hire_me";
     this.spinner.show();
     console.log((formData.value));
+    this.gtmService.hireMeGTMEvent(formData?.value);
     this._http.post(`${this.httpUrl}/hireMe.json`, formData.value).subscribe(response => {
       formData.reset();
       this.spinner.hide();
