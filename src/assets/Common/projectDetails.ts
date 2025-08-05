@@ -2,8 +2,27 @@ export const PROJECT_DETAILS = {
   title: 'Project',
   company: [
     {
+      companyName: 'Deloitte Consulting',
+      duration: 'Apr 2023 - Present',
+      projects: [
+        {
+          projectName: 'Project - 1',
+          technologiesUsed: 'Angular 15+, TypeScript, RxJS, NgRx, SCSS, RESTful APIs, Microservices, Docker, AWS',
+          role: 'Consultant',
+          responsibilities: [
+            'Led the development of enterprise-scale digital transformation platform serving 10,000+ users',
+            'Architected and implemented reusable component library using Angular CDK and custom directives',
+            'Established coding standards and best practices for the frontend team',
+            'Collaborated with UX designers to create accessible and responsive interfaces meeting WCAG 2.1 standards',
+            'Mentored junior developers and conducted code reviews for 5+ team members'
+          ],
+          achievements: 'Successfully delivered the project ahead of schedule'
+        }
+      ]
+    },
+    {
       companyName: 'Zycus Infotech',
-      duration: 'Since - Dec, 2022',
+      duration: 'Dec, 2022 - Apr, 2023',
       projects: [
         {
           projectName: 'i-Console',
