@@ -34,16 +34,16 @@ export class GtmService {
         // Add the complete GTM initialization script
         const gtmInitScript = document.createElement('script');
         gtmInitScript.innerHTML = `
-      (function(w,d,s,l,i){
-        w[l]=w[l]||[];
-        w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-        j.async=true;
-        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-        f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','${this.gtmId}');
-    `;
+            (function(w,d,s,l,i){
+                w[l]=w[l]||[];
+                w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+                var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+                j.async=true;
+                j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','${this.gtmId}');
+            `;
         document.head.appendChild(gtmInitScript);
 
         // Also add the noscript fallback to body
@@ -105,14 +105,17 @@ export class GtmService {
     hireMeGTMEvent(formData: any): void {
         if (!this.isEnabled) return;
 
+
+        console.log(formData);
         const eventData = {
             event: GTM_CONFIG.EVENTS.HIRE_ME_CONTACT_FORM,
             event_category: GTM_CONFIG.CATEGORIES.CONTACT,
             event_action: 'click',
-            event_label: formData.formType || 'Hire Me',
-            ...formData
+            contact_name: formData.name || '',
+            contact_email: formData.email || '',
+            contact_message: formData.message || '',
         };
 
-        this.pushEvent(eventData.event, eventData); 
+        this.pushEvent(eventData.event, eventData);
     }
 }
