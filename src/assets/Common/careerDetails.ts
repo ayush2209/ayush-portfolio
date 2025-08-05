@@ -13,12 +13,6 @@ export const CAREER_DETAILS = {
   },
   "companies": [
     {
-      "name": "Deloitte USI",
-      "image": "https://assets.telegraphindia.com/telegraph/2023/May/1684655283_newdeloitte.jpg",
-      "description": "Deloitte USI (United States India) is a leading consulting firm providing audit, consulting, financial advisory, risk management, and tax services. As a Consultant, I provide expert consulting services for Angular-based applications, collaborate with client teams to design and implement scalable solutions, and mentor junior developers.",
-      "readMoreLink": "https://www2.deloitte.com/us/en.html"
-    },
-    {
       "name": "Zycus",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB0HWPg4DcvG7EpsqZqsclZLG7e7YQ2bKybR-GII8Gc8-mUIceu0gZ3owS_wVZpsSZlKs&usqp=CAU",
       "description": "Zycus is a pioneer in Cognitive Procurement software and has been a trusted partner of choice for large global enterprises for two decades. Zycus helps enterprises drive real savings, reduce risks, and boost compliance and easy-to-use user interface ensures high adoption and value across the organization.",
