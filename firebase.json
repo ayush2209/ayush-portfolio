@@ -1,8 +1,11 @@
 {
   "hosting": {
-    "site": "anand-ayush",
-    "public": "dist/ayush-blog/browser",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "public": "dist/ayush-blog",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
     "rewrites": [
       {
         "source": "**",

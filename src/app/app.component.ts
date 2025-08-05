@@ -3,16 +3,13 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ModalDialogService } from './Component/On-Demand/common-modal/modal-dialog.service';
 import { LocalStorageService } from './Shared/local-storage.service';
 import { CommonService } from './Shared/Service/common.service';
-import { GoogleAnalyticsService } from './Shared/Service/google-analytics.service';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
-
-import * as AOS from 'aos';
+import { GtmService } from './Shared/Service/gtm.service';
 import { ModalConfig } from './Component/On-Demand/common-modal/modal-config';
 import { TranslateService } from '@ngx-translate/core';
 
-export const welcomeData = [
-];
+import * as AOS from 'aos';
+
+export const welcomeData = [];
 
 
 @Component({
@@ -21,6 +18,7 @@ export const welcomeData = [
   styleUrls: ['./app.component.scss'],
   standalone: false
 })
+
 export class AppComponent implements OnInit {
   isShow: boolean = false;
   topPosToStartShowing: number = 250;
@@ -29,7 +27,8 @@ export class AppComponent implements OnInit {
     private commonService: CommonService,
     public _modalService: ModalDialogService,
     public _localStorageService: LocalStorageService,
-    private _translateService: TranslateService
+    private _translateService: TranslateService,
+    private gtmService: GtmService
   ) {
     this._translateService.setDefaultLang(this._localStorageService.getData('lang') || 'en');
   }
@@ -39,6 +38,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Initialize GTM after Angular has loaded
+    this.initializeGTM();
+
     setTimeout(() => {
       this.openModalAfter5SecOfLaunch();
     }, 100);
@@ -78,4 +80,20 @@ export class AppComponent implements OnInit {
       this._modalService.openModal(config);
     }
   }
+
+  /**
+   * Initialize GTM after Angular app has loaded
+   */
+  private initializeGTM(): void {
+    // Wait for the DOM to be ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        this.gtmService.initGTM();
+      });
+    } else {
+      // DOM is already ready
+      this.gtmService.initGTM();
+    }
+  }
+
 }

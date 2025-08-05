@@ -10,7 +10,25 @@ import { CAREER_DETAILS } from 'src/assets/Common/careerDetails';
 export class ProjectComponent implements OnInit {
 
   careerDetailsObj = CAREER_DETAILS;
+  
   constructor() { }
-  ngOnInit(): void { }
+  
+  ngOnInit(): void {
+    console.log('Project section viewed.');
+  }
+
+  /**
+   * Project click handler - tracking removed
+   */
+  onProjectClick(project: any): void {
+    console.log('Project clicked:', project.name || project.title);
+  }
+
+  /**
+   * Project link click handler - tracking removed
+   */
+  onProjectLinkClick(project: any, linkType: string): void {
+    console.log('Project link clicked:', project.name, linkType);
+  }
 
 }

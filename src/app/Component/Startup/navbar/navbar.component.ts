@@ -38,9 +38,17 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Navigation click handler - tracking removed
+   */
+  trackNavigation(section: string): void {
+    console.log('Navigation clicked:', section);
+  }
+
   setLangAsDefault = false;
   selectLanguage(lang: string) {
     console.log('Language: ', lang);
+    
     this.spinner.show();
     setTimeout(() => {
       this._translateService.use(lang);
@@ -48,9 +56,7 @@ export class NavbarComponent implements OnInit {
       this.setLangAsDefault = false;
     }, 2000);
     this.commonService.sendLoadingMessage.next('Translating ...');
-    // if (this.setLangAsDefault) {
     this._localStorageService.setdata({ key: 'lang', value: lang })
-    // }
   }
 
   saveLangAsDefault(event: any): void {
