@@ -1,0 +1,100 @@
+.chip-marquee {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  overflow: hidden;
+  padding: 0.25rem 0;
+}
+.chip-marquee__row {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+.chip-marquee__track {
+  display: flex;
+  width: max-content;
+  gap: 0.5rem;
+}
+.chip-marquee__track--forward {
+  animation: chip-marquee-left linear infinite;
+}
+.chip-marquee__track--reverse {
+  animation: chip-marquee-right linear infinite;
+}
+.chip-marquee__group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  padding-right: 0.5rem;
+}
+.chip-marquee__chip {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+}
+.chip-marquee__chip--category {
+  color: #ffffff;
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.chip-marquee--banner {
+  padding: 0.55rem 0.5rem;
+  gap: 0.5rem;
+}
+.chip-marquee--banner .chip-marquee__chip {
+  color: var(--charcoal);
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+.chip-marquee--banner .chip-marquee__chip--category {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+@keyframes chip-marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes chip-marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chip-marquee__track {
+    animation: none !important;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+  .chip-marquee__row {
+    mask-image: none;
+    overflow: visible;
+  }
+  .chip-marquee {
+    gap: 0.75rem;
+  }
+}
+
+/*# sourceMappingURL=chip-marquee.component.css.map */

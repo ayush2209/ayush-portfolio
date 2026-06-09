@@ -1,0 +1,254 @@
+@charset "UTF-8";
+.hero-banner {
+  background: var(--charcoal);
+  color: #fff;
+  border-radius: 12px;
+  padding: 0.45rem 1rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+.hero-banner__text {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  white-space: nowrap;
+  text-align: right;
+  animation: marquee 28s linear infinite;
+}
+.hero-banner__divider {
+  margin: 0 0.75rem;
+  opacity: 0.5;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.hero-section {
+  margin-top: 1.5rem;
+}
+
+.hero-role {
+  font-size: 1.0625rem;
+  color: var(--coral);
+  margin: 0;
+}
+.hero-role__title {
+  font-weight: 600;
+  color: var(--text-body);
+}
+.hero-role__company {
+  color: var(--coral);
+  font-weight: 600;
+}
+
+.hero-description {
+  color: var(--text-body);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.hero-description code {
+  color: var(--charcoal);
+  font-weight: 600;
+  background: var(--surface-subtle);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.hero-skills {
+  margin-top: 1.25rem;
+}
+
+.skill-element {
+  position: relative;
+  margin-bottom: 0.625rem;
+  padding-left: 1.125rem;
+  font-size: 0.9375rem;
+  color: var(--text-body);
+  line-height: 1.55;
+}
+.skill-element::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+.skill-element span {
+  padding-bottom: 2px;
+}
+
+.hero-image-col {
+  display: flex;
+  align-items: center;
+}
+
+.hero-image {
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-image-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-subtle);
+  border-radius: var(--radius);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.hero-cta__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+.hero-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 9.5rem;
+}
+.hero-cta__btn i {
+  font-size: 0.875rem;
+  line-height: 1;
+}
+.hero-cta__btn {
+  padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: var(--font-family);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+.hero-cta__btn:focus-visible {
+  outline: 2px solid var(--charcoal);
+  outline-offset: 2px;
+}
+.hero-cta__btn--primary {
+  background-color: var(--charcoal);
+  border: 1px solid var(--charcoal);
+  color: #fff;
+}
+.hero-cta__btn--primary:hover {
+  background-color: var(--charcoal-hover);
+  border-color: var(--charcoal-hover);
+  color: #fff;
+}
+.hero-cta__btn--secondary {
+  background-color: #fff;
+  border: 1px solid var(--border-strong);
+  color: var(--charcoal);
+}
+.hero-cta__btn--secondary:hover {
+  background-color: var(--surface-subtle);
+  border-color: var(--charcoal);
+  color: var(--charcoal);
+}
+
+.skills-section {
+  margin: 2rem 0 1.5rem;
+}
+.skills-section__header {
+  margin-bottom: 1rem;
+}
+
+.form-success {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background: var(--accent-softer);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius);
+  color: var(--accent);
+}
+.form-success i {
+  font-size: 1.125rem;
+  margin-top: 0.1rem;
+}
+.form-success p {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.modal-footer {
+  border: none;
+}
+
+.hero-enter {
+  animation: hero-fade-up 550ms 80ms ease-out both;
+}
+
+.image-enter {
+  animation: hero-image-in 600ms 250ms ease-out both;
+}
+
+.cta-enter {
+  animation: hero-fade-up 450ms 400ms ease-out both;
+}
+
+.skill-enter {
+  animation: skill-slide-in 380ms ease-out both;
+  animation-delay: var(--skill-delay, 0ms);
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes hero-image-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes skill-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter,
+  .image-enter,
+  .cta-enter,
+  .skill-enter {
+    animation: none;
+  }
+}
+
+/*# sourceMappingURL=home.component.css.map */
