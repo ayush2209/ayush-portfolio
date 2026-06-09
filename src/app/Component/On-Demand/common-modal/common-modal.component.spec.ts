@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TranslateModule } from '@ngx-translate/core';
 import { CommonModalComponent } from './common-modal.component';
 
 describe('CommonModalComponent', () => {
@@ -8,9 +8,9 @@ describe('CommonModalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CommonModalComponent ]
-    })
-    .compileComponents();
+      declarations: [CommonModalComponent],
+      imports: [TranslateModule.forRoot()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CommonModalComponent);
     component = fixture.componentInstance;

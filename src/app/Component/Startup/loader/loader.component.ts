@@ -9,7 +9,7 @@ import { CommonService } from 'src/app/Shared/Service/common.service';
     standalone: false
 })
 export class LoaderComponent implements OnInit {
-  loaderMsg: String = "Loading ..."
+  loaderMsg = 'Msg_Loading';
   constructor(private commonService: CommonService, private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
@@ -21,7 +21,7 @@ export class LoaderComponent implements OnInit {
 
   openLoader() {
     this.spinner.show();
-    this.commonService.sendLoadingMessage.next('Loading ...');
+    this.commonService.sendLoadingMessage.next('Msg_Loading');
     setTimeout(() => {
       this.spinner.hide();
     }, 1500);

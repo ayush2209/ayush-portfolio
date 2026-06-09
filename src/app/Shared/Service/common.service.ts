@@ -8,7 +8,7 @@ export class CommonService {
 
   constructor() { }
 
-  sendLoadingMessage = new Subject<String>();
+  sendLoadingMessage = new Subject<string>();
 
   downloadResume() {
     let link = document.createElement('a');

@@ -10,19 +10,20 @@ import { BsDropdownDirective } from 'ngx-bootstrap/dropdown';
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  standalone: false
+  standalone: false,
+  host: { class: 'app-navbar' }
 })
 export class NavbarComponent implements OnInit {
 
   languages = [
-    { code: 'en', name: 'English' },
-    { code: 'hi', name: 'Hindi' },
-    { code: 'de', name: 'German' },
-    { code: 'es', name: 'Spanish' },
-    { code: 'fr', name: 'French' },
-    { code: 'it', name: 'Italian' },
-    { code: 'ja', name: 'Japanese' },
-    { code: 'ru', name: 'Russian' }
+    { code: 'en', nameKey: 'Lang_English' },
+    { code: 'hi', nameKey: 'Lang_Hindi' },
+    { code: 'de', nameKey: 'Lang_German' },
+    { code: 'es', nameKey: 'Lang_Spanish' },
+    { code: 'fr', nameKey: 'Lang_French' },
+    { code: 'it', nameKey: 'Lang_Italian' },
+    { code: 'ja', nameKey: 'Lang_Japanese' },
+    { code: 'ru', nameKey: 'Lang_Russian' }
   ];
 
   saveAs() {
@@ -55,7 +56,7 @@ export class NavbarComponent implements OnInit {
       this.spinner.hide();
       this.setLangAsDefault = false;
     }, 2000);
-    this.commonService.sendLoadingMessage.next('Translating ...');
+    this.commonService.sendLoadingMessage.next('Msg_Translating');
     this._localStorageService.setdata({ key: 'lang', value: lang })
   }
 

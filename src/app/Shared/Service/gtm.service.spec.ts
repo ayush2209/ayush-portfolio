@@ -15,11 +15,13 @@ describe('GtmService', () => {
   });
 
   it('should initialize GTM', () => {
-    spyOn(document, 'createElement').and.returnValue(document.createElement('script'));
+    spyOn<any>(service, 'addGTMNoscript');
+    const script = document.createElement('script');
+    spyOn(document, 'createElement').and.returnValue(script);
     spyOn(document.head, 'appendChild');
-    
+
     service.initGTM();
-    
+
     expect(document.createElement).toHaveBeenCalledWith('script');
     expect(document.head.appendChild).toHaveBeenCalled();
   });

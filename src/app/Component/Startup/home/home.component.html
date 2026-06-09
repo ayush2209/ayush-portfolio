@@ -1,112 +1,76 @@
-<section>
-    <marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();" class="mt-2 rounded onHover" style="font-family: Calibri, sans-serif; color: #FFFFFF" bgcolor="#00224f" scrolldelay="100" behavior="loop">
-        <span>This app is running on Angular Version {{angularCurrentVersion}}.</span>
-        <span> | </span>
-        <!-- <span>Started learning <code>React.js </code>fron Namaste React by <b>Akshay Saini</b>.</span> -->
-        <span>WIP: Implementing Multilanguage Support.</span>
-    </marquee>
+<section class="hero-banner" [attr.aria-label]="'Aria_Site_Status' | translate">
+    <p class="hero-banner__text">
+        <span>{{ 'MarQue_Text_1' | translate }} {{ angularCurrentVersion }}</span>
+        <span class="hero-banner__divider">·</span>
+        <span>{{ 'MarQue_Text_2' | translate }}</span>
+        <!-- <span class="hero-banner__divider">·</span> -->
+    </p>
 </section>
 
-<section class="row">
-    <article class="col-sm-6 col-md-8">
-        <section class="info-text mb-2" style="color: rgb(0, 28, 85);">{{ 'Name' | translate | upperCase}}</section>
-        <section class="mb-1" style="color: rgb(0, 28, 85);font-family: Google Sans Bold Italic;"> <code> {{'Role_Title' | translate}} at Zycus Infotech. <b>[Angular 14]</b> </code> </section>
-        <p>
-            {{'Description_Title' | translate}} <code>Angular, JavaScript, TypeScript, HTML and CSS</code>.
+<section class="row hero-section">
+    <article class="col-sm-6 col-md-8" animate.enter="hero-enter">
+        <h1 class="info-text mb-2">{{ 'Name' | translate }}</h1>
+        <p class="hero-role mb-2">
+            <span class="hero-role__title">{{ 'Senior Consultant' | translate }}</span>
+            <span class="hero-role__company"> {{ 'Role_At' | translate }} {{ 'Role_Company' | translate }}</span>
         </p>
-        <ul class="list-style" role=listitem data-aos="fade-up">
-            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"> <b> <span class="underline">{{total_YOE}} {{ 'Years_Of_Experience' | translate}}</span></b> {{'Corporate_Environment_Desc' | translate}}.</li>
+        <p class="hero-description">
+            {{ 'Description_Title' | translate }}<code>{{ 'Description_Skills' | translate }}</code>{{ 'Description_Suffix' | translate }}
+        </p>
+        <ul class="list-style hero-skills" role="list">
+            <li class="skill-element" animate.enter="skill-enter" style="--skill-delay: 0ms">
+                <b><span class="underline">{{ total_YOE }} {{ 'Years_Of_Experience' | translate }}</span></b>
+                {{ 'Corporate_Environment_Desc' | translate }}
+            </li>
             @for (item of TECH_DESCRIPTION; track $index) {
-            <li class="skill-element" data-aos="" data-aos-duration="1000">{{item | translate}}</li>
+            <li class="skill-element" animate.enter="skill-enter" [style.--skill-delay.ms]="($index + 1) * 70">{{ item | translate }}</li>
             }
         </ul>
     </article>
 
-    <article class="col-sm-6 col-md-4 my-2" style="display: flex; align-items: center;">
+    <article class="col-sm-6 col-md-4 my-2 hero-image-col" animate.enter="image-enter">
         @defer (on viewport; on timer(5s)) {
-        <img class="img-fluid rounded" src="assets/homeImg.gif" alt="" height="100%" width="100%">
+        <img class="img-fluid rounded hero-image" src="assets/homeImg.gif" [attr.alt]="'Alt_Portfolio_Image' | translate" height="100%" width="100%">
         } @placeholder {
-        <div>Loading Image... </div>
+        <div class="hero-image-placeholder">{{ 'Loading' | translate }}</div>
         }
     </article>
-
 </section>
-<section class="mb-2">
-    <article>
-        <button type="button" [ariaHasPopup]="true" class="btn btn-light shadow" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Hire Me</button>
-        <span> | </span>
-        <button type="button" class="btn btn-info shadow" (click)="saveResumeAsPDF()">Download CV</button>
-    </article>
-    <article class="info-text-p mt-2 socialMediaIcons">
-        <a href="https://www.linkedin.com/in/ui-ayush-anand/" target="_blank" class="btn rounded">
+
+<section class="hero-cta mb-2" animate.enter="cta-enter">
+    <div class="hero-cta__buttons">
+        <button type="button" class="hero-cta__btn hero-cta__btn--primary" (click)="goToContactForm()">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            <span>{{ 'Contact_Me_CTA' | translate }}</span>
+        </button>
+        <button type="button" class="hero-cta__btn hero-cta__btn--secondary" (click)="saveResumeAsPDF()">
+            {{ 'Download_CV' | translate }}
+        </button>
+    </div>
+    <nav class="info-text-p mt-3 socialMediaIcons" [attr.aria-label]="'Aria_Social_Links' | translate">
+        <a href="https://www.linkedin.com/in/ui-ayush-anand/" target="_blank" rel="noopener noreferrer" class="btn rounded" [attr.aria-label]="'Aria_LinkedIn' | translate">
             <i class="fa fa-2x fa-linkedin" aria-hidden="true"></i>
         </a>
-        <a href="https://github.com/ayush2209" target="_blank" class="btn">
+        <a href="https://github.com/ayush2209" target="_blank" rel="noopener noreferrer" class="btn" [attr.aria-label]="'Aria_GitHub' | translate">
             <i class="fa fa-2x fa-github" aria-hidden="true"></i>
         </a>
-        <a href="https://twitter.com/omayushanand?t=rqiFI1UM_JngkbiLNqQHDg&s=08" target="_blank" class="btn">
+        <a href="https://twitter.com/omayushanand" target="_blank" rel="noopener noreferrer" class="btn" [attr.aria-label]="'Aria_Twitter' | translate">
             <i class="fa fa-2x fa-twitter" aria-hidden="true"></i>
         </a>
-        <a href="insta" class="btn">
-            <i class="fa fa-2x fa-instagram" aria-hidden="true"></i>
-        </a>
-    </article>
+    </nav>
 </section>
 
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Hire me</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="" method="" #messageForm='ngForm' (ngSubmit)='sendMessage(messageForm)'>
-                    <div class="form-row mt-3">
-                        <div class="form-group">
-                            <input type="text" id="name" name="fullName" class="form-control" minlength="4" placeholder="Enter Name" #fullName="ngModel" ngModel required>
-                            @if (fullName.invalid && (fullName.dirty || fullName.touched)) {
-                            <div class="errmsg">
-                                @if (fullName.errors?.['required']) {
-                                <p>* Name is required.</p>
-                                }
-                                @if (fullName.errors?.['minlength']) {
-                                <p>* Name must be at least 4 characters long.</p>
-                                }
-                            </div>
-                            }
-                        </div>
-                        <div class="form-group mt-3">
-                            <input type="email" class="form-control" name="email" placeholder="Email" #email="ngModel" ngModel required>
-                            @if (email.invalid && (email.dirty || email.touched)) {
-                            <div class="errmsg">
-                                @if (email.errors?.['required']) {
-                                <p>* Email is required.</p>
-                                }
-                            </div>
-                            }
 
-                        </div>
-                        <div class="form-group mt-3">
-                            <textarea name="message" #message='ngModel' class="form-control" placeholder="Message" ngModel required cols="30" rows="4"></textarea>
-                            @if (message.invalid && (message.dirty || message.touched)) {
-                            <div class="errmsg">
-                                @if (message.errors?.['required']) {
-                                <p>* Message is required.</p>
-                                }
-                            </div>
-                            }
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <div style="gap: 10px; display: flex">
-                            <button type="submit" [disabled]='messageForm.invalid' class="btn btn-outline-primary shadow">Send Invitation</button>
-                            <button type="button" class="btn btn-light shadow" (click)="messageForm.reset();">Reset</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+<section class="skills-section" aria-labelledby="skills-heading">
+    <header class="skills-section__header">
+        <h2 id="skills-heading" class="section-title">
+            <i class="fa fa-cogs section-title__icon" aria-hidden="true"></i>
+            {{ 'Skills_Title' | translate }}
+        </h2>
+        <p class="section-subtitle">{{ 'Skills_Subtitle' | translate }}</p>
+    </header>
+
+    <app-chip-marquee [rows]="skillMarqueeRows" [ariaLabel]="'Skills_Title' | translate" />
+</section>
+
+<app-highlights-section [stats]="highlightStats" [pillars]="highlightPillars" />

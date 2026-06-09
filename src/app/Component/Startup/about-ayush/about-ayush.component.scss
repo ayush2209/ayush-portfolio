@@ -1,37 +1,212 @@
-.centerDiv {
-    height: 100%;
-    display: inline-flex;
-    justify-content: center;
+.contact-section {
+  padding-bottom: 2rem;
+
+  &__header {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.contact-aside {
+  padding: 1.75rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__greeting {
+    font-size: 1rem;
+    color: var(--text-body);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__like {
+    display: flex;
     align-items: center;
-}
+    gap: 0.5rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 0.625rem 1rem;
+    font-weight: 500;
+    color: var(--text-body);
+    transition: border-color var(--transition), color var(--transition);
 
-.fa-heart:hover {
-    color: red !important;
-}
-
-.customStyle {
-    border: 1px solid #6c757d;
-
-    .fa-heart {
-        font-size: 1em;
+    i {
+      font-size: 1.125rem;
+      transition: color var(--transition);
     }
+
+    &--active,
+    &:hover i {
+      color: var(--error);
+    }
+
+    &:hover {
+      border-color: var(--error);
+    }
+  }
+
+  &__count {
+    margin-left: auto;
+    background: var(--accent-soft);
+    color: var(--charcoal);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.15em 0.55em;
+    border-radius: 999px;
+  }
+
+  &__links {
+    margin-top: auto;
+    display: flex;
+    gap: 1.25rem;
+
+    a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--charcoal-light);
+      text-decoration: none;
+      transition: color var(--transition);
+
+      i {
+        margin-right: 0.35rem;
+      }
+
+      &:hover {
+        color: var(--charcoal);
+      }
+    }
+  }
 }
 
-// .accordion-item {
-//     border-bottom: #6c757d;
-// }
-
-.accordion-button:focus {
-
-    border-color: white;
-    outline: 0;
-    box-shadow: none;
+.offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 1rem;
 }
 
-.table-wrap {
-    // height: 80px;
-    overflow-y: auto;
+.feedback-tabs {
+  flex-shrink: 0;
 }
-.customPadding {
-    padding: 10px;
+
+.tab-content {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-read-pane {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-tabs .nav-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+
+  &.active {
+    background: var(--charcoal);
+    color: #ffffff !important;
+  }
+}
+
+.feedback-list {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+
+  &__empty {
+    margin: auto 0;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+}
+
+.form-success {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background: rgba(4, 120, 87, 0.08);
+  border: 1px solid rgba(4, 120, 87, 0.25);
+  border-radius: var(--radius);
+
+  i {
+    font-size: 1.125rem;
+    color: var(--accent);
+    margin-top: 0.1rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+}
+
+.feedback-admin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.75rem;
+  padding: 0.4rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  background: var(--accent-softer);
+  border: 1px solid var(--accent-border);
+  border-radius: 999px;
+}
+
+.feedback-item {
+  padding: 1rem;
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.35rem;
+  }
+
+  &__delete {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.55rem;
+    line-height: 1.3;
+
+    i {
+      margin-right: 0.25rem;
+    }
+  }
+
+  strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--charcoal);
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text-body);
+    line-height: 1.55;
+  }
 }

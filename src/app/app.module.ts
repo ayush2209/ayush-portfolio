@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, provideZoneChangeDetection } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { NgOptimizedImage } from '@angular/common'
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './Component/Startup/navbar/navbar.component';
@@ -23,6 +23,12 @@ import { TextHightlightDirective } from './text-hightlight.directive';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ChipMarqueeComponent } from './Shared/Component/chip-marquee/chip-marquee.component';
+import { HighlightsSectionComponent } from './Shared/Component/highlights-section/highlights-section.component';
+import { ContactFormComponent } from './Shared/Component/contact-form/contact-form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -40,7 +46,10 @@ export function HttpLoaderFactory(http: HttpClient) {
         LoaderComponent,
         CommonModalComponent,
         UpperCasePipe,
-        TextHightlightDirective
+        TextHightlightDirective,
+        ChipMarqueeComponent,
+        HighlightsSectionComponent,
+        ContactFormComponent
     ],
     bootstrap: [AppComponent], imports: [
         BrowserModule,
@@ -57,8 +66,12 @@ export function HttpLoaderFactory(http: HttpClient) {
                 deps: [HttpClient]
             }
         }),
-        BsDropdownModule
+        BsDropdownModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule
     ], providers: [
+        provideZoneChangeDetection(),
         BsModalService,
         {
             provide: HTTP_INTERCEPTORS,

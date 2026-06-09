@@ -1,24 +1,35 @@
-import { TestBed, ComponentFixture } from '@angular/core/testing';
-import { AppComponent, welcomeData } from './app.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { TestBed, ComponentFixture, fakeAsync, tick } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
+import { AppComponent } from './app.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ModalDialogService } from './Component/On-Demand/common-modal/modal-dialog.service';
 import { LocalStorageService } from './Shared/local-storage.service';
 import { CommonService } from './Shared/Service/common.service';
-import * as AOS from 'aos';
-import { ModalConfig } from './Component/On-Demand/common-modal/modal-config';
+import { GtmService } from './Shared/Service/gtm.service';
+import { TranslateService } from '@ngx-translate/core';
 
 describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
+  let modalService: jasmine.SpyObj<ModalDialogService>;
+  let localStorageService: jasmine.SpyObj<LocalStorageService>;
 
   beforeEach(() => {
+    modalService = jasmine.createSpyObj('ModalDialogService', ['openModal']);
+    localStorageService = jasmine.createSpyObj('LocalStorageService', ['getData', 'setdata']);
+
     TestBed.configureTestingModule({
       declarations: [AppComponent],
+      imports: [TranslateModule.forRoot()],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
-        NgxSpinnerService,
-        CommonService,
-        ModalDialogService,
-        LocalStorageService,
+        { provide: NgxSpinnerService, useValue: jasmine.createSpyObj('NgxSpinnerService', ['show', 'hide']) },
+        { provide: ModalDialogService, useValue: modalService },
+        { provide: LocalStorageService, useValue: localStorageService },
+        { provide: CommonService, useValue: {} },
+        { provide: TranslateService, useValue: jasmine.createSpyObj('TranslateService', ['setDefaultLang', 'use']) },
+        { provide: GtmService, useValue: jasmine.createSpyObj('GtmService', ['initGTM']) },
       ],
     });
 
@@ -31,50 +42,28 @@ describe('AppComponent', () => {
   });
 
   it('should set isShow to true when scrolling down past topPosToStartShowing', () => {
-    const scrollPosition = component.topPosToStartShowing + 1;
+    spyOnProperty(window, 'pageYOffset', 'get').and.returnValue(component.topPosToStartShowing + 1);
     component.checkScroll();
-    expect(component.isShow).toBeTruthy();
+    expect(component.isShow).toBeTrue();
   });
 
   it('should set isShow to false when scrolling above topPosToStartShowing', () => {
-    const scrollPosition = component.topPosToStartShowing - 1;
+    spyOnProperty(window, 'pageYOffset', 'get').and.returnValue(component.topPosToStartShowing - 1);
     component.checkScroll();
-    expect(component.isShow).toBeFalsy();
+    expect(component.isShow).toBeFalse();
   });
 
-  // it('should scroll to top when gotoTop is called', () => {
-  //   spyOn(window, 'scroll');
-  //   component.gotoTop();
-  //   expect(window.scroll).toHaveBeenCalledWith({
-  //     top: 0,
-  //     left: 0,
-  //     behavior: 'smooth',
-  //   });
-  // });
-
-  it('should open modal after 5 seconds of launch if dontShowThisAgain is not true', () => {
-    spyOn(component, 'openModalAfter5SecOfLaunch').and.callThrough();
-    spyOn(component._localStorageService, 'getData').and.returnValue(null); // Assuming initial value is null
-    spyOn(component._modalService, 'openModal');
-
+  it('should open modal after launch if dontShowThisAgain is not true', fakeAsync(() => {
+    localStorageService.getData.and.returnValue(null);
     component.ngOnInit();
+    tick(100);
+    expect(modalService.openModal).toHaveBeenCalled();
+  }));
 
-    setTimeout(() => {
-      expect(component.openModalAfter5SecOfLaunch).toHaveBeenCalled();
-      expect(component._modalService.openModal).toHaveBeenCalled(); // Corrected line
-    }, 5001); // Wait for 5 seconds
-  });
-
-  it('should not open modal if dontShowThisAgain is true', () => {
-    spyOn(component, 'openModalAfter5SecOfLaunch').and.callThrough();
-    spyOn(component._localStorageService, 'getData').and.returnValue('true');
-    spyOn(component._modalService, 'openModal');
-
+  it('should not open modal if dontShowThisAgain is true', fakeAsync(() => {
+    localStorageService.getData.and.returnValue('true');
     component.ngOnInit();
-
-    setTimeout(() => {
-      expect(component.openModalAfter5SecOfLaunch).toHaveBeenCalled();
-      expect(component._modalService.openModal).not.toHaveBeenCalled();
-    }, 5001); // Wait for 5 seconds
-  });
+    tick(100);
+    expect(modalService.openModal).not.toHaveBeenCalled();
+  }));
 });

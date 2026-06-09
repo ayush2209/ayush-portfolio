@@ -1,39 +1,48 @@
 export const CAREER_DETAILS = {
   "careerSection": {
-    "title": "Career",
+    "title": "Career Journey",
+    "subtitle": "A snapshot of organizations I've contributed to and the value I brought to each team.",
     "responsibilities": [
-      "Engaged in all phases of the software development lifecycle, including gathering and analyzing user/business system requirements.",
-      "Implementing new features as per the requirements within the timeline.",
-      "Worked on fixing critical issues of high, medium, and low priority.",
-      "Worked on adding functionality and enhancement of the application.",
-      "Worked as a code reviewer.",
-      "Unit Test cases in Angular.",
-      "Participate in the build and release process."
+      "Gather and translate business requirements into scalable front-end solutions.",
+      "Deliver features on schedule while maintaining high code quality.",
+      "Triage and resolve defects across priority levels.",
+      "Drive application enhancements, performance improvements, and UX refinements.",
+      "Conduct code reviews and mentor junior developers.",
+      "Write and maintain unit tests with Jasmine and Karma.",
+      "Support build, release, and deployment pipelines."
     ]
   },
   "companies": [
     {
       "name": "Deloitte USI",
+      "tenure": "Apr 2023 – Present",
+      "role": "Consultant",
       "image": "https://assets.telegraphindia.com/telegraph/2023/May/1684655283_newdeloitte.jpg",
-      "description": "Deloitte USI (United States India) is a leading consulting firm providing audit, consulting, financial advisory, risk management, and tax services. As a Consultant, I provide expert consulting services for Angular-based applications, collaborate with client teams to design and implement scalable solutions, and mentor junior developers.",
+      "description": "Consulting on enterprise Angular applications — designing reusable components, guiding architecture decisions, and partnering with client teams on digital transformation initiatives.",
       "readMoreLink": "https://www2.deloitte.com/us/en.html"
     },
     {
       "name": "Zycus",
+      "tenure": "Dec 2022 – Apr 2023",
+      "role": "Associate Tech Lead",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB0HWPg4DcvG7EpsqZqsclZLG7e7YQ2bKybR-GII8Gc8-mUIceu0gZ3owS_wVZpsSZlKs&usqp=CAU",
-      "description": "Zycus is a pioneer in Cognitive Procurement software and has been a trusted partner of choice for large global enterprises for two decades. Zycus helps enterprises drive real savings, reduce risks, and boost compliance and easy-to-use user interface ensures high adoption and value across the organization.",
+      "description": "Led front-end delivery for cognitive procurement products, building Angular features for large-scale enterprise clients with a focus on usability and maintainability.",
       "readMoreLink": "https://zycus.com/company.html"
     },
     {
-      "name": "EFI Ind Pvt Ltd",
+      "name": "EFI India Pvt Ltd",
+      "tenure": "Apr 2020 – Dec 2022",
+      "role": "Software Engineer",
       "image": "assets/efiLogo.jpeg",
-      "description": "EFI is a leading firm in doing R&D in color enhancement and create printers and its software to enhance the color quality. Fiery is a very famous product of EFI in the market used in others firms.",
+      "description": "Developed color-management and print software UIs using Angular and Electron. Led UI upgrades from Angular 6 to 13 and improved application performance across product lines.",
       "readMoreLink": "https://go.efi.com/en_us_Fiery-Spot-Pro.html"
     },
     {
       "name": "Test Yantra Software Solutions",
+      "tenure": "Jun 2019 – Apr 2020",
+      "role": "Associate Software Developer",
       "image": "https://cdn.pixabay.com/photo/2015/01/09/11/09/meeting-594091_1280.jpg",
-      "description": "Tyro Vet automates the requirements process and hire the right talent. It helped the team to reduce around 20% of work to managing the interview process and keep tracking.",
+      "description": "Built recruitment and e-learning platforms with Angular dashboards, chart integrations, and responsive layouts that streamlined hiring workflows for client teams.",
       "readMoreLink": "https://www.testyantra.com/"
     }
   ]

@@ -1,106 +1,120 @@
-export const PROJECT_DETAILS = {
-  title: 'Project',
+/**
+ * Local fallback / seed data for the Experience section.
+ *
+ * Firebase Realtime Database schema (one node per language):
+ *   /experience/{lang}  →  ProjectData  (lang = en | hi | de | es | fr | it | ja | ru)
+ *
+ * Edit content in Firebase Console — no code deploy needed.
+ * Copy DEFAULT_EXPERIENCE_DATA into /experience/{lang} when seeding Firebase.
+ */
+import { ProjectData } from 'src/app/Component/technology/interfaces/project.interface';
+
+export const DEFAULT_EXPERIENCE_DATA: ProjectData = {
+  title: 'Professional Experience',
+  subtitle: 'Organizations, roles, and project contributions across my career.',
+  highlights: [
+    'Angular & TypeScript development',
+    'Component architecture & reusable UI libraries',
+    'Code reviews & team mentoring',
+    'Agile delivery & SDLC ownership',
+    'Performance optimization & testing'
+  ],
   company: [
     {
-      companyName: 'Deloitte Consulting',
+      companyName: 'Deloitte USI',
       duration: 'Apr 2023 - Present',
+      role: 'Senior Consultant',
+      image: 'https://assets.telegraphindia.com/telegraph/2023/May/1684655283_newdeloitte.jpg',
       projects: [
         {
-          projectName: 'Project - 1',
-          technologiesUsed: 'Angular 15+, TypeScript, RxJS, NgRx, SCSS, RESTful APIs, Microservices, Docker, AWS',
-          role: 'Consultant',
+          projectName: 'Project 1#',
+          technologiesUsed:
+            'Angular 21, TypeScript, RxJS, NgRx, SAP Composable Storefront, Angular Material, Angular CDK, Bootstrap, SCSS',
+          role: 'Senior Consultant',
           responsibilities: [
-            'Led the development of enterprise-scale digital transformation platform serving 10,000+ users',
-            'Architected and implemented reusable component library using Angular CDK and custom directives',
-            'Established coding standards and best practices for the frontend team',
-            'Collaborated with UX designers to create accessible and responsive interfaces meeting WCAG 2.1 standards',
-            'Mentored junior developers and conducted code reviews for 5+ team members'
-          ],
-          achievements: 'Successfully delivered the project ahead of schedule'
+            'Led front-end development for a multi-brand B2B e-commerce platform serving several regional storefronts on a headless commerce stack.'
+          ]
         }
       ]
     },
     {
       companyName: 'Zycus Infotech',
-      duration: 'Dec, 2022 - Apr, 2023',
+      duration: 'Dec 2022 - Apr 2023',
+      role: 'Associate Tech Lead',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB0HWPg4DcvG7EpsqZqsclZLG7e7YQ2bKybR-GII8Gc8-mUIceu0gZ3owS_wVZpsSZlKs&usqp=CAU',
       projects: [
         {
           projectName: 'i-Console',
-          technologiesUsed: 'HTML5, CSS, Angular 2+, TypeScript, JavaScript, Bitbucket, GIT, Java',
-          role: 'Associate Technical Lead [Angular]',
+          technologiesUsed: 'Angular 11+, TypeScript, HTML5, CSS3, Bootstrap, Git, Bitbucket, Java',
+          role: 'UI Developer',
           responsibilities: [
-            'Collaborated with cross-functional teams to design and implement new features and functionalities.',
-            'Developed and maintained complex Angular applications using Angular 11+.',
-            'Created responsive user interfaces using HTML5/CSS3 and CSS Library like Bootstrap.',
-            'Conducted code reviews and implemented best practices to ensure code quality and maintainability.',
-            'Worked with RESTful APIs to fetch and display data in real-time.',
-            'Participated in agile development processes and attended daily stand-up meetings.',
-            'Troubleshot and resolved technical issues and bugs.'
-          ]
-        },
-      ]
-    },
-    {
-      companyName: 'Efi India Pvt Ltd',
-      duration: 'Apr 2020 - Dec 2022',
-      projects: [
-        {
-          projectName: 'Spot Pro',
-          technologiesUsed: 'HTML5, CSS, Angular 8+, TypeScript, JavaScript, SVN, GIT, C++',
-          role: 'Software Engineer [Angular/ UI Developer]',
-          responsibilities: [
-            'Involved in designing the user experience interface UI/UX strategy, Brainstorming the feature and UI requirements for UI designs and workflow.',
-            'UI Lead and Code reviewer.',
-            'Infrastructure Upgrade and Bug Tracking and fixing.',
-            'Add new features as per the requirements.',
-            'Application performance enhancement',
-            'Used SVN for version control and JIRA for defect tracking.',
-            'Used Jasmine/Karma for unit testing.',
-            'Responsible for Build and Release process.'
-          ],
-          achievements: 'Upgraded Angular version 6 to Angular 13. | Electron version 5 to 18'
-        },
-        {
-          projectName: 'Fiery Verify',
-          technologiesUsed: 'HTML5, CSS, Angular.js, TypeScript, JavaScript, GIT, C++',
-          role: 'Software Engineer [Angular/ UI Developer]',
-          responsibilities: [
-            "Application performance enhancement",
-            "Code reviewer.",
-            'Infrastructure Upgrade and Bug Tracking and fixing.',
-            'Add new features as per the requirements.',
-            'Used SVN for version control and JIRA for defect tracking.',
-            'Used Jasmine/Karma for unit testing.',
+            'Designed and shipped new features across cross-functional agile teams.',
+            'Maintained complex Angular applications with real-time REST API integrations.',
+            'Conducted code reviews and enforced front-end quality standards.',
+            'Resolved production defects and improved application stability.',
+            'Participated in daily stand-ups and sprint planning ceremonies.'
           ]
         }
       ]
     },
     {
-      companyName: 'TYSS Bangalore',
+      companyName: 'EFI India Pvt Ltd',
       duration: 'Apr 2020 - Dec 2022',
+      role: 'Software Engineer — UI',
+      image: 'assets/efiLogo.jpeg',
+      projects: [
+        {
+          projectName: 'Fiery Spot Pro',
+          technologiesUsed: 'Angular 8–13, TypeScript, Electron, SCSS, Git, SVN, C++',
+          role: 'Software Engineer — UI',
+          responsibilities: [
+            'Led UI/UX strategy and workflow design for color-management software.',
+            'Served as UI lead and primary code reviewer for the front-end team.',
+            'Upgraded the application from Angular 6 to Angular 13 and Electron 5 to 18.',
+            'Improved application performance and delivered features on schedule.',
+            'Managed build and release pipelines with Jasmine/Karma test coverage.'
+          ],
+          achievements: 'Angular 6 → 13 upgrade · Electron 5 → 18 migration'
+        },
+        {
+          projectName: 'Fiery Verify',
+          technologiesUsed: 'Angular.js, TypeScript, HTML5, CSS3, Git, SVN, C++',
+          role: 'Software Engineer — UI',
+          responsibilities: [
+            'Enhanced application performance and resolved critical defects.',
+            'Reviewed code and maintained front-end quality across releases.',
+            'Tracked issues in JIRA and managed version control with SVN/Git.',
+            'Wrote unit tests with Jasmine and Karma.'
+          ]
+        }
+      ]
+    },
+    {
+      companyName: 'Test Yantra (TYSS)',
+      duration: 'Jun 2019 - Apr 2020',
+      role: 'Associate Software Developer',
+      image: 'https://cdn.pixabay.com/photo/2015/01/09/11/09/meeting-594091_1280.jpg',
+      summary: 'Built recruitment and e-learning platforms with Angular dashboards, chart integrations, and responsive layouts.',
       projects: [
         {
           projectName: 'Tyro Vet',
-          duration: 'June 2019',
-          technologiesUsed: 'HTML5, CSS, Angular 6+, TypeScript, JavaScript, GIT, Node.js, MongoDB',
-          role: 'Software Engineer [Angular/ UI Developer]',
+          technologiesUsed: 'Angular 6+, TypeScript, Node.js, MongoDB, Highcharts, Git',
+          role: 'Software Engineer — UI',
           responsibilities: [
-            'Involved in designing the user experience interface UI/UX strategy, UI requirements, into UI designs.',
-            'Implemented admin dashboard using High chart and Google chart.',
-            'Implemented the new features as per the requirements within the timeline.',
-            'Worked for adding functionality and enhancement of application.',
-            'Worked on fixing critical issues of high, medium, and low priority.'
+            'Designed UI/UX flows for a recruitment automation platform.',
+            'Built admin dashboards with Highcharts and Google Charts.',
+            'Delivered features on time and resolved priority defects.',
+            'Collaborated on application enhancements and performance tuning.'
           ]
         },
         {
-          projectName: 'SkillRary: Online Courses - Learn Anywhere, Learn Any Skill',
-          technologiesUsed: 'HTML5, CSS, JavaScript, GIT',
+          projectName: 'SkillRary',
+          technologiesUsed: 'HTML5, CSS3, JavaScript, Git',
           role: 'Associate Software Developer',
           responsibilities: [
-            'Worked on fixing critical issues of high, medium, and low priority.',
-            'Supporting the team mates.'
+            'Fixed high, medium, and low priority production issues.',
+            'Supported team members on front-end implementation tasks.'
           ]
-
         }
       ]
     }
