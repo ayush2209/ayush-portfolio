@@ -1,0 +1,65 @@
+<div class="contact-form-card surface-card" [class.contact-form-card--highlight]="isHighlighted()">
+    @if (isHireIntent()) {
+    <p class="contact-form-card__intent" role="status">
+        <i class="fa fa-briefcase" aria-hidden="true"></i>
+        {{ 'Contact_Form_Hire_Note' | translate }}
+    </p>
+    }
+
+    @if (messageSent) {
+    <div class="form-success" role="status">
+        <i class="fa fa-check-circle" aria-hidden="true"></i>
+        <p>{{ 'Form_Success_Message' | translate }}</p>
+    </div>
+    }
+
+    <form #messageForm="ngForm" (ngSubmit)="sendMessage(messageForm)" novalidate>
+        <mat-form-field appearance="outline" class="portfolio-field">
+            <mat-label>{{ 'Label_Full_Name' | translate }}</mat-label>
+            <input matInput type="text" id="contact-name" name="fullName" minlength="4"
+                [placeholder]="'Placeholder_Name_Example' | translate" #fullName="ngModel" ngModel required autocomplete="name">
+            @if (fullName.invalid && (fullName.dirty || fullName.touched) && fullName.errors?.['required']) {
+            <mat-error>{{ 'Error_Name_Required' | translate }}</mat-error>
+            }
+            @if (fullName.invalid && (fullName.dirty || fullName.touched) && fullName.errors?.['minlength']) {
+            <mat-error>{{ 'Error_Name_Minlength' | translate }}</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="portfolio-field">
+            <mat-label>{{ 'Label_Email_Address' | translate }}</mat-label>
+            <input matInput type="email" id="contact-email" name="email"
+                [placeholder]="'Placeholder_Email' | translate" #email="ngModel" ngModel required autocomplete="email">
+            @if (email.invalid && (email.dirty || email.touched) && email.errors?.['required']) {
+            <mat-error>{{ 'Error_Email_Required' | translate }}</mat-error>
+            }
+            @if (email.invalid && (email.dirty || email.touched) && email.errors?.['email']) {
+            <mat-error>{{ 'Error_Email_Invalid' | translate }}</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="portfolio-field">
+            <mat-label>{{ 'Label_Your_Message' | translate }}</mat-label>
+            <textarea matInput id="contact-message" name="message" #message="ngModel"
+                [placeholder]="isHireIntent() ? ('Placeholder_Message_Hire' | translate) : ('Placeholder_Message_Contact' | translate)"
+                ngModel required rows="5" maxlength="1000" (input)="updateCharCount($event)"></textarea>
+            @if (message.invalid && (message.dirty || message.touched) && message.errors?.['required']) {
+            <mat-error>{{ 'Error_Message_Required' | translate }}</mat-error>
+            }
+        </mat-form-field>
+
+        <div class="form-field__footer">
+            <span></span>
+            <span class="char-count" [class.char-count--warn]="charCount > 900">{{ 'Char_Count' | translate: { count: charCount, max: 1000 } }}</span>
+        </div>
+
+        <div class="contact-form-card__actions form-actions">
+            <button type="submit" [disabled]="messageForm.invalid" class="btn btn-primary shadow-sm">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i> {{ 'Btn_Send_Message' | translate }}
+            </button>
+            <button type="button" class="btn btn-outline-secondary shadow-sm" (click)="resetForm(messageForm)">
+                <i class="fa fa-undo" aria-hidden="true"></i> {{ 'Btn_Reset' | translate }}
+            </button>
+        </div>
+    </form>
+</div>

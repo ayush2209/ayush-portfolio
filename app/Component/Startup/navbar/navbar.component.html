@@ -1,0 +1,28 @@
+<div class="top">
+  <div class="d-flex navbar justify-content-between shadow">
+    <div class="navbar-brand brand-mark ms-2" [attr.aria-label]="'Name' | translate">
+      <span class="brand-mark__tag" aria-hidden="true">&lt;</span>
+      <span class="brand-mark__name">{{ 'Name' | translate }}</span>
+      <span class="brand-mark__tag" aria-hidden="true">/&gt;</span>
+    </div>
+    <div>
+
+    </div>
+    <div class="me-2">
+      <div class="btn-group" id="123" dropdown placement="bottom left" [insideClick]="false">
+        <button id="button-basic" dropdownToggle type="button" class="btn btn-lang dropdown-toggle" aria-controls="dropdown-basic">
+          {{ 'Language' | translate }} <span class="caret"></span>
+        </button>
+        <div id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-end mt-1" role="menu">
+          <div role="group">
+            @for (language of languages; track language.code) {
+            <button type="button" class="dropdown-item" role="menuitem" (click)="selectLanguage(language.code)">{{ language.nameKey | translate }}</button>
+            }
+          </div>
+          <div class="dropdown-divider" role="separator"></div>
+          <div class="dropdown-item text-muted small">{{ 'Language_Save_Note' | translate }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

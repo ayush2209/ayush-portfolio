@@ -1,0 +1,37 @@
+<section class="highlights-section" aria-labelledby="highlights-heading">
+  <header class="highlights-section__header">
+    <h2 id="highlights-heading" class="section-title">
+      <i class="fa fa-bar-chart section-title__icon" aria-hidden="true"></i>
+      {{ titleKey() | translate }}
+    </h2>
+    <p class="section-subtitle">{{ subtitleKey() | translate }}</p>
+  </header>
+
+  @if (stats().length) {
+  <ul class="highlights-section__stats" role="list">
+    @for (stat of stats(); track stat.labelKey) {
+    <li class="highlights-stat surface-card">
+      <span class="highlights-stat__icon" aria-hidden="true">
+        <i class="fa" [class]="stat.icon"></i>
+      </span>
+      <span class="highlights-stat__value">{{ stat.value }}</span>
+      <span class="highlights-stat__label">{{ stat.labelKey | translate }}</span>
+    </li>
+    }
+  </ul>
+  }
+
+  @if (pillars().length) {
+  <ul class="highlights-section__pillars" role="list">
+    @for (pillar of pillars(); track pillar.titleKey) {
+    <li class="highlights-pillar surface-card">
+      <span class="highlights-pillar__icon" aria-hidden="true">
+        <i class="fa" [class]="pillar.icon"></i>
+      </span>
+      <h3 class="highlights-pillar__title">{{ pillar.titleKey | translate }}</h3>
+      <p class="highlights-pillar__body">{{ pillar.bodyKey | translate }}</p>
+    </li>
+    }
+  </ul>
+  }
+</section>

@@ -1,0 +1,76 @@
+<section class="hero-banner" [attr.aria-label]="'Aria_Site_Status' | translate">
+    <p class="hero-banner__text">
+        <span>{{ 'MarQue_Text_1' | translate }} {{ angularCurrentVersion }}</span>
+        <span class="hero-banner__divider">·</span>
+        <span>{{ 'MarQue_Text_2' | translate }}</span>
+        <!-- <span class="hero-banner__divider">·</span> -->
+    </p>
+</section>
+
+<section class="row hero-section">
+    <article class="col-sm-6 col-md-8" animate.enter="hero-enter">
+        <h1 class="info-text mb-2">{{ 'Name' | translate }}</h1>
+        <p class="hero-role mb-2">
+            <span class="hero-role__title">{{ 'Senior Consultant' | translate }}</span>
+            <span class="hero-role__company"> {{ 'Role_At' | translate }} {{ 'Role_Company' | translate }}</span>
+        </p>
+        <p class="hero-description">
+            {{ 'Description_Title' | translate }}<code>{{ 'Description_Skills' | translate }}</code>{{ 'Description_Suffix' | translate }}
+        </p>
+        <ul class="list-style hero-skills" role="list">
+            <li class="skill-element" animate.enter="skill-enter" style="--skill-delay: 0ms">
+                <b><span class="underline">{{ total_YOE }} {{ 'Years_Of_Experience' | translate }}</span></b>
+                {{ 'Corporate_Environment_Desc' | translate }}
+            </li>
+            @for (item of TECH_DESCRIPTION; track $index) {
+            <li class="skill-element" animate.enter="skill-enter" [style.--skill-delay.ms]="($index + 1) * 70">{{ item | translate }}</li>
+            }
+        </ul>
+    </article>
+
+    <article class="col-sm-6 col-md-4 my-2 hero-image-col" animate.enter="image-enter">
+        @defer (on viewport; on timer(5s)) {
+        <img class="img-fluid rounded hero-image" src="assets/homeImg.gif" [attr.alt]="'Alt_Portfolio_Image' | translate" height="100%" width="100%">
+        } @placeholder {
+        <div class="hero-image-placeholder">{{ 'Loading' | translate }}</div>
+        }
+    </article>
+</section>
+
+<section class="hero-cta mb-2" animate.enter="cta-enter">
+    <div class="hero-cta__buttons">
+        <button type="button" class="hero-cta__btn hero-cta__btn--primary" (click)="goToContactForm()">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            <span>{{ 'Contact_Me_CTA' | translate }}</span>
+        </button>
+        <button type="button" class="hero-cta__btn hero-cta__btn--secondary" (click)="saveResumeAsPDF()">
+            {{ 'Download_CV' | translate }}
+        </button>
+    </div>
+    <nav class="info-text-p mt-3 socialMediaIcons" [attr.aria-label]="'Aria_Social_Links' | translate">
+        <a href="https://www.linkedin.com/in/ui-ayush-anand/" target="_blank" rel="noopener noreferrer" class="btn rounded" [attr.aria-label]="'Aria_LinkedIn' | translate">
+            <i class="fa fa-2x fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="https://github.com/ayush2209" target="_blank" rel="noopener noreferrer" class="btn" [attr.aria-label]="'Aria_GitHub' | translate">
+            <i class="fa fa-2x fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="https://twitter.com/omayushanand" target="_blank" rel="noopener noreferrer" class="btn" [attr.aria-label]="'Aria_Twitter' | translate">
+            <i class="fa fa-2x fa-twitter" aria-hidden="true"></i>
+        </a>
+    </nav>
+</section>
+
+
+<section class="skills-section" aria-labelledby="skills-heading">
+    <header class="skills-section__header">
+        <h2 id="skills-heading" class="section-title">
+            <i class="fa fa-cogs section-title__icon" aria-hidden="true"></i>
+            {{ 'Skills_Title' | translate }}
+        </h2>
+        <p class="section-subtitle">{{ 'Skills_Subtitle' | translate }}</p>
+    </header>
+
+    <app-chip-marquee [rows]="skillMarqueeRows" [ariaLabel]="'Skills_Title' | translate" />
+</section>
+
+<app-highlights-section [stats]="highlightStats" [pillars]="highlightPillars" />

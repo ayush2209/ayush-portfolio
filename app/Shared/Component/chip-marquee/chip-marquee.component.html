@@ -1,0 +1,30 @@
+<div class="chip-marquee" [class.chip-marquee--banner]="appearance() === 'banner'" aria-hidden="true">
+  @for (row of rows(); track $index; let ri = $index) {
+  <div class="chip-marquee__row">
+    <div class="chip-marquee__track"
+      [class.chip-marquee__track--forward]="rowDirection(row, ri) === 'forward'"
+      [class.chip-marquee__track--reverse]="rowDirection(row, ri) === 'reverse'"
+      [style.animation-duration.s]="rowDuration(row)">
+      @for (copy of loopIndices(); track copy) {
+      <div class="chip-marquee__group">
+        @for (item of row.items; track $index) {
+        @if (isCategory(item)) {
+        <span class="chip-marquee__chip chip-marquee__chip--category">{{ item.labelKey | translate }}</span>
+        } @else if (chipLabel(item); as label) {
+        <span class="chip-marquee__chip">{{ label }}</span>
+        }
+        }
+      </div>
+      }
+    </div>
+  </div>
+  }
+</div>
+
+@if (skillLabels().length) {
+<ul class="visually-hidden" role="list" [attr.aria-label]="ariaLabel() || null">
+  @for (label of skillLabels(); track label) {
+  <li>{{ label }}</li>
+  }
+</ul>
+}

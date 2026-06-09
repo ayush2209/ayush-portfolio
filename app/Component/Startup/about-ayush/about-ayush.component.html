@@ -1,0 +1,128 @@
+<footer class="contact-section" id="contact">
+    <div class="contact-section__header">
+        <h2 class="title section-title">
+            <i class="fa fa-envelope-o section-title__icon" aria-hidden="true"></i>
+            {{ 'Get_In_Touch' | translate }}
+        </h2>
+        <p class="section-subtitle">{{ 'Contact_Subtitle' | translate }}</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-lg-7">
+            <app-contact-form />
+        </div>
+
+        <div class="col-lg-5">
+            <aside class="contact-aside surface-card">
+                <p class="contact-aside__greeting">
+                    {{ 'Contact_Aside_Greeting' | translate }}
+                </p>
+
+                <div class="contact-aside__actions">
+                    <button type="button" class="btn contact-aside__like shadow-sm" (click)="increaseLike()" [attr.aria-pressed]="ifClicked">
+                        <i class="fa fa-heart" [class.contact-aside__like--active]="ifClicked" aria-hidden="true"></i>
+                        <span>{{ (ifClicked ? 'Appreciated' : 'Show_Appreciation') | translate }}</span>
+                        @if (count > 0) {
+                        <span class="contact-aside__count">{{ count }}</span>
+                        }
+                    </button>
+
+                    <button type="button" class="btn btn-outline-primary shadow-sm" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <i class="fa fa-comment" aria-hidden="true"></i> {{ 'Leave_Feedback' | translate }}
+                    </button>
+                </div>
+
+                <div class="contact-aside__links">
+                    <a href="https://www.linkedin.com/in/ui-ayush-anand/" target="_blank" rel="noopener noreferrer">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i> {{ 'LinkedIn' | translate }}
+                    </a>
+                    <a href="https://github.com/ayush2209" target="_blank" rel="noopener noreferrer">
+                        <i class="fa fa-github" aria-hidden="true"></i> {{ 'GitHub' | translate }}
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</footer>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h4 class="title section-title" id="offcanvasRightLabel">{{ 'Share_Feedback' | translate }}</h4>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" [attr.aria-label]="'Aria_Close' | translate"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="nav nav-pills feedback-tabs mb-3" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="write-tab" data-bs-toggle="pill" data-bs-target="#write-feedback" type="button" role="tab">{{ 'Feedback_Write' | translate }}</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="read-tab" data-bs-toggle="pill" data-bs-target="#read-feedback" type="button" role="tab">{{ 'Feedback_Previous' | translate }}</button>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="write-feedback" role="tabpanel">
+                <form #feedback_Form="ngForm" (ngSubmit)="sendFeedback(feedback_Form)">
+                    <mat-form-field appearance="outline" class="portfolio-field">
+                        <mat-label>{{ 'Label_Your_Feedback' | translate }}</mat-label>
+                        <textarea matInput id="feedback-text" name="feedback_Message" #feedback_Message="ngModel"
+                            [placeholder]="'Placeholder_Feedback' | translate" ngModel required rows="3"></textarea>
+                        @if (feedback_Message.invalid && (feedback_Message.dirty || feedback_Message.touched)) {
+                        <mat-error>{{ 'Error_Feedback_Required' | translate }}</mat-error>
+                        }
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="portfolio-field">
+                        <mat-label>{{ 'Label_Name' | translate }}</mat-label>
+                        <input matInput type="text" id="feedback-name" name="feedback_Messager" minlength="4"
+                            [placeholder]="'Placeholder_Your_Name' | translate" #feedback_Messager="ngModel" ngModel required>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="portfolio-field">
+                        <mat-label>{{ 'Label_Email' | translate }}</mat-label>
+                        <input matInput type="email" id="feedback-email" name="f_email"
+                            [placeholder]="'Placeholder_Email' | translate" #f_email="ngModel" ngModel required>
+                    </mat-form-field>
+                    <div class="form-actions d-flex flex-wrap gap-2 mt-3">
+                        <button type="submit" [disabled]="feedback_Form.invalid" class="btn btn-primary shadow-sm">
+                            <i class="fa fa-paper-plane" aria-hidden="true"></i> {{ 'Btn_Submit' | translate }}
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary shadow-sm" (click)="feedback_Form.reset()">
+                            <i class="fa fa-undo" aria-hidden="true"></i> {{ 'Btn_Reset' | translate }}
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tab-pane fade feedback-read-pane" id="read-feedback" role="tabpanel">
+                @if (adminMode.isAdmin()) {
+                <p class="feedback-admin-badge" role="status">
+                    <i class="fa fa-shield" aria-hidden="true"></i>
+                    {{ 'Admin_Mode_Active' | translate }}
+                </p>
+                }
+                <div class="feedback-list">
+                    @if (feedBackData.length) {
+                    @for (item of feedBackData; track item.id) {
+                    <article class="feedback-item surface-card">
+                        <div class="feedback-item__header">
+                            <strong>{{ item.feedback_Messager }}</strong>
+                            @if (adminMode.isAdmin()) {
+                            <button type="button" class="btn btn-sm btn-outline-secondary feedback-item__delete"
+                                (click)="deleteFeedback(item)"
+                                [attr.aria-label]="'Btn_Delete_Feedback' | translate">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                {{ 'Btn_Delete_Feedback' | translate }}
+                            </button>
+                            }
+                        </div>
+                        <p>{{ item.feedback_Message }}</p>
+                    </article>
+                    }
+                    } @else {
+                    <p class="feedback-list__empty text-muted">{{ 'No_Feedback_Yet' | translate }}</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

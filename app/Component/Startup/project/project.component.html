@@ -1,0 +1,52 @@
+<section class="career-intro row align-items-center">
+    <article class="col-md-5 my-3">
+        <div class="career-intro__visual" role="img" [attr.aria-label]="'Alt_Career_Overview' | translate">
+            <i class="fa fa-briefcase career-intro__icon" aria-hidden="true"></i>
+            <span class="career-intro__badge">{{ 'Career_Journey' | translate }}</span>
+        </div>
+    </article>
+    <article class="col-md-7">
+        <div class="contact-me">
+            <h2 class="title section-title">
+                <i class="fa fa-briefcase section-title__icon" aria-hidden="true"></i>
+                {{ careerDetailsObj.careerSection.title | translate }}
+            </h2>
+        </div>
+        <p class="section-subtitle">{{ careerDetailsObj.careerSection.subtitle | translate }}</p>
+        <h3 class="career-intro__label">{{ 'Core_Responsibilities' | translate }}</h3>
+        <ul class="career-responsibilities" role="list">
+            @for (responsibility of careerDetailsObj.careerSection.responsibilities; track $index) {
+            <li>{{ responsibility | translate }}</li>
+            }
+        </ul>
+    </article>
+</section>
+
+<section class="career-timeline" [attr.aria-label]="'Aria_Work_History' | translate">
+    @for (company of careerDetailsObj.companies; track company.name; let i = $index) {
+    <article class="timeline-card surface-card" [class.timeline-card--alt]="i % 2 === 1">
+        <div class="timeline-card__marker" aria-hidden="true">
+            <span class="timeline-card__dot"></span>
+            @if (i < careerDetailsObj.companies.length - 1) {
+            <span class="timeline-card__line"></span>
+            }
+        </div>
+        <div class="timeline-card__content">
+            <div class="timeline-card__media">
+                <img class="timeline-card__image" [src]="company.image" [attr.alt]="(company.name | translate) + ' ' + ('Logo' | translate)" loading="lazy">
+            </div>
+            <div class="timeline-card__body">
+                <div class="timeline-card__header">
+                    <h3 class="timeline-card__name">{{ company.name | translate }}</h3>
+                    <span class="timeline-card__tenure">{{ company.tenure | translate }}</span>
+                </div>
+                <span class="timeline-card__role">{{ company.role | translate }}</span>
+                <p class="timeline-card__description">{{ company.description | translate }}</p>
+                <a class="timeline-card__link" [href]="company.readMoreLink" target="_blank" rel="noopener noreferrer">
+                    {{ 'Learn_More' | translate }} <i class="fa fa-external-link" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </article>
+    }
+</section>
