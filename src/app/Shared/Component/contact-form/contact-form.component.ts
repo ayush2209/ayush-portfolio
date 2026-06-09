@@ -22,6 +22,7 @@ export class ContactFormComponent {
   readonly httpUrl = 'https://anand-ayush-default-rtdb.firebaseio.com/';
   charCount = 0;
   messageSent = false;
+  private successTimer?: number;
 
   readonly isHighlighted = computed(() => this.contactScroll.highlight());
   readonly isHireIntent = computed(() => this.contactScroll.intent() === 'hire');
@@ -48,8 +49,22 @@ export class ContactFormComponent {
         formData.reset();
         this.charCount = 0;
         this.messageSent = true;
+        // auto-hide success message after 5 seconds
+        if (this.successTimer) {
+          clearTimeout(this.successTimer);
+        }
+        this.successTimer = window.setTimeout(() => {
+          this.messageSent = false;
+          this.successTimer = undefined;
+        }, 5000);
         this.contactScroll.intent.set('contact');
         this.spinner.hide();
+        // ensure validation visuals are cleared
+        Object.keys(formData.controls || {}).forEach(k => {
+          const c = formData.controls[k];
+          c.markAsPristine();
+          c.markAsUntouched();
+        });
       },
       error: () => {
         this.spinner.hide();
@@ -61,6 +76,17 @@ export class ContactFormComponent {
   resetForm(form: NgForm): void {
     form.reset();
     this.charCount = 0;
+    // clear any pending success message timer and hide message immediately
+    if (this.successTimer) {
+      clearTimeout(this.successTimer);
+      this.successTimer = undefined;
+    }
+    this.messageSent = false;
     this.contactScroll.intent.set('contact');
+    Object.keys(form.controls || {}).forEach(k => {
+      const c = form.controls[k];
+      c.markAsPristine();
+      c.markAsUntouched();
+    });
   }
 }

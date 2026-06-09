@@ -22,11 +22,6 @@
   }
 }
 
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
 .hero-section {
   margin-top: 1.5rem;
 }
@@ -95,7 +90,7 @@
 
 .hero-image {
   border: 1px solid var(--border);
-  box-shadow: var(--shadow-md);
+  box-shadow: none;
 }
 
 .hero-image-placeholder {
@@ -129,6 +124,7 @@
       font-size: 0.875rem;
       line-height: 1;
     }
+
     padding: 0.625rem 1.5rem;
     font-size: 0.875rem;
     font-weight: 500;
@@ -139,7 +135,9 @@
     border-radius: 4px;
     cursor: pointer;
     box-shadow: none;
-    transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+    transition: background-color var(--transition),
+    color var(--transition),
+    border-color var(--transition);
 
     &:focus-visible {
       outline: 2px solid var(--charcoal);
@@ -224,49 +222,3 @@
   animation: skill-slide-in 380ms ease-out both;
   animation-delay: var(--skill-delay, 0ms);
 }
-
-@keyframes hero-fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes hero-image-in {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes skill-slide-in {
-  from {
-    opacity: 0;
-    transform: translateX(-12px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-enter,
-  .image-enter,
-  .cta-enter,
-  .skill-enter {
-    animation: none;
-  }
-}
-

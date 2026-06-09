@@ -22,16 +22,17 @@ export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
 }
 
 @Component({
-    selector: 'app-about-ayush',
-    templateUrl: './about-ayush.component.html',
-    styleUrls: ['./about-ayush.component.scss'],
-    standalone: false
+  selector: 'app-about-ayush',
+  templateUrl: './about-ayush.component.html',
+  styleUrls: ['./about-ayush.component.scss'],
+  standalone: false
 })
 export class AboutAyushComponent implements OnInit {
   httpUrl: string = `https://anand-ayush-default-rtdb.firebaseio.com/`;
   ifClicked = false;
   count = 0;
   feedBackData: FeedbackRecord[] = [];
+  messageSent = false;
 
   constructor(
     private commonService: CommonService,
@@ -101,11 +102,29 @@ export class AboutAyushComponent implements OnInit {
         formData.reset();
         this.spinner.hide();
         this.getFeedbackDataResponse();
+        this.messageSent = true;
+        // clear validation visuals
+        Object.keys(formData.controls || {}).forEach(k => {
+          const c = formData.controls[k];
+          c.markAsPristine();
+          c.markAsUntouched();
+        });
+        // auto-hide success message after 5s
+        setTimeout(() => this.messageSent = false, 5000);
       },
       error: () => {
         this.spinner.hide();
         alert(this.translate.instant('Alert_Feedback_Failed'));
       }
+    });
+  }
+
+  resetFeedback(formData: NgForm) {
+    formData.reset();
+    Object.keys(formData.controls || {}).forEach(k => {
+      const c = formData.controls[k];
+      c.markAsPristine();
+      c.markAsUntouched();
     });
   }
 

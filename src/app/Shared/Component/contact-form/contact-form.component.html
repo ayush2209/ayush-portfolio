@@ -7,17 +7,17 @@
     }
 
     @if (messageSent) {
-    <div class="form-success" role="status">
+    <div class="form-success form-success--inline mb-3" role="status" aria-live="polite">
         <i class="fa fa-check-circle" aria-hidden="true"></i>
-        <p>{{ 'Form_Success_Message' | translate }}</p>
+        <span class="sr-only">{{ 'Form_Success_Message' | translate }}</span>
+        <span aria-hidden="true">{{ 'Form_Success_Message' | translate }}</span>
     </div>
     }
 
     <form #messageForm="ngForm" (ngSubmit)="sendMessage(messageForm)" novalidate>
         <mat-form-field appearance="outline" class="portfolio-field">
             <mat-label>{{ 'Label_Full_Name' | translate }}</mat-label>
-            <input matInput type="text" id="contact-name" name="fullName" minlength="4"
-                [placeholder]="'Placeholder_Name_Example' | translate" #fullName="ngModel" ngModel required autocomplete="name">
+            <input matInput type="text" id="contact-name" name="fullName" minlength="4" [placeholder]="'Placeholder_Name_Example' | translate" #fullName="ngModel" ngModel required autocomplete="name">
             @if (fullName.invalid && (fullName.dirty || fullName.touched) && fullName.errors?.['required']) {
             <mat-error>{{ 'Error_Name_Required' | translate }}</mat-error>
             }
@@ -28,8 +28,7 @@
 
         <mat-form-field appearance="outline" class="portfolio-field">
             <mat-label>{{ 'Label_Email_Address' | translate }}</mat-label>
-            <input matInput type="email" id="contact-email" name="email"
-                [placeholder]="'Placeholder_Email' | translate" #email="ngModel" ngModel required autocomplete="email">
+            <input matInput type="email" id="contact-email" name="email" [placeholder]="'Placeholder_Email' | translate" #email="ngModel" ngModel required autocomplete="email">
             @if (email.invalid && (email.dirty || email.touched) && email.errors?.['required']) {
             <mat-error>{{ 'Error_Email_Required' | translate }}</mat-error>
             }
@@ -40,9 +39,7 @@
 
         <mat-form-field appearance="outline" class="portfolio-field">
             <mat-label>{{ 'Label_Your_Message' | translate }}</mat-label>
-            <textarea matInput id="contact-message" name="message" #message="ngModel"
-                [placeholder]="isHireIntent() ? ('Placeholder_Message_Hire' | translate) : ('Placeholder_Message_Contact' | translate)"
-                ngModel required rows="5" maxlength="1000" (input)="updateCharCount($event)"></textarea>
+            <textarea matInput id="contact-message" name="message" #message="ngModel" [placeholder]="isHireIntent() ? ('Placeholder_Message_Hire' | translate) : ('Placeholder_Message_Contact' | translate)" ngModel required rows="5" maxlength="1000" (input)="updateCharCount($event)"></textarea>
             @if (message.invalid && (message.dirty || message.touched) && message.errors?.['required']) {
             <mat-error>{{ 'Error_Message_Required' | translate }}</mat-error>
             }
