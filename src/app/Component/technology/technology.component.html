@@ -73,6 +73,13 @@
             </ul>
           </div>
 
+          @if( project.hostUrl) {
+          <a [href]="project.hostUrl" target="_blank" rel="noopener noreferrer" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+            <i class="fa fa-asterisk me-1" aria-hidden="true"></i>
+            {{ project.hostUrl }}
+          </a>
+          }
+
           @if (project.achievements) {
           <div class="project-panel__highlight">
             <i class="fa fa-star" aria-hidden="true"></i>

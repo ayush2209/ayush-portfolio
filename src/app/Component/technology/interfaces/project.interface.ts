@@ -4,6 +4,7 @@ export interface Project {
   role: string;
   responsibilities: string[];
   achievements?: string;
+  hostUrl?: string;
 }
 
 export interface Company {

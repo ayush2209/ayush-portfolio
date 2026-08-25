@@ -26,11 +26,16 @@ export class HomeComponent implements OnInit {
       items: [
         { type: 'category', labelKey: 'Skills_Core' },
         { type: 'skill', label: 'Angular' },
+        { type: 'skill', label: 'React.js' },
+        { type: 'skill', label: 'Vue.js' },
         { type: 'skill', label: 'TypeScript' },
         { type: 'skill', label: 'JavaScript' },
         { type: 'skill', label: 'RxJS' },
         { type: 'skill', label: 'HTML5' },
-        { type: 'skill', label: 'SCSS' }
+        { type: 'skill', label: 'SCSS' },
+        { type: 'category', labelKey: 'Skills_Core' },
+        { type: 'skill', label: 'Angular' },
+        { type: 'skill', label: 'React.js' },
       ]
     },
     {
@@ -39,6 +44,7 @@ export class HomeComponent implements OnInit {
       items: [
         { type: 'category', labelKey: 'Skills_Tools' },
         { type: 'skill', label: 'Git' },
+        { type: 'skill', label: 'Firestore' },
         { type: 'skill', label: 'JIRA' },
         { type: 'skill', label: 'Jasmine' },
         { type: 'skill', label: 'Karma' },

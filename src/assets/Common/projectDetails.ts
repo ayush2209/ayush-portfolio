@@ -14,12 +14,53 @@ export const DEFAULT_EXPERIENCE_DATA: ProjectData = {
   subtitle: 'Organizations, roles, and project contributions across my career.',
   highlights: [
     'Angular & TypeScript development',
+    'React.js',
+    'Vue.js',
     'Component architecture & reusable UI libraries',
     'Code reviews & team mentoring',
     'Agile delivery & SDLC ownership',
     'Performance optimization & testing'
   ],
   company: [
+    {
+      companyName: 'Self Development',
+      duration: 'Present',
+      role: 'Student',
+      image: 'https://img.magnific.com/free-vector/hand-drawn-neuroeducation-illustration_23-2150945405.jpg?semt=ais_hybrid&w=740&q=80',
+      projects: [
+        {
+          projectName: 'Anand Shopify Store',
+          technologiesUsed:
+            'Vue 3, Javascript, Pinia - State Management, Bootstrap CSS',
+          role: 'Senior Consultant',
+          achievements: 'Vue 3 + Pinia + Firestore for Auth & Realtime data + Bootstrap CSS',
+          responsibilities: [
+            'Wrote code for a Shopify store using Vue 3 and Pinia for state management, implementing responsive design with Bootstrap CSS.',
+            'Developed the core logic independently without boilerplate code or AI, while leveraging AI selectively for user experience design.'
+          ],
+          hostUrl: 'http://anand-shopify.vercel.app'
+        },
+        {
+          projectName: 'To-Do Application',
+          technologiesUsed: 'React 18, JavaScript, Material UI, Tailwind CSS, React Router',
+          role: 'Frontend Developer',
+          achievements: 'Built and deployed a responsive task-management application with interactive draggable tasks and a component-based React architecture.',
+          responsibilities: [
+            'Developed a responsive To-Do application using React with reusable functional components and React hooks.',
+            'Used dynamic color generation to visually distinguish tasks and improve usability.',
+            'Combined Tailwind CSS and Material UI to create a responsive and polished user interface.'
+          ],
+          hostUrl: 'https://to-do-ayush.vercel.app'
+        },
+        {
+          projectName: 'YouTube React',
+          technologiesUsed: 'React.js',
+          role: 'Frontend Developer',
+          responsibilities: ['React Learning Project'],
+          hostUrl: 'https://anand-youtube.vercel.app'
+        }
+      ]
+    },
     {
       companyName: 'Deloitte USI',
       duration: 'Apr 2023 - Present',

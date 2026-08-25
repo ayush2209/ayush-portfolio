@@ -10,7 +10,6 @@ import { NavbarComponent } from './Component/Startup/navbar/navbar.component';
 import { HomeComponent } from './Component/Startup/home/home.component';
 import { AboutAyushComponent } from './Component/Startup/about-ayush/about-ayush.component';
 import { CareerComponent } from './Component/Startup/career/career.component';
-import { ProjectComponent } from './Component/Startup/project/project.component';
 import { TechnologyComponent } from './Component/technology/technology.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoaderComponent } from './Component/Startup/loader/loader.component';
@@ -41,7 +40,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         HomeComponent,
         AboutAyushComponent,
         CareerComponent,
-        ProjectComponent,
         TechnologyComponent,
         LoaderComponent,
         CommonModalComponent,
