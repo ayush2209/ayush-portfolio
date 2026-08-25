@@ -20,14 +20,30 @@
   }
 
   <div id="home">
+    @defer (on immediate) {
     <app-home></app-home>
+    } @placeholder {
+    <div class="section-placeholder">
+      <div class="section-loader" aria-hidden="true"></div>
+    </div>
+    } @loading (after 100ms; minimum 300ms) {
+    <div class="section-placeholder">
+      <div class="section-loader" aria-hidden="true"></div>
+    </div>
+    }
   </div>
 
   <section id="experience" class="page-section">
     @defer (on viewport) {
     <app-career></app-career>
     } @placeholder {
-    <div class="section-placeholder">{{ 'Loading_Experience' | translate }}</div>
+    <div class="section-placeholder">
+      <div class="section-loader" aria-hidden="true"></div>
+    </div>
+    } @loading (after 100ms; minimum 300ms) {
+    <div class="section-placeholder">
+      <div class="section-loader" aria-hidden="true"></div>
+    </div>
     }
   </section>
 
@@ -35,7 +51,13 @@
     @defer (on viewport) {
     <app-about-ayush></app-about-ayush>
     } @placeholder {
-    <div class="section-placeholder">{{ 'Loading_About' | translate }}</div>
+    <div class="section-placeholder">
+      <div class="section-loader" aria-hidden="true"></div>
+    </div>
+    } @loading (after 100ms; minimum 300ms) {
+    <div class="section-placeholder">
+      <div class="section-loader" aria-hidden="true"></div>
+    </div>
     }
   </section>
 </div>
