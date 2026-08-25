@@ -78,6 +78,28 @@
   font-size: 0.9375rem;
 }
 
+.section-loader {
+  width: 42px;
+  height: 42px;
+
+  border: 3px solid var(--border);
+  border-top-color: var(--charcoal);
+
+  border-radius: 50%;
+
+  animation: section-loader-spin 0.75s linear infinite;
+}
+
+@keyframes section-loader-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 #back-to-top {
   position: fixed;
   bottom: 25px;
